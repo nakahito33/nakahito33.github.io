@@ -30,7 +30,7 @@ a,li {
 /* ヘッダー */
 header {
   background-color: #e2f1ff;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #b2b2b2;
 }
 
 .head {
@@ -123,6 +123,7 @@ main {
   padding: 16px;
   background-color: #fffbee;
   border-radius: 8px;
+  border: 1px solid #b2b2b2;
 }
 
 .quiz-title {
