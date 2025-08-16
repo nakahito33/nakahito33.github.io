@@ -112,17 +112,17 @@ main {
   display: block;
 }
 
-/* クイズ部分のスタイル */
+/* mainの左部分 */
 .right {
   width: 50%;
   /* background-color: orange; 確認用*/
 }
 
+/* クイズ部分のスタイル */
 .quiz-section {
   padding: 16px;
   background-color: #fffbee;
   border-radius: 8px;
-  margin: 16px;
 }
 
 .quiz-title {
