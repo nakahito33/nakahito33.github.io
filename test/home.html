@@ -36,8 +36,28 @@
     <div class="left">
       <!-- 映像部分 -->
       <div class="movie">
-        <img src="images/風と共に去りぬ.jpg" alt="風と共に去りぬ">
+        <iframe id="player1" width="314" height="240" src="https://www.youtube.com/embed/-iblco_3JrM?si=KLTYlgm_PzLPm343?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
+      <!-- APIの部分 -->
+      <script>var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player1', {
+          videoId: '-iblco_3JrM', //動画コードが入ります。
+          events: {
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+      function onPlayerStateChange(event) {
+        player.setPlaybackRate(0.5);
+      }
+       </script>
+
       <!-- 翻訳部分 -->
       <div class="translation-section">
         <div class="language-tabs">
