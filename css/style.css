@@ -30,7 +30,7 @@ a,li {
 /* ヘッダー */
 header {
   background-color: #e2f1ff;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #ccc;
 }
 
 .head {
@@ -39,11 +39,8 @@ header {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  /* タイトルを中央に配置 */
   align-items: center;
-  /* 垂直方向の中央揃え */
   position: relative;
-  /* 子要素の絶対位置指定の基準 */
 }
 
 h1 {
@@ -52,35 +49,31 @@ h1 {
 
 /* main */
 main {
-  width: 90%;
+  width: 98%; /* 変更：全体の幅を広げました */
   margin: 16px auto;
   display: flex;
 }
 
 /* mainの左部分 */
 .left {
-  width: 50%;
-  /* background-color: pink; 確認用*/
-}
-/* 【変更点 1】 動画の親要素にスタイルを追加 */
-.movie {
-  overflow: hidden; /* はみ出した部分（黒帯）を隠す */
-  border-radius: 8px; /* 角を丸くして見た目を整える */
-  margin: 0 16px; /* 左右の余白を設定 */
+  width: 70%; /* 変更：左側の割合を増やしました */
 }
 
-/* 【変更点 2】 iframe自体を拡大 */
+.movie {
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 0 16px;
+}
+
 .movie iframe{
   width: 100%;
   aspect-ratio: 16 / 9;
   height: auto;
   display: block;
   margin: 0 auto;
-  /* padding: 0 16px; ← 親要素に余白を移したので削除 */
   box-sizing: border-box;
-  transform: scale(1.4); /* 動画を1.4倍に拡大して黒帯を隠す */
+  transform: scale(1.4);
 }
-
 
 .movie img {
   width: 100%;
@@ -133,8 +126,7 @@ main {
 
 /* クイズ部分のスタイル */
 .right {
-  width: 50%;
-  /* background-color: orange; 確認用*/
+  width: 30%; /* 変更：右側の割合を減らしました */
 }
 
 .quiz-section {
@@ -198,6 +190,6 @@ main {
   font-size: 12px;
   color: #3f5170;
   background-color: #e2f1ff;
-
 }
+
 
