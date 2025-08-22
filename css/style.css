@@ -62,16 +62,25 @@ main {
   width: 50%;
   /* background-color: pink; 確認用*/
 }
+/* 【変更点 1】 動画の親要素にスタイルを追加 */
+.movie {
+  overflow: hidden; /* はみ出した部分（黒帯）を隠す */
+  border-radius: 8px; /* 角を丸くして見た目を整える */
+  margin: 0 16px; /* 左右の余白を設定 */
+}
 
+/* 【変更点 2】 iframe自体を拡大 */
 .movie iframe{
   width: 100%;
   aspect-ratio: 16 / 9;
   height: auto;
   display: block;
   margin: 0 auto;
-  padding: 0 16px;
+  /* padding: 0 16px; ← 親要素に余白を移したので削除 */
   box-sizing: border-box;
+  transform: scale(1.4); /* 動画を1.4倍に拡大して黒帯を隠す */
 }
+
 
 .movie img {
   width: 100%;
@@ -191,3 +200,4 @@ main {
   background-color: #e2f1ff;
 
 }
+
