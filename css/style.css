@@ -124,6 +124,7 @@ main {
   background-color: #fff; /* 変更 */
   color: #000;
   font-weight: 700;
+  border-bottom: 2px solid #ffc9a3;/* 追加:選択したとき色を付ける */
 }
 
 .translation-content {
@@ -216,3 +217,4 @@ main {
     width: 100%;
   }
 }
+
