@@ -34,29 +34,9 @@
   <main>
     <!-- メイン左部分 -->
     <div class="left">
-      <!-- 映像部分 -->
-      <div class="movie">
-        <iframe id="player1" src="https://www.youtube.com/embed/-iblco_3JrM?si=KLTYlgm_PzLPm343?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <!-- APIの部分 -->
-      <script>var tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player1', {
-          videoId: '-iblco_3JrM', //動画コードが入ります。
-          events: {
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
-      function onPlayerStateChange(event) {
-        player.setPlaybackRate(0.5);
-      }
-       </script>
+      <!-- 映像部分 -->
+      <div id="player"></div>
 
       <!-- 翻訳部分 -->
       <div class="translation-section">
@@ -65,26 +45,8 @@
           <button class="tab-button">日本語</button>
         </div>
         <div class="translation-content">
-          <div class="lang-text active">
-            <p>Woman. ---------- </p>
-            <p>Man. ----------</p>
-            <p>Woman. ----------</p>
-            <p>Man. ----------</p>
-            <p>Woman. ----------</p>
-            <p>Man. ----------</p>
-            <p>Woman. ----------</p>
-            <p>Man. ----------</p>
-          </div>
-          <div class="lang-text">
-            <p>女性. ----------</p>
-            <p>男性. ----------</p>
-            <p>女性. ----------</p>
-            <p>男性. ----------</p>
-            <p>女性. ----------</p>
-            <p>男性. ----------</p>
-            <p>女性. ----------</p>
-            <p>男性. ----------</p>
-          </div>
+          <div class="lang-text active"></div>
+          <div class="lang-text"></div>
         </div>
       </div>
     </div>
