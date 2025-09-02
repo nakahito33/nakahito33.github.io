@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const values = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
       return {
         id: Number(values[0]),
-        time: values[1].replace(/^"|"$/g, ""),
+        time: parseTimeToSeconds(values[1].replace(/^"|"$/g, "")),
         speaker: values[2],
         en_text: values[3].replace(/^"|"$/g, ""),
         ja_text: values[4].replace(/^"|"$/g, "")
@@ -85,8 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // JSONのイベントを確認
         eventsData.forEach(ev => {
-          const eventTime = parseTimeToSeconds(ev.time);
-          if (eventTime <= currentTime && ev.id > latestId) {
+          if (ev.time <= currentTime && ev.id > latestId) {
             addEventToList(ev.en_text, ev.ja_text, ev.speaker);
             latestId = ev.id;
           }
@@ -101,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // iframeのセットアップ
   window.onYouTubeIframeAPIReady = function () {
     ytplayer = new YT.Player('player', {
-      videoId: 'BPNZdXZ5_HA',
+      videoId: 'BPNZdXZ5_HA',             //ここ変更すると再生する動画が変えられる
       events: {
         onStateChange: onPlayerStateChange
       }
