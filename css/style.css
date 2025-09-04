@@ -135,6 +135,14 @@ main {
   flex-grow: 1; /* 追加 */
 }
 
+.lang-text {
+  display: none;
+}
+
+.lang-text.active {
+  display: block;
+}
+
 /* クイズ部分のスタイル */
 .right {
   width: 35%; /* 変更：右側の割合を調整 */
@@ -217,4 +225,5 @@ main {
     width: 100%;
   }
 }
+
 
