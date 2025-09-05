@@ -1,1 +1,61 @@
+@charset "UTF-8";
 
+/* Google Fontsを読み込む */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+
+
+.swiper {
+    padding-top: 40px;
+}
+
+.swiper-pagination-bullet {
+  background: #ffc9a3;/* ページネーションの色 */
+}
+
+.swiper-pagination-bullet-active {
+  background: #ff8b5e;/* ページネーションの色 */
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: #ff8b5e; /* 矢印の色 */
+}
+
+/* main部分ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* main {
+    width: 95%;
+    max-width: 1200px;
+    margin: 24px auto;
+    overflow-x: hidden; 横スクロールを無効化
+    display: flex;
+}
+/* main部分ーおすすめ 
+.container-img {
+    overflow-x: scroll; スクロール
+    gap: 16px;
+    padding-bottom: 20px;width: 100%;
+}
+
+.container-img::-webkit-scrollbar {
+    display: none;スクロールバーを隠す
+}
+
+.container-img {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+} */
+/* おすすめ部分の画像をスクロールさせたいんだけど、マジできないーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+main {
+    display: block;
+}
+
+.container {
+    width: 80%;
+    border-bottom: solid 2px #ffc9a3;
+    margin: 0 auto;
+}
+
+.container-img {
+    padding-left: 40px;
+    margin-bottom: 40px;
+}
