@@ -1,0 +1,44 @@
+/* 基本的なスタイル */
+body { 
+    font-family: sans-serif; 
+    text-align: center; 
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+/* YouTubeプレーヤーと字幕コンテナを中央に配置 */
+#player, #subtitle-container {
+    margin: 20px auto;
+}
+
+/* 字幕コンテナのスタイル */
+#subtitle-container {
+    width: 560px; /* YouTubeプレーヤーと同じ幅に設定 */
+    height: 225px;
+    overflow-y: scroll; /* 縦スクロールを有効にする */
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    -webkit-overflow-scrolling: touch; /* iOSでのスクロールをスムーズに */
+    text-align: left; /* テキストを左揃えに */
+}
+
+/* 各字幕行のスタイル */
+#subtitle-list p {
+    margin: 5px 0;
+    padding: 8px;
+    font-size: 1em;
+    color: #888;
+    transition: background-color 0.3s, color 0.3s, font-weight 0.3s;
+    border-radius: 4px;
+}
+
+/* 現在再生中の字幕に適用するスタイル */
+#subtitle-list p.active {
+    color: #333;
+    font-weight: bold;
+    background-color: #e6f7ff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
