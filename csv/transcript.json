@@ -1,0 +1,2797 @@
+[
+  {
+    "speaker": "",
+    "text": "JEFF POSNICK: Hey, everybody.",
+    "translated": "",
+    "start": 10.349
+  },
+  {
+    "speaker": "",
+    "text": "Welcome to this week's show of\nYouTube Developers Live.",
+    "translated": "",
+    "start": 11.349
+  },
+  {
+    "speaker": "",
+    "text": "I'm Jeff Posnick coming to\nyou from New York City.",
+    "translated": "",
+    "start": 14.03
+  },
+  {
+    "speaker": "",
+    "text": "I'm a member of the Developer\nRelations team.",
+    "translated": "",
+    "start": 16.18
+  },
+  {
+    "speaker": "",
+    "text": "And this week I'm really excited\nto talk to you about",
+    "translated": "",
+    "start": 19.42
+  },
+  {
+    "speaker": "",
+    "text": "different ways of customizing\nthe YouTube-embedded player.",
+    "translated": "",
+    "start": 21.49
+  },
+  {
+    "speaker": "",
+    "text": "Before I get started though, I\nwant a couple of ground rules",
+    "translated": "",
+    "start": 24.54
+  },
+  {
+    "speaker": "",
+    "text": "to just talk about what we're\ngoing to be covering in",
+    "translated": "",
+    "start": 28.029
+  },
+  {
+    "speaker": "",
+    "text": "today's show.",
+    "translated": "",
+    "start": 31.539
+  },
+  {
+    "speaker": "",
+    "text": "There are a lot of different\nembedded players, and there's",
+    "translated": "",
+    "start": 32.539
+  },
+  {
+    "speaker": "",
+    "text": "lots of ways to customize\nthem.",
+    "translated": "",
+    "start": 34.399
+  },
+  {
+    "speaker": "",
+    "text": "But for this particular show,\nwe're going to be focusing on",
+    "translated": "",
+    "start": 36.8
+  },
+  {
+    "speaker": "",
+    "text": "customizing be iframe-embedded\nplayer, which is our current",
+    "translated": "",
+    "start": 39.92
+  },
+  {
+    "speaker": "",
+    "text": "recommended way of embedding\nvideos on web pages.",
+    "translated": "",
+    "start": 45.17
+  },
+  {
+    "speaker": "",
+    "text": "And we're going to specifically\nfocus on the",
+    "translated": "",
+    "start": 48.699
+  },
+  {
+    "speaker": "",
+    "text": "options that are most relevant\nfor desktop web browsers.",
+    "translated": "",
+    "start": 50.219
+  },
+  {
+    "speaker": "",
+    "text": "A lot of these customization\noptions we'll talk about do",
+    "translated": "",
+    "start": 54.899
+  },
+  {
+    "speaker": "",
+    "text": "have some effect with mobile\nbrowser playback, but not all",
+    "translated": "",
+    "start": 58.17
+  },
+  {
+    "speaker": "",
+    "text": "of them do.",
+    "translated": "",
+    "start": 62.159
+  },
+  {
+    "speaker": "",
+    "text": "And we're going to just focus\ntoday on how these options",
+    "translated": "",
+    "start": 63.159
+  },
+  {
+    "speaker": "",
+    "text": "affect desktop playback.",
+    "translated": "",
+    "start": 66.5
+  },
+  {
+    "speaker": "",
+    "text": "Another thing that we're not\ngoing to be covering today is",
+    "translated": "",
+    "start": 68.6
+  },
+  {
+    "speaker": "",
+    "text": "using the JavaScript API for\ncontrolling playback.",
+    "translated": "",
+    "start": 70.88
+  },
+  {
+    "speaker": "",
+    "text": "This is obviously a very\ninteresting topic and a very",
+    "translated": "",
+    "start": 75.1
+  },
+  {
+    "speaker": "",
+    "text": "important topic, it's just a\nlittle bit outside the scope",
+    "translated": "",
+    "start": 76.84
+  },
+  {
+    "speaker": "",
+    "text": "of what we wanted\nto talk about.",
+    "translated": "",
+    "start": 78.76
+  },
+  {
+    "speaker": "",
+    "text": "So we're not going to be\ncovering any of the methods",
+    "translated": "",
+    "start": 80.53
+  },
+  {
+    "speaker": "",
+    "text": "that you could use in JavaScript\nto start playback",
+    "translated": "",
+    "start": 83.14
+  },
+  {
+    "speaker": "",
+    "text": "or control playback, or receive\nevents when playback",
+    "translated": "",
+    "start": 85.28
+  },
+  {
+    "speaker": "",
+    "text": "changes happen in the player.",
+    "translated": "",
+    "start": 89.37
+  },
+  {
+    "speaker": "",
+    "text": "What we are going to be covering\nis things that are",
+    "translated": "",
+    "start": 91.28
+  },
+  {
+    "speaker": "",
+    "text": "covered in the documentation\non the specific page, so if",
+    "translated": "",
+    "start": 93.829
+  },
+  {
+    "speaker": "",
+    "text": "you pull that up, we'll\nshare that with you.",
+    "translated": "",
+    "start": 98.039
+  },
+  {
+    "speaker": "",
+    "text": "And as I'm going through this\ndemo, a lot of what I'm going",
+    "translated": "",
+    "start": 101.32
+  },
+  {
+    "speaker": "",
+    "text": "to be covering refers to\nspecific web pages.",
+    "translated": "",
+    "start": 104.759
+  },
+  {
+    "speaker": "",
+    "text": "When we go back and post this\nvideo on YouTube, I'll have",
+    "translated": "",
+    "start": 107.259
+  },
+  {
+    "speaker": "",
+    "text": "annotations linking to all the\nweb pages, so that you could",
+    "translated": "",
+    "start": 110.25
+  },
+  {
+    "speaker": "",
+    "text": "go there and check them\nout yourself.",
+    "translated": "",
+    "start": 112.619
+  },
+  {
+    "speaker": "",
+    "text": "So this is our main jumping off\npoint for talking about",
+    "translated": "",
+    "start": 116.95
+  },
+  {
+    "speaker": "",
+    "text": "the customization that\nyou could do to the",
+    "translated": "",
+    "start": 120.909
+  },
+  {
+    "speaker": "",
+    "text": "YouTube-embedded\niframe player.",
+    "translated": "",
+    "start": 123.06
+  },
+  {
+    "speaker": "",
+    "text": "And you could get here from\nour main Developers.Googl",
+    "translated": "",
+    "start": 126.59
+  },
+  {
+    "speaker": "",
+    "text": "e.com/YouTubedocumentation.",
+    "translated": "",
+    "start": 129.91
+  },
+  {
+    "speaker": "",
+    "text": "And everything in this parameter\nsection in the docks",
+    "translated": "",
+    "start": 133.08
+  },
+  {
+    "speaker": "",
+    "text": "is fair game for what we're\ngoing to talk about now.",
+    "translated": "",
+    "start": 137.471
+  },
+  {
+    "speaker": "",
+    "text": "One other thing before I\nactually get into explaining",
+    "translated": "",
+    "start": 140.96
+  },
+  {
+    "speaker": "",
+    "text": "these parameters is explain\nthe two different types of",
+    "translated": "",
+    "start": 144.33
+  },
+  {
+    "speaker": "",
+    "text": "ways that you can load the\niframe-embedded player onto",
+    "translated": "",
+    "start": 146.75
+  },
+  {
+    "speaker": "",
+    "text": "your web page.",
+    "translated": "",
+    "start": 151.01
+  },
+  {
+    "speaker": "",
+    "text": "And we're kind of agnostic as\nto the way in which you load",
+    "translated": "",
+    "start": 152.79
+  },
+  {
+    "speaker": "",
+    "text": "it, these parameters are going\nto behave the same way",
+    "translated": "",
+    "start": 155.58
+  },
+  {
+    "speaker": "",
+    "text": "regardless.",
+    "translated": "",
+    "start": 157.41
+  },
+  {
+    "speaker": "",
+    "text": "But I just wanted to point out\nthat there are two different",
+    "translated": "",
+    "start": 158.41
+  },
+  {
+    "speaker": "",
+    "text": "ways of doing it.",
+    "translated": "",
+    "start": 160.39
+  },
+  {
+    "speaker": "",
+    "text": "The first way is using the\niframes kind of like YouTube",
+    "translated": "",
+    "start": 162.52
+  },
+  {
+    "speaker": "",
+    "text": "player, YT.",
+    "translated": "",
+    "start": 168.08
+  },
+  {
+    "speaker": "",
+    "text": "Player constructor.",
+    "translated": "",
+    "start": 169.72
+  },
+  {
+    "speaker": "",
+    "text": "And this is a more programmatic\nway of loading",
+    "translated": "",
+    "start": 170.72
+  },
+  {
+    "speaker": "",
+    "text": "the iframe player onto\nyour web page.",
+    "translated": "",
+    "start": 173.22
+  },
+  {
+    "speaker": "",
+    "text": "So I have this jsFiddle right\nhere that demonstrates what",
+    "translated": "",
+    "start": 174.93
+  },
+  {
+    "speaker": "",
+    "text": "that will look like.",
+    "translated": "",
+    "start": 178.05
+  },
+  {
+    "speaker": "",
+    "text": "It basically involves loading\nin this JavaScript API and",
+    "translated": "",
+    "start": 179.79
+  },
+  {
+    "speaker": "",
+    "text": "calling the YT.",
+    "translated": "",
+    "start": 183.98
+  },
+  {
+    "speaker": "",
+    "text": "Player constructor, and passing\nin the ID of a div",
+    "translated": "",
+    "start": 185.08
+  },
+  {
+    "speaker": "",
+    "text": "that's on your page.",
+    "translated": "",
+    "start": 188.14
+  },
+  {
+    "speaker": "",
+    "text": "And you'll see here that there\nis this playerVars section",
+    "translated": "",
+    "start": 190.49
+  },
+  {
+    "speaker": "",
+    "text": "that you could pass\nin to the YT.",
+    "translated": "",
+    "start": 193.6
+  },
+  {
+    "speaker": "",
+    "text": "Player constructors.",
+    "translated": "",
+    "start": 195.49
+  },
+  {
+    "speaker": "",
+    "text": "So this is where you get to\nspecify all the options that",
+    "translated": "",
+    "start": 196.49
+  },
+  {
+    "speaker": "",
+    "text": "we're going to be covering today\nif you're using the YT.",
+    "translated": "",
+    "start": 199.48
+  },
+  {
+    "speaker": "",
+    "text": "PLayer constructor.",
+    "translated": "",
+    "start": 201.65
+  },
+  {
+    "speaker": "",
+    "text": "And just quickly jumping over\nhere, this is where I stole",
+    "translated": "",
+    "start": 203.16
+  },
+  {
+    "speaker": "",
+    "text": "that code from in our Getting\nStarted guide",
+    "translated": "",
+    "start": 207.07
+  },
+  {
+    "speaker": "",
+    "text": "for the iframe API.",
+    "translated": "",
+    "start": 210.22
+  },
+  {
+    "speaker": "",
+    "text": "We talk about how you could\nactually get that code.",
+    "translated": "",
+    "start": 212.77
+  },
+  {
+    "speaker": "",
+    "text": "So feel free to borrow it there\nor from that jsFiddle.",
+    "translated": "",
+    "start": 216.93
+  },
+  {
+    "speaker": "",
+    "text": "The second way that you load\nthe iframe player onto your",
+    "translated": "",
+    "start": 220.2
+  },
+  {
+    "speaker": "",
+    "text": "page is just with a simple\niframe tag that you could add",
+    "translated": "",
+    "start": 221.95
+  },
+  {
+    "speaker": "",
+    "text": "to any web page.",
+    "translated": "",
+    "start": 225.37
+  },
+  {
+    "speaker": "",
+    "text": "And this has the same sort of\nparameters that the YT.",
+    "translated": "",
+    "start": 227.74
+  },
+  {
+    "speaker": "",
+    "text": "Player constructor is,\nkind under the hood.",
+    "translated": "",
+    "start": 230.58
+  },
+  {
+    "speaker": "",
+    "text": "They really end up creating\nthe same thing.",
+    "translated": "",
+    "start": 232.27
+  },
+  {
+    "speaker": "",
+    "text": "Just that the YT.",
+    "translated": "",
+    "start": 234.75
+  },
+  {
+    "speaker": "",
+    "text": "Player constructor is a\nprogrammatic way of creating",
+    "translated": "",
+    "start": 235.75
+  },
+  {
+    "speaker": "",
+    "text": "this tag using JavaScript.",
+    "translated": "",
+    "start": 238.8
+  },
+  {
+    "speaker": "",
+    "text": "This is if you're just writing\nout [? initiable ?]",
+    "translated": "",
+    "start": 240.84
+  },
+  {
+    "speaker": "",
+    "text": "template, or even if you're not\na JavaScript programmer at",
+    "translated": "",
+    "start": 242.86
+  },
+  {
+    "speaker": "",
+    "text": "all and just want to include\nsome HTML on your page, you",
+    "translated": "",
+    "start": 246.06
+  },
+  {
+    "speaker": "",
+    "text": "could use this tag.",
+    "translated": "",
+    "start": 249.71
+  },
+  {
+    "speaker": "",
+    "text": "And the same parameters we are\ngoing to be talking about can",
+    "translated": "",
+    "start": 252.43
+  },
+  {
+    "speaker": "",
+    "text": "go at the very end of the URL\nthat you use as a source of",
+    "translated": "",
+    "start": 255.59
+  },
+  {
+    "speaker": "",
+    "text": "the iframe tag.",
+    "translated": "",
+    "start": 259.34
+  },
+  {
+    "speaker": "",
+    "text": "So over here we have autoplay\nequals 0 and",
+    "translated": "",
+    "start": 260.419
+  },
+  {
+    "speaker": "",
+    "text": "controls equals 0.",
+    "translated": "",
+    "start": 263.18
+  },
+  {
+    "speaker": "",
+    "text": "And that corresponds to what\nwe're seeing over here for the",
+    "translated": "",
+    "start": 265.139
+  },
+  {
+    "speaker": "",
+    "text": "playerVars.",
+    "translated": "",
+    "start": 269.81
+  },
+  {
+    "speaker": "",
+    "text": "And the actual documentation for\nusing that iframe tag is",
+    "translated": "",
+    "start": 270.81
+  },
+  {
+    "speaker": "",
+    "text": "found over here.",
+    "translated": "",
+    "start": 276.14
+  },
+  {
+    "speaker": "",
+    "text": "If you look in the docs over\nhere, we give some examples.",
+    "translated": "",
+    "start": 278.25
+  },
+  {
+    "speaker": "",
+    "text": "So that's the ground rules for\nhow you actually will use",
+    "translated": "",
+    "start": 284.12
+  },
+  {
+    "speaker": "",
+    "text": "these parameters that\nwe are going to be",
+    "translated": "",
+    "start": 287.93
+  },
+  {
+    "speaker": "",
+    "text": "describing in your own code.",
+    "translated": "",
+    "start": 289.101
+  },
+  {
+    "speaker": "",
+    "text": "So I just wanted to run through\npretty much from the",
+    "translated": "",
+    "start": 292.22
+  },
+  {
+    "speaker": "",
+    "text": "top, all these parameters\nhere.",
+    "translated": "",
+    "start": 294.9
+  },
+  {
+    "speaker": "",
+    "text": "We do have really nice\nexplanations what they mean in",
+    "translated": "",
+    "start": 296.97
+  },
+  {
+    "speaker": "",
+    "text": "the documentation.",
+    "translated": "",
+    "start": 300.66
+  },
+  {
+    "speaker": "",
+    "text": "So it's going to be a little bit\nrepetitive in some cases.",
+    "translated": "",
+    "start": 301.69
+  },
+  {
+    "speaker": "",
+    "text": "But I did want to highlight some\nspecific ones that are",
+    "translated": "",
+    "start": 305.91
+  },
+  {
+    "speaker": "",
+    "text": "the most useful.",
+    "translated": "",
+    "start": 308.55
+  },
+  {
+    "speaker": "",
+    "text": "So autohide comes in\nhandy quite a bit.",
+    "translated": "",
+    "start": 309.58
+  },
+  {
+    "speaker": "",
+    "text": "This is something that controls\nthe behavior of the",
+    "translated": "",
+    "start": 313.76
+  },
+  {
+    "speaker": "",
+    "text": "controls, more or less, that\nare on the bottom of the",
+    "translated": "",
+    "start": 317.96
+  },
+  {
+    "speaker": "",
+    "text": "YouTube Player.",
+    "translated": "",
+    "start": 321.401
+  },
+  {
+    "speaker": "",
+    "text": "It's not necessarily the initial\nstate of the controls,",
+    "translated": "",
+    "start": 322.94
+  },
+  {
+    "speaker": "",
+    "text": "but it's more like what happens\nthe controls once",
+    "translated": "",
+    "start": 326.47
+  },
+  {
+    "speaker": "",
+    "text": "playback starts.",
+    "translated": "",
+    "start": 328.6
+  },
+  {
+    "speaker": "",
+    "text": "And I'm going to demonstrate\nthe ways of setting those",
+    "translated": "",
+    "start": 330.79
+  },
+  {
+    "speaker": "",
+    "text": "different values by going to\nthis page over here, which is",
+    "translated": "",
+    "start": 333.83
+  },
+  {
+    "speaker": "",
+    "text": "our YouTube player demo.",
+    "translated": "",
+    "start": 337.68
+  },
+  {
+    "speaker": "",
+    "text": "So this is another really\ngreat resource.",
+    "translated": "",
+    "start": 339.66
+  },
+  {
+    "speaker": "",
+    "text": "And it's an alternative to\nwriting this code over here or",
+    "translated": "",
+    "start": 342.67
+  },
+  {
+    "speaker": "",
+    "text": "writing this in jsFiddle.",
+    "translated": "",
+    "start": 347.33
+  },
+  {
+    "speaker": "",
+    "text": "It's just a way to play around\nwith these parameters in a",
+    "translated": "",
+    "start": 348.33
+  },
+  {
+    "speaker": "",
+    "text": "live setting.",
+    "translated": "",
+    "start": 351.81
+  },
+  {
+    "speaker": "",
+    "text": "And we can think of it like our\nAPI explorer, if you've",
+    "translated": "",
+    "start": 354.41
+  },
+  {
+    "speaker": "",
+    "text": "ever used that for\nour data APIs.",
+    "translated": "",
+    "start": 357.21
+  },
+  {
+    "speaker": "",
+    "text": "This is the equivalent\nfor our player APIs.",
+    "translated": "",
+    "start": 360.55
+  },
+  {
+    "speaker": "",
+    "text": "So what it lets you do is go\nover here on the right and",
+    "translated": "",
+    "start": 363.9
+  },
+  {
+    "speaker": "",
+    "text": "start choosing different values\nfor the parameters.",
+    "translated": "",
+    "start": 366.97
+  },
+  {
+    "speaker": "",
+    "text": "And I'm not going to do this\nfor every single parameter",
+    "translated": "",
+    "start": 369.71
+  },
+  {
+    "speaker": "",
+    "text": "that we didn't talk about, but\njust to show you how you could",
+    "translated": "",
+    "start": 371.57
+  },
+  {
+    "speaker": "",
+    "text": "experiment in real time\nwithout having",
+    "translated": "",
+    "start": 375.0
+  },
+  {
+    "speaker": "",
+    "text": "to write any code.",
+    "translated": "",
+    "start": 376.91
+  },
+  {
+    "speaker": "",
+    "text": "Let me just try setting autohide\nto 0 over here.",
+    "translated": "",
+    "start": 378.23
+  },
+  {
+    "speaker": "",
+    "text": "I'm going to click\nUpdate Player.",
+    "translated": "",
+    "start": 381.24
+  },
+  {
+    "speaker": "",
+    "text": "And once I set it,\nBegin Playback.",
+    "translated": "",
+    "start": 384.05
+  },
+  {
+    "speaker": "",
+    "text": "This is a very old video.",
+    "translated": "",
+    "start": 388.72
+  },
+  {
+    "speaker": "",
+    "text": "Actually, part of what I plan\non doing is replacing the",
+    "translated": "",
+    "start": 391.16
+  },
+  {
+    "speaker": "",
+    "text": "default video that we use in\nthis demo with this video, so",
+    "translated": "",
+    "start": 394.08
+  },
+  {
+    "speaker": "",
+    "text": "we'll have a very meta\nexperience, if you happen to",
+    "translated": "",
+    "start": 397.23
+  },
+  {
+    "speaker": "",
+    "text": "be watching this while on the\ndemo page trying out these",
+    "translated": "",
+    "start": 399.68
+  },
+  {
+    "speaker": "",
+    "text": "parameters.",
+    "translated": "",
+    "start": 402.5
+  },
+  {
+    "speaker": "",
+    "text": "So the main thing to keep in\nmind though is that the",
+    "translated": "",
+    "start": 404.11
+  },
+  {
+    "speaker": "",
+    "text": "controls at the bottom\nover here did not",
+    "translated": "",
+    "start": 407.03
+  },
+  {
+    "speaker": "",
+    "text": "disappear during playback.",
+    "translated": "",
+    "start": 408.56
+  },
+  {
+    "speaker": "",
+    "text": "And if I were to go over here\nand change the autohide to 1,",
+    "translated": "",
+    "start": 411.2
+  },
+  {
+    "speaker": "",
+    "text": "Update Player--",
+    "translated": "",
+    "start": 416.65
+  },
+  {
+    "speaker": "",
+    "text": "it says, loading in the player\nwith the parameters--",
+    "translated": "",
+    "start": 417.7
+  },
+  {
+    "speaker": "",
+    "text": "you'll see that when I mouse\nover, the controls are there.",
+    "translated": "",
+    "start": 423.09
+  },
+  {
+    "speaker": "",
+    "text": "When I move the mouse away,\nthe controls disappear.",
+    "translated": "",
+    "start": 425.87
+  },
+  {
+    "speaker": "",
+    "text": "So for experiences where you\nwant maybe a more of lean-back",
+    "translated": "",
+    "start": 428.12
+  },
+  {
+    "speaker": "",
+    "text": "type of situation, where people\naren't going to be",
+    "translated": "",
+    "start": 433.15
+  },
+  {
+    "speaker": "",
+    "text": "interacting with the controls,\nor you don't want the controls",
+    "translated": "",
+    "start": 435.43
+  },
+  {
+    "speaker": "",
+    "text": "to overlay the video playback,\nit's a very useful parameter.",
+    "translated": "",
+    "start": 437.31
+  },
+  {
+    "speaker": "",
+    "text": "Autoplay is next on the\nlist alphabetically.",
+    "translated": "",
+    "start": 441.71
+  },
+  {
+    "speaker": "",
+    "text": "Somewhat self-explanatory, if\nyou add in the autoplay",
+    "translated": "",
+    "start": 445.032
+  },
+  {
+    "speaker": "",
+    "text": "parameter, then the video will\nstart playing back as soon as",
+    "translated": "",
+    "start": 447.36
+  },
+  {
+    "speaker": "",
+    "text": "the iframe embed is loaded\non the page.",
+    "translated": "",
+    "start": 451.419
+  },
+  {
+    "speaker": "",
+    "text": "I'll give a quick demo\nof that over here.",
+    "translated": "",
+    "start": 454.77
+  },
+  {
+    "speaker": "",
+    "text": "And this time, instead of using\nthe player demo page,",
+    "translated": "",
+    "start": 458.19
+  },
+  {
+    "speaker": "",
+    "text": "I'm going to use that jsFiddle\nthat we have set up.",
+    "translated": "",
+    "start": 463.48
+  },
+  {
+    "speaker": "",
+    "text": "And I'm going to just change\nthe autoplay value to 1.",
+    "translated": "",
+    "start": 466.3
+  },
+  {
+    "speaker": "",
+    "text": "I'm going to click Run.",
+    "translated": "",
+    "start": 468.43
+  },
+  {
+    "speaker": "",
+    "text": "And you could see,\nhere's the embed.",
+    "translated": "",
+    "start": 470.37
+  },
+  {
+    "speaker": "",
+    "text": "It started playing as soon\nas the page loads.",
+    "translated": "",
+    "start": 472.69
+  },
+  {
+    "speaker": "",
+    "text": "So there are certain scenarios\nwhere that's useful, certain",
+    "translated": "",
+    "start": 475.81
+  },
+  {
+    "speaker": "",
+    "text": "scenarios where it's not.",
+    "translated": "",
+    "start": 477.77
+  },
+  {
+    "speaker": "",
+    "text": "You have to use your judgment\nas to whether autoplaying is",
+    "translated": "",
+    "start": 478.99
+  },
+  {
+    "speaker": "",
+    "text": "the right thing to do.",
+    "translated": "",
+    "start": 482.52
+  },
+  {
+    "speaker": "",
+    "text": "cc_load_policy is something that\ncontrols whether closed",
+    "translated": "",
+    "start": 484.91
+  },
+  {
+    "speaker": "",
+    "text": "captions or subtitles are\ndisplayed by default.",
+    "translated": "",
+    "start": 489.03
+  },
+  {
+    "speaker": "",
+    "text": "And the default behavior--\nwe don't set anything for",
+    "translated": "",
+    "start": 493.53
+  },
+  {
+    "speaker": "",
+    "text": "cc_load_policy--",
+    "translated": "",
+    "start": 497.3
+  },
+  {
+    "speaker": "",
+    "text": "is that the user's preferences\n[? basic ?] on YouTube.",
+    "translated": "",
+    "start": 498.3
+  },
+  {
+    "speaker": "",
+    "text": "There is a way of going in and\nsaying whether you want closed",
+    "translated": "",
+    "start": 501.18
+  },
+  {
+    "speaker": "",
+    "text": "captions or you don't want\nclosed captions.",
+    "translated": "",
+    "start": 503.389
+  },
+  {
+    "speaker": "",
+    "text": "That's normally what\ntakes effect.",
+    "translated": "",
+    "start": 506.06
+  },
+  {
+    "speaker": "",
+    "text": "If you have a specific video and\nyou know that you always",
+    "translated": "",
+    "start": 507.27
+  },
+  {
+    "speaker": "",
+    "text": "want the closed captions to\nbe shown, you could set",
+    "translated": "",
+    "start": 509.38
+  },
+  {
+    "speaker": "",
+    "text": "cc_load_policy to 1.",
+    "translated": "",
+    "start": 511.86
+  },
+  {
+    "speaker": "",
+    "text": "Color's a bit interesting.",
+    "translated": "",
+    "start": 514.37
+  },
+  {
+    "speaker": "",
+    "text": "It's not something that I see\nwidely used and necessarily,",
+    "translated": "",
+    "start": 516.599
+  },
+  {
+    "speaker": "",
+    "text": "but there are some cases where\nyou might want a little bit of",
+    "translated": "",
+    "start": 521.019
+  },
+  {
+    "speaker": "",
+    "text": "flair, let's say,\nin your player.",
+    "translated": "",
+    "start": 524.029
+  },
+  {
+    "speaker": "",
+    "text": "And you don't want the\ndefault behavior.",
+    "translated": "",
+    "start": 525.67
+  },
+  {
+    "speaker": "",
+    "text": "So I'm going to go to the\nplayer demo page really",
+    "translated": "",
+    "start": 528.05
+  },
+  {
+    "speaker": "",
+    "text": "quickly and just show\nyou what it does.",
+    "translated": "",
+    "start": 533.089
+  },
+  {
+    "speaker": "",
+    "text": "You could set color to white\ninstead of red, and you update",
+    "translated": "",
+    "start": 534.999
+  },
+  {
+    "speaker": "",
+    "text": "the player.",
+    "translated": "",
+    "start": 542.779
+  },
+  {
+    "speaker": "",
+    "text": "Controls should look slightly\ndifferent depending upon",
+    "translated": "",
+    "start": 545.06
+  },
+  {
+    "speaker": "",
+    "text": "whether they're red or white.",
+    "translated": "",
+    "start": 546.99
+  },
+  {
+    "speaker": "",
+    "text": "So it just basically changes the\nbranding a little bit on",
+    "translated": "",
+    "start": 548.91
+  },
+  {
+    "speaker": "",
+    "text": "the player.",
+    "translated": "",
+    "start": 551.829
+  },
+  {
+    "speaker": "",
+    "text": "Not necessarily the most useful\nthing in the world, but",
+    "translated": "",
+    "start": 553.819
+  },
+  {
+    "speaker": "",
+    "text": "it does give you a little\nbit more control.",
+    "translated": "",
+    "start": 555.661
+  },
+  {
+    "speaker": "",
+    "text": "Speaking of control, next item\nalphabetically is controls.",
+    "translated": "",
+    "start": 558.72
+  },
+  {
+    "speaker": "",
+    "text": "And this is actually\nquite useful.",
+    "translated": "",
+    "start": 562.449
+  },
+  {
+    "speaker": "",
+    "text": "There are cases where you can\nactually see a lot of",
+    "translated": "",
+    "start": 564.61
+  },
+  {
+    "speaker": "",
+    "text": "performance benefits by changing\nthis value from the",
+    "translated": "",
+    "start": 569.3
+  },
+  {
+    "speaker": "",
+    "text": "defaults to a specific\noption, which is 2.",
+    "translated": "",
+    "start": 573.16
+  },
+  {
+    "speaker": "",
+    "text": "We have a note in the\ndocumentation explaining more",
+    "translated": "",
+    "start": 578.079
+  },
+  {
+    "speaker": "",
+    "text": "about what this does.",
+    "translated": "",
+    "start": 580.24
+  },
+  {
+    "speaker": "",
+    "text": "And if you read the note, it\nsays that controls=2 can give",
+    "translated": "",
+    "start": 582.47
+  },
+  {
+    "speaker": "",
+    "text": "you a performance improvement\nover the default behavior.",
+    "translated": "",
+    "start": 585.509
+  },
+  {
+    "speaker": "",
+    "text": "And the reason why that is is\ncontrols=2 has a way of",
+    "translated": "",
+    "start": 589.42
+  },
+  {
+    "speaker": "",
+    "text": "loading the iframe embedded\nplayer that does not",
+    "translated": "",
+    "start": 593.399
+  },
+  {
+    "speaker": "",
+    "text": "initialize the underlying\nFlash player by default.",
+    "translated": "",
+    "start": 595.86
+  },
+  {
+    "speaker": "",
+    "text": "It doesn't initialize it until\nyou actually click on the",
+    "translated": "",
+    "start": 600.97
+  },
+  {
+    "speaker": "",
+    "text": "video thumbnail to start\nthe playback.",
+    "translated": "",
+    "start": 604.819
+  },
+  {
+    "speaker": "",
+    "text": "This obviously only applies to\nplaybacks that do involve the",
+    "translated": "",
+    "start": 607.68
+  },
+  {
+    "speaker": "",
+    "text": "Flash player.",
+    "translated": "",
+    "start": 612.189
+  },
+  {
+    "speaker": "",
+    "text": "The iframe player might decide\nthat HTML5 video is going to",
+    "translated": "",
+    "start": 613.67
+  },
+  {
+    "speaker": "",
+    "text": "be used instead, in which case\nthis isn't quite as important.",
+    "translated": "",
+    "start": 616.56
+  },
+  {
+    "speaker": "",
+    "text": "But in situations where Flash\nplayback is being used, you",
+    "translated": "",
+    "start": 619.48
+  },
+  {
+    "speaker": "",
+    "text": "could really see a significant\nperformance benefit from",
+    "translated": "",
+    "start": 621.79
+  },
+  {
+    "speaker": "",
+    "text": "setting controls=2.",
+    "translated": "",
+    "start": 624.86
+  },
+  {
+    "speaker": "",
+    "text": "And that might be the default\nthat we use at some point in",
+    "translated": "",
+    "start": 626.56
+  },
+  {
+    "speaker": "",
+    "text": "the future, as mentioned here,\nas soon as some UI issues are",
+    "translated": "",
+    "start": 629.94
+  },
+  {
+    "speaker": "",
+    "text": "worked out.",
+    "translated": "",
+    "start": 633.139
+  },
+  {
+    "speaker": "",
+    "text": "And I'm going to give you an\nexample of how you could see",
+    "translated": "",
+    "start": 634.139
+  },
+  {
+    "speaker": "",
+    "text": "that performance benefit.",
+    "translated": "",
+    "start": 637.389
+  },
+  {
+    "speaker": "",
+    "text": "It mainly comes across\nwhen you have--",
+    "translated": "",
+    "start": 639.61
+  },
+  {
+    "speaker": "",
+    "text": "let's say, I don't want to say\na specific number, but if you",
+    "translated": "",
+    "start": 641.679
+  },
+  {
+    "speaker": "",
+    "text": "have multiple iframe embeds\non the same page.",
+    "translated": "",
+    "start": 644.35
+  },
+  {
+    "speaker": "",
+    "text": "So this one over here has--",
+    "translated": "",
+    "start": 646.24
+  },
+  {
+    "speaker": "",
+    "text": "I think there might be 50 from\nthe Google Developers channel.",
+    "translated": "",
+    "start": 648.929
+  },
+  {
+    "speaker": "",
+    "text": "So the first thing that we're\ngoing to look at is behavior",
+    "translated": "",
+    "start": 652.249
+  },
+  {
+    "speaker": "",
+    "text": "pretty much by default, where\nthere's controls=1 or if you",
+    "translated": "",
+    "start": 656.009
+  },
+  {
+    "speaker": "",
+    "text": "leave out controls.",
+    "translated": "",
+    "start": 660.3
+  },
+  {
+    "speaker": "",
+    "text": "It's the default.",
+    "translated": "",
+    "start": 661.589
+  },
+  {
+    "speaker": "",
+    "text": "And it can take some time for\nthese underlying Flash players",
+    "translated": "",
+    "start": 662.61
+  },
+  {
+    "speaker": "",
+    "text": "to all initialize, and can add\nsome latency to the point",
+    "translated": "",
+    "start": 668.529
+  },
+  {
+    "speaker": "",
+    "text": "where things look like\nthey're ready to be",
+    "translated": "",
+    "start": 672.879
+  },
+  {
+    "speaker": "",
+    "text": "interacted with on the page.",
+    "translated": "",
+    "start": 675.509
+  },
+  {
+    "speaker": "",
+    "text": "So not necessarily the\nbest user experience.",
+    "translated": "",
+    "start": 677.3
+  },
+  {
+    "speaker": "",
+    "text": "If you take the same thing and\nyou change it to controls",
+    "translated": "",
+    "start": 680.55
+  },
+  {
+    "speaker": "",
+    "text": "equals 2 explicitly, then you\nshould see a much better",
+    "translated": "",
+    "start": 682.629
+  },
+  {
+    "speaker": "",
+    "text": "performance.",
+    "translated": "",
+    "start": 686.309
+  },
+  {
+    "speaker": "",
+    "text": "It's quite remarkable,\nactually.",
+    "translated": "",
+    "start": 687.55
+  },
+  {
+    "speaker": "",
+    "text": "So what's going on?",
+    "translated": "",
+    "start": 690.759
+  },
+  {
+    "speaker": "",
+    "text": "[? You can see ?] now again,\nit's just loading in these",
+    "translated": "",
+    "start": 691.759
+  },
+  {
+    "speaker": "",
+    "text": "thumbnails.",
+    "translated": "",
+    "start": 693.68
+  },
+  {
+    "speaker": "",
+    "text": "It's not initializing the Flash\nplayer for each video.",
+    "translated": "",
+    "start": 694.68
+  },
+  {
+    "speaker": "",
+    "text": "And you could have--",
+    "translated": "",
+    "start": 698.189
+  },
+  {
+    "speaker": "",
+    "text": "I don't want to say you should\nput thousands of embeds on the",
+    "translated": "",
+    "start": 700.899
+  },
+  {
+    "speaker": "",
+    "text": "same page-- but if you do happen\nto have a large number",
+    "translated": "",
+    "start": 702.869
+  },
+  {
+    "speaker": "",
+    "text": "of embeds on the page, you\nwill see a difference.",
+    "translated": "",
+    "start": 705.689
+  },
+  {
+    "speaker": "",
+    "text": "So very important to\nkeep that in mind.",
+    "translated": "",
+    "start": 709.519
+  },
+  {
+    "speaker": "",
+    "text": "A few other parameters\nthat are not",
+    "translated": "",
+    "start": 710.91
+  },
+  {
+    "speaker": "",
+    "text": "necessarily as exciting.",
+    "translated": "",
+    "start": 713.72
+  },
+  {
+    "speaker": "",
+    "text": "There's keyboard support for\nthe ActionScript player.",
+    "translated": "",
+    "start": 715.92
+  },
+  {
+    "speaker": "",
+    "text": "I'm not really sure why you\nwould want to turn this off.",
+    "translated": "",
+    "start": 720.86
+  },
+  {
+    "speaker": "",
+    "text": "I think it's actually kind of\nnice to keep it on, but we do",
+    "translated": "",
+    "start": 723.119
+  },
+  {
+    "speaker": "",
+    "text": "have the option of turning\nit off if you want.",
+    "translated": "",
+    "start": 725.23
+  },
+  {
+    "speaker": "",
+    "text": "This particular parameter\nis quite important, the",
+    "translated": "",
+    "start": 729.369
+  },
+  {
+    "speaker": "",
+    "text": "enablejsapi.",
+    "translated": "",
+    "start": 733.17
+  },
+  {
+    "speaker": "",
+    "text": "And what it'll let you do is\nensure that you are able to",
+    "translated": "",
+    "start": 734.459
+  },
+  {
+    "speaker": "",
+    "text": "talk to the iframe player\non the page using",
+    "translated": "",
+    "start": 738.389
+  },
+  {
+    "speaker": "",
+    "text": "the JavaScript API.",
+    "translated": "",
+    "start": 741.249
+  },
+  {
+    "speaker": "",
+    "text": "So as I mentioned, we're not\nactually going to be covering",
+    "translated": "",
+    "start": 742.3
+  },
+  {
+    "speaker": "",
+    "text": "anything about the JavaScript\nAPI in this particular",
+    "translated": "",
+    "start": 745.709
+  },
+  {
+    "speaker": "",
+    "text": "session, but plenty of\npeople have used it.",
+    "translated": "",
+    "start": 748.529
+  },
+  {
+    "speaker": "",
+    "text": "And the one case where you\nreally need to be sure you're",
+    "translated": "",
+    "start": 751.709
+  },
+  {
+    "speaker": "",
+    "text": "explicitly setting this is when\nyou're writing the iframe",
+    "translated": "",
+    "start": 754.18
+  },
+  {
+    "speaker": "",
+    "text": "tag directly to the page.",
+    "translated": "",
+    "start": 757.339
+  },
+  {
+    "speaker": "",
+    "text": "So kind of like this.",
+    "translated": "",
+    "start": 761.86
+  },
+  {
+    "speaker": "",
+    "text": "Because when you're\nusing the YT.",
+    "translated": "",
+    "start": 765.369
+  },
+  {
+    "speaker": "",
+    "text": "Player constructor, it pretty\nmuch will be set automatically",
+    "translated": "",
+    "start": 766.709
+  },
+  {
+    "speaker": "",
+    "text": "for you by default.",
+    "translated": "",
+    "start": 770.269
+  },
+  {
+    "speaker": "",
+    "text": "Just because by virtue of the\nfact that you're using",
+    "translated": "",
+    "start": 772.939
+  },
+  {
+    "speaker": "",
+    "text": "JavaScript to initialize the\nplayer, chances are you are",
+    "translated": "",
+    "start": 774.579
+  },
+  {
+    "speaker": "",
+    "text": "going to want to talk to the\nplayer with JavaScript.",
+    "translated": "",
+    "start": 777.0
+  },
+  {
+    "speaker": "",
+    "text": "So it always gets set for you.",
+    "translated": "",
+    "start": 779.24
+  },
+  {
+    "speaker": "",
+    "text": "But that's not the case if you\nexplicitly are writing an",
+    "translated": "",
+    "start": 780.36
+  },
+  {
+    "speaker": "",
+    "text": "iframe tag to a page.",
+    "translated": "",
+    "start": 783.04
+  },
+  {
+    "speaker": "",
+    "text": "So you really do need to make\nsure there that you have",
+    "translated": "",
+    "start": 784.769
+  },
+  {
+    "speaker": "",
+    "text": "enabled jsapi set to 1.",
+    "translated": "",
+    "start": 786.9
+  },
+  {
+    "speaker": "",
+    "text": "And that's necessary in order to\ntalk to the iframe player.",
+    "translated": "",
+    "start": 790.589
+  },
+  {
+    "speaker": "",
+    "text": "The end tag, and a little\nbit further down",
+    "translated": "",
+    "start": 797.44
+  },
+  {
+    "speaker": "",
+    "text": "the alphabet is start.",
+    "translated": "",
+    "start": 800.119
+  },
+  {
+    "speaker": "",
+    "text": "So these are two corresponding\ntags.",
+    "translated": "",
+    "start": 802.1
+  },
+  {
+    "speaker": "",
+    "text": "This gives you a really easy way\nof putting an embed on a",
+    "translated": "",
+    "start": 804.459
+  },
+  {
+    "speaker": "",
+    "text": "page that has its custom end\ntime and a custom start time.",
+    "translated": "",
+    "start": 807.029
+  },
+  {
+    "speaker": "",
+    "text": "So if you have a three-minute\nvideo and you really want to",
+    "translated": "",
+    "start": 811.269
+  },
+  {
+    "speaker": "",
+    "text": "embed 30 seconds in the middle\nof the video, you could use",
+    "translated": "",
+    "start": 815.779
+  },
+  {
+    "speaker": "",
+    "text": "those two tags to do it.",
+    "translated": "",
+    "start": 817.66
+  },
+  {
+    "speaker": "",
+    "text": "As soon as playback reaches\nthe end tag, playback will",
+    "translated": "",
+    "start": 818.819
+  },
+  {
+    "speaker": "",
+    "text": "effectively stop.",
+    "translated": "",
+    "start": 823.179
+  },
+  {
+    "speaker": "",
+    "text": "So that could be useful.",
+    "translated": "",
+    "start": 824.819
+  },
+  {
+    "speaker": "",
+    "text": "fs parameter--",
+    "translated": "",
+    "start": 827.149
+  },
+  {
+    "speaker": "",
+    "text": "not super useful anymore.",
+    "translated": "",
+    "start": 829.089
+  },
+  {
+    "speaker": "",
+    "text": "Basically, it lets you control\nwhether there is a full-screen",
+    "translated": "",
+    "start": 830.519
+  },
+  {
+    "speaker": "",
+    "text": "button on the ActionScript\n3.0 player.",
+    "translated": "",
+    "start": 834.35
+  },
+  {
+    "speaker": "",
+    "text": "But I don't think it has an\neffect on the HTML5 player.",
+    "translated": "",
+    "start": 836.93
+  },
+  {
+    "speaker": "",
+    "text": "So not really sure why you would\nwant to change that.",
+    "translated": "",
+    "start": 840.019
+  },
+  {
+    "speaker": "",
+    "text": "iv_load_policy is something that\ncontrols whether, I guess",
+    "translated": "",
+    "start": 844.619
+  },
+  {
+    "speaker": "",
+    "text": "interactive video\nannotations--",
+    "translated": "",
+    "start": 847.989
+  },
+  {
+    "speaker": "",
+    "text": "for lack of a better way of\ndescribing it-- is shown on",
+    "translated": "",
+    "start": 851.389
+  },
+  {
+    "speaker": "",
+    "text": "your video by default.",
+    "translated": "",
+    "start": 854.129
+  },
+  {
+    "speaker": "",
+    "text": "So there's a couple of different\nvalues over here.",
+    "translated": "",
+    "start": 856.629
+  },
+  {
+    "speaker": "",
+    "text": "You use 1 or 3.",
+    "translated": "",
+    "start": 858.379
+  },
+  {
+    "speaker": "",
+    "text": "Basically, setting at 1 will\nmake sure that those",
+    "translated": "",
+    "start": 860.069
+  },
+  {
+    "speaker": "",
+    "text": "annotations are shown.",
+    "translated": "",
+    "start": 862.48
+  },
+  {
+    "speaker": "",
+    "text": "Setting it to 3 will make\nsure that they're",
+    "translated": "",
+    "start": 863.829
+  },
+  {
+    "speaker": "",
+    "text": "not shown by default.",
+    "translated": "",
+    "start": 864.959
+  },
+  {
+    "speaker": "",
+    "text": "But at any point, the user can\nchange the setting explicitly",
+    "translated": "",
+    "start": 866.35
+  },
+  {
+    "speaker": "",
+    "text": "in the player, if they want to\nshow or hide the annotations.",
+    "translated": "",
+    "start": 869.799
+  },
+  {
+    "speaker": "",
+    "text": "List is a really interesting\none.",
+    "translated": "",
+    "start": 874.7
+  },
+  {
+    "speaker": "",
+    "text": "And there is quite a bit to\ntalk about with list.",
+    "translated": "",
+    "start": 876.089
+  },
+  {
+    "speaker": "",
+    "text": "So I'm actually going to defer\nat this point to a whole blog",
+    "translated": "",
+    "start": 879.0
+  },
+  {
+    "speaker": "",
+    "text": "post that we put together to\ntalk about the different types",
+    "translated": "",
+    "start": 882.79
+  },
+  {
+    "speaker": "",
+    "text": "of values that the list\nparameter and the listType",
+    "translated": "",
+    "start": 886.66
+  },
+  {
+    "speaker": "",
+    "text": "parameter, which is\nan associated",
+    "translated": "",
+    "start": 891.12
+  },
+  {
+    "speaker": "",
+    "text": "parameter, can take.",
+    "translated": "",
+    "start": 893.019
+  },
+  {
+    "speaker": "",
+    "text": "I'll link to this blog post in\nthe video annotations, so you",
+    "translated": "",
+    "start": 894.019
+  },
+  {
+    "speaker": "",
+    "text": "can read it in more detail.",
+    "translated": "",
+    "start": 896.769
+  },
+  {
+    "speaker": "",
+    "text": "But the long and short of it is\nthat it's a really easy way",
+    "translated": "",
+    "start": 898.1
+  },
+  {
+    "speaker": "",
+    "text": "to take a simple embedded player\non your page and use",
+    "translated": "",
+    "start": 901.329
+  },
+  {
+    "speaker": "",
+    "text": "that to display a list of videos\nwithout having to hard",
+    "translated": "",
+    "start": 905.689
+  },
+  {
+    "speaker": "",
+    "text": "code the video IDs in advance.",
+    "translated": "",
+    "start": 909.019
+  },
+  {
+    "speaker": "",
+    "text": "So you could have one specific\nplayer on your page and say,",
+    "translated": "",
+    "start": 911.7
+  },
+  {
+    "speaker": "",
+    "text": "play back the most recent videos\nfrom a specific YouTube",
+    "translated": "",
+    "start": 914.769
+  },
+  {
+    "speaker": "",
+    "text": "channel or specific playlist or\nspecific search term, even.",
+    "translated": "",
+    "start": 917.8
+  },
+  {
+    "speaker": "",
+    "text": "So you could say, this is an\nembedded player that will show",
+    "translated": "",
+    "start": 923.459
+  },
+  {
+    "speaker": "",
+    "text": "the latest videos that\nmatch the search",
+    "translated": "",
+    "start": 926.799
+  },
+  {
+    "speaker": "",
+    "text": "from the YouTube API.",
+    "translated": "",
+    "start": 929.019
+  },
+  {
+    "speaker": "",
+    "text": "Something along those lines.",
+    "translated": "",
+    "start": 930.779
+  },
+  {
+    "speaker": "",
+    "text": "It's quite useful.",
+    "translated": "",
+    "start": 932.829
+  },
+  {
+    "speaker": "",
+    "text": "I don't think as many people\nknow about it as they should.",
+    "translated": "",
+    "start": 933.939
+  },
+  {
+    "speaker": "",
+    "text": "So hopefully people will watch\nthis and start using it a",
+    "translated": "",
+    "start": 936.579
+  },
+  {
+    "speaker": "",
+    "text": "little bit more.",
+    "translated": "",
+    "start": 938.999
+  },
+  {
+    "speaker": "",
+    "text": "listType goes hand in hand\nwith the list parameter.",
+    "translated": "",
+    "start": 940.499
+  },
+  {
+    "speaker": "",
+    "text": "There is a loop parameter.",
+    "translated": "",
+    "start": 943.41
+  },
+  {
+    "speaker": "",
+    "text": "And the loop parameter will--",
+    "translated": "",
+    "start": 945.839
+  },
+  {
+    "speaker": "",
+    "text": "as explained in the\ndocumentation--",
+    "translated": "",
+    "start": 949.089
+  },
+  {
+    "speaker": "",
+    "text": "allow you to automatically\nrestart playback of a video",
+    "translated": "",
+    "start": 951.6
+  },
+  {
+    "speaker": "",
+    "text": "when the playback has ended.",
+    "translated": "",
+    "start": 955.549
+  },
+  {
+    "speaker": "",
+    "text": "You have to have a little bit of\na hack, if you're trying to",
+    "translated": "",
+    "start": 957.61
+  },
+  {
+    "speaker": "",
+    "text": "do this for a single video,\nwhere you create a playlist",
+    "translated": "",
+    "start": 960.111
+  },
+  {
+    "speaker": "",
+    "text": "that has only one video\nentry in it.",
+    "translated": "",
+    "start": 962.1
+  },
+  {
+    "speaker": "",
+    "text": "So we have a little bit\nmore info there.",
+    "translated": "",
+    "start": 964.39
+  },
+  {
+    "speaker": "",
+    "text": "modestbranding is something\nthat's covered in a different",
+    "translated": "",
+    "start": 966.779
+  },
+  {
+    "speaker": "",
+    "text": "blog post, which we will also\nlink to from the annotation.",
+    "translated": "",
+    "start": 969.91
+  },
+  {
+    "speaker": "",
+    "text": "And it talks about the option\ndown here at the bottom.",
+    "translated": "",
+    "start": 972.41
+  },
+  {
+    "speaker": "",
+    "text": "It's not exactly a fully\nlogoless player.",
+    "translated": "",
+    "start": 977.769
+  },
+  {
+    "speaker": "",
+    "text": "There still is a YouTube logo\ninvolved that shows, I think,",
+    "translated": "",
+    "start": 980.529
+  },
+  {
+    "speaker": "",
+    "text": "on the pause screen in the upper\nright-hand corner, or in",
+    "translated": "",
+    "start": 985.089
+  },
+  {
+    "speaker": "",
+    "text": "the queued screen.",
+    "translated": "",
+    "start": 987.869
+  },
+  {
+    "speaker": "",
+    "text": "But it is one parameter that you\ncould set to tone down the",
+    "translated": "",
+    "start": 989.579
+  },
+  {
+    "speaker": "",
+    "text": "YouTube branding\non the player.",
+    "translated": "",
+    "start": 993.749
+  },
+  {
+    "speaker": "",
+    "text": "And that's something that you\nmight want to keep in mind if",
+    "translated": "",
+    "start": 996.699
+  },
+  {
+    "speaker": "",
+    "text": "you have a scenario where you\nwant to embed, but don't want",
+    "translated": "",
+    "start": 1000.87
+  },
+  {
+    "speaker": "",
+    "text": "to make it fully YouTubed.",
+    "translated": "",
+    "start": 1003.819
+  },
+  {
+    "speaker": "",
+    "text": "The origin parameter is\nsomething that can be used",
+    "translated": "",
+    "start": 1007.35
+  },
+  {
+    "speaker": "",
+    "text": "when you are using the iframe\nembed tag, and you're going to",
+    "translated": "",
+    "start": 1011.559
+  },
+  {
+    "speaker": "",
+    "text": "be interacting with the iframe\nembed using JavaScript.",
+    "translated": "",
+    "start": 1015.41
+  },
+  {
+    "speaker": "",
+    "text": "So as mentioned before, you\nmight want to explicitly put",
+    "translated": "",
+    "start": 1020.299
+  },
+  {
+    "speaker": "",
+    "text": "in enablejsapi.",
+    "translated": "",
+    "start": 1022.509
+  },
+  {
+    "speaker": "",
+    "text": "You also might want to\nput in the origin",
+    "translated": "",
+    "start": 1023.819
+  },
+  {
+    "speaker": "",
+    "text": "parameter over here.",
+    "translated": "",
+    "start": 1026.77
+  },
+  {
+    "speaker": "",
+    "text": "And you set it equal to the full\nURL for your web page.",
+    "translated": "",
+    "start": 1028.37
+  },
+  {
+    "speaker": "",
+    "text": "And this is a security mechanism\nto make sure that",
+    "translated": "",
+    "start": 1032.9
+  },
+  {
+    "speaker": "",
+    "text": "only JavaScript that's run from\nyour host web page is",
+    "translated": "",
+    "start": 1037.319
+  },
+  {
+    "speaker": "",
+    "text": "able to talk to the player.",
+    "translated": "",
+    "start": 1040.069
+  },
+  {
+    "speaker": "",
+    "text": "And if you're using the YT.",
+    "translated": "",
+    "start": 1043.169
+  },
+  {
+    "speaker": "",
+    "text": "Player constructor, it gets\nset automatically for you.",
+    "translated": "",
+    "start": 1044.959
+  },
+  {
+    "speaker": "",
+    "text": "So this is another instance\nwhere you really only have to",
+    "translated": "",
+    "start": 1047.27
+  },
+  {
+    "speaker": "",
+    "text": "worry about this when you're\nexplicitly writing out an",
+    "translated": "",
+    "start": 1049.549
+  },
+  {
+    "speaker": "",
+    "text": "iframe tag.",
+    "translated": "",
+    "start": 1052.399
+  },
+  {
+    "speaker": "",
+    "text": "And sometimes people run into\nissues where they explicitly",
+    "translated": "",
+    "start": 1054.89
+  },
+  {
+    "speaker": "",
+    "text": "were using the iframe tag, and\nthey're trying to talk to it",
+    "translated": "",
+    "start": 1058.22
+  },
+  {
+    "speaker": "",
+    "text": "using JavaScript, but their\ncode just isn't working.",
+    "translated": "",
+    "start": 1061.24
+  },
+  {
+    "speaker": "",
+    "text": "One thing to debug in that case\nis check to see whether",
+    "translated": "",
+    "start": 1065.22
+  },
+  {
+    "speaker": "",
+    "text": "you are setting the\norigin parameter.",
+    "translated": "",
+    "start": 1067.669
+  },
+  {
+    "speaker": "",
+    "text": "And if you are, make sure that\nit's really set to the full",
+    "translated": "",
+    "start": 1069.51
+  },
+  {
+    "speaker": "",
+    "text": "URL of the host name\nfor your site.",
+    "translated": "",
+    "start": 1073.82
+  },
+  {
+    "speaker": "",
+    "text": "playerapiid--",
+    "translated": "",
+    "start": 1077.72
+  },
+  {
+    "speaker": "",
+    "text": "this isn't really relevant\nanymore.",
+    "translated": "",
+    "start": 1079.69
+  },
+  {
+    "speaker": "",
+    "text": "It's more of a way of using the\nolder JavaScript API for",
+    "translated": "",
+    "start": 1081.77
+  },
+  {
+    "speaker": "",
+    "text": "identifying your player.",
+    "translated": "",
+    "start": 1084.889
+  },
+  {
+    "speaker": "",
+    "text": "There's a playlist parameter\nwhich is easily confused with",
+    "translated": "",
+    "start": 1086.61
+  },
+  {
+    "speaker": "",
+    "text": "the list parameter.",
+    "translated": "",
+    "start": 1090.419
+  },
+  {
+    "speaker": "",
+    "text": "And it is something that\nactually takes in a different",
+    "translated": "",
+    "start": 1091.419
+  },
+  {
+    "speaker": "",
+    "text": "set of values.",
+    "translated": "",
+    "start": 1093.889
+  },
+  {
+    "speaker": "",
+    "text": "The playlist parameter takes\nin a list of video IDs.",
+    "translated": "",
+    "start": 1094.889
+  },
+  {
+    "speaker": "",
+    "text": "So this does not have to\nbe a real playlist, a",
+    "translated": "",
+    "start": 1098.74
+  },
+  {
+    "speaker": "",
+    "text": "[? list that ?] exists\non YouTube.",
+    "translated": "",
+    "start": 1100.509
+  },
+  {
+    "speaker": "",
+    "text": "It doesn't have to be anything\nthat uploads",
+    "translated": "",
+    "start": 1101.82
+  },
+  {
+    "speaker": "",
+    "text": "from a specific channel.",
+    "translated": "",
+    "start": 1106.32
+  },
+  {
+    "speaker": "",
+    "text": "It could just be a list of any\nvideo IDs that you want.",
+    "translated": "",
+    "start": 1107.809
+  },
+  {
+    "speaker": "",
+    "text": "And it's a way of generating a\ndynamic, on-the-fly playlist.",
+    "translated": "",
+    "start": 1110.69
+  },
+  {
+    "speaker": "",
+    "text": "So some use cases where\nthat might be useful.",
+    "translated": "",
+    "start": 1115.59
+  },
+  {
+    "speaker": "",
+    "text": "There's the rel parameter.",
+    "translated": "",
+    "start": 1119.09
+  },
+  {
+    "speaker": "",
+    "text": "And this controls whether or not\nthe end screen of a video",
+    "translated": "",
+    "start": 1121.769
+  },
+  {
+    "speaker": "",
+    "text": "will display related\nvideos or not.",
+    "translated": "",
+    "start": 1125.769
+  },
+  {
+    "speaker": "",
+    "text": "Most folks are familiar with the\nfact that once you reach",
+    "translated": "",
+    "start": 1129.2
+  },
+  {
+    "speaker": "",
+    "text": "the end of a YouTube video,\nyou'll see some configuration",
+    "translated": "",
+    "start": 1131.29
+  },
+  {
+    "speaker": "",
+    "text": "of thumbnails with suggestions\nfor other videos to play.",
+    "translated": "",
+    "start": 1135.62
+  },
+  {
+    "speaker": "",
+    "text": "We do have the ability to turn\nthat off if you feel like you",
+    "translated": "",
+    "start": 1139.049
+  },
+  {
+    "speaker": "",
+    "text": "do not want that\non your embeds.",
+    "translated": "",
+    "start": 1141.85
+  },
+  {
+    "speaker": "",
+    "text": "showinfo is something that will\ncontrol what is displayed",
+    "translated": "",
+    "start": 1146.179
+  },
+  {
+    "speaker": "",
+    "text": "initially in the\nqueued states.",
+    "translated": "",
+    "start": 1152.669
+  },
+  {
+    "speaker": "",
+    "text": "There's ways of taking the\ndefault behavior and kind of",
+    "translated": "",
+    "start": 1155.269
+  },
+  {
+    "speaker": "",
+    "text": "toning it down a bit, again,\nwhere you don't see quite as",
+    "translated": "",
+    "start": 1158.14
+  },
+  {
+    "speaker": "",
+    "text": "much before the video starts.",
+    "translated": "",
+    "start": 1160.11
+  },
+  {
+    "speaker": "",
+    "text": "And you can set it to\nshow info equal",
+    "translated": "",
+    "start": 1163.38
+  },
+  {
+    "speaker": "",
+    "text": "0, if you want that.",
+    "translated": "",
+    "start": 1165.14
+  },
+  {
+    "speaker": "",
+    "text": "showinfo's actually used\nin another case.",
+    "translated": "",
+    "start": 1167.13
+  },
+  {
+    "speaker": "",
+    "text": "And that's when you're using\nthe list player.",
+    "translated": "",
+    "start": 1169.36
+  },
+  {
+    "speaker": "",
+    "text": "And explicitly setting showinfo\nequal to 1 will make",
+    "translated": "",
+    "start": 1171.97
+  },
+  {
+    "speaker": "",
+    "text": "it so that there is a list of\nqueued videos in the playlist",
+    "translated": "",
+    "start": 1176.639
+  },
+  {
+    "speaker": "",
+    "text": "in your list player.",
+    "translated": "",
+    "start": 1181.25
+  },
+  {
+    "speaker": "",
+    "text": "So if we look over here,\nthis is a case where",
+    "translated": "",
+    "start": 1182.57
+  },
+  {
+    "speaker": "",
+    "text": "showinfo is set to 1.",
+    "translated": "",
+    "start": 1184.179
+  },
+  {
+    "speaker": "",
+    "text": "This is a playlist player that's\nloading everything from",
+    "translated": "",
+    "start": 1187.33
+  },
+  {
+    "speaker": "",
+    "text": "Google Developers.",
+    "translated": "",
+    "start": 1189.24
+  },
+  {
+    "speaker": "",
+    "text": "And you'll see, before playback\nhas even started, you",
+    "translated": "",
+    "start": 1190.74
+  },
+  {
+    "speaker": "",
+    "text": "have this handy thumbnail for\nall the videos that are queued",
+    "translated": "",
+    "start": 1192.929
+  },
+  {
+    "speaker": "",
+    "text": "up in the playlist for\nthe next videos.",
+    "translated": "",
+    "start": 1196.399
+  },
+  {
+    "speaker": "",
+    "text": "It will let you choose what\nyou want to start with.",
+    "translated": "",
+    "start": 1198.269
+  },
+  {
+    "speaker": "",
+    "text": "So it is actually quite useful\nfor scenarios where you're",
+    "translated": "",
+    "start": 1200.97
+  },
+  {
+    "speaker": "",
+    "text": "doing the list player.",
+    "translated": "",
+    "start": 1204.46
+  },
+  {
+    "speaker": "",
+    "text": "Start parameter we really\ncovered before, hand in hand",
+    "translated": "",
+    "start": 1208.659
+  },
+  {
+    "speaker": "",
+    "text": "with the end parameter.",
+    "translated": "",
+    "start": 1212.57
+  },
+  {
+    "speaker": "",
+    "text": "And the last one is the\ntheme parameter.",
+    "translated": "",
+    "start": 1214.46
+  },
+  {
+    "speaker": "",
+    "text": "This is something similar to\nthat earlier color parameter",
+    "translated": "",
+    "start": 1217.36
+  },
+  {
+    "speaker": "",
+    "text": "that just lets you change the\ndefault way that the player",
+    "translated": "",
+    "start": 1219.309
+  },
+  {
+    "speaker": "",
+    "text": "looks and gives you some degree\nof customization in",
+    "translated": "",
+    "start": 1223.21
+  },
+  {
+    "speaker": "",
+    "text": "that regard.",
+    "translated": "",
+    "start": 1226.61
+  },
+  {
+    "speaker": "",
+    "text": "There are now a couple of\ndeprecated parameters.",
+    "translated": "",
+    "start": 1229.269
+  },
+  {
+    "speaker": "",
+    "text": "I'm not going to cover those.",
+    "translated": "",
+    "start": 1232.039
+  },
+  {
+    "speaker": "",
+    "text": "They're deprecated\nfor a reason.",
+    "translated": "",
+    "start": 1233.3
+  },
+  {
+    "speaker": "",
+    "text": "We don't want folks using\nthem anymore.",
+    "translated": "",
+    "start": 1234.659
+  },
+  {
+    "speaker": "",
+    "text": "I wanted to point out that\nthere are occasionally--",
+    "translated": "",
+    "start": 1236.42
+  },
+  {
+    "speaker": "",
+    "text": "I don't want to say rumors--\nbut certain parameters out",
+    "translated": "",
+    "start": 1240.49
+  },
+  {
+    "speaker": "",
+    "text": "there that people pass around\nand say, hey, you can use this",
+    "translated": "",
+    "start": 1244.309
+  },
+  {
+    "speaker": "",
+    "text": "player parameter to force HTML5\nplayback, or use this",
+    "translated": "",
+    "start": 1246.97
+  },
+  {
+    "speaker": "",
+    "text": "player parameter to force\nplayback in a certain quality",
+    "translated": "",
+    "start": 1251.139
+  },
+  {
+    "speaker": "",
+    "text": "level or something along\nthose lines.",
+    "translated": "",
+    "start": 1253.759
+  },
+  {
+    "speaker": "",
+    "text": "Those are undocumented\nfor a reason.",
+    "translated": "",
+    "start": 1256.309
+  },
+  {
+    "speaker": "",
+    "text": "We really do not want people to\nuse parameters that aren't",
+    "translated": "",
+    "start": 1258.399
+  },
+  {
+    "speaker": "",
+    "text": "explicitly mentioned in the\ndocumentation, partly because",
+    "translated": "",
+    "start": 1261.98
+  },
+  {
+    "speaker": "",
+    "text": "we're not fully committed\nto supporting them.",
+    "translated": "",
+    "start": 1264.32
+  },
+  {
+    "speaker": "",
+    "text": "They might sometimes work in\nsome cases, and they might",
+    "translated": "",
+    "start": 1266.529
+  },
+  {
+    "speaker": "",
+    "text": "stop working at any time\nin the future.",
+    "translated": "",
+    "start": 1270.5
+  },
+  {
+    "speaker": "",
+    "text": "So we really don't want people\nto build things that rely on",
+    "translated": "",
+    "start": 1272.309
+  },
+  {
+    "speaker": "",
+    "text": "those parameters.",
+    "translated": "",
+    "start": 1275.09
+  },
+  {
+    "speaker": "",
+    "text": "And there's also just cases\nwhere we want control to be in",
+    "translated": "",
+    "start": 1277.19
+  },
+  {
+    "speaker": "",
+    "text": "the hands of the person who's\nviewing the embed.",
+    "translated": "",
+    "start": 1282.07
+  },
+  {
+    "speaker": "",
+    "text": "So we want control over the\ndefault playback to really lie",
+    "translated": "",
+    "start": 1285.44
+  },
+  {
+    "speaker": "",
+    "text": "in the person who's using the\nweb browser and might have",
+    "translated": "",
+    "start": 1290.7
+  },
+  {
+    "speaker": "",
+    "text": "Flash enabled.",
+    "translated": "",
+    "start": 1293.84
+  },
+  {
+    "speaker": "",
+    "text": "Or the default auto quality for\nthe quality level in many",
+    "translated": "",
+    "start": 1295.87
+  },
+  {
+    "speaker": "",
+    "text": "cases gives the best playback\nexperience.",
+    "translated": "",
+    "start": 1301.169
+  },
+  {
+    "speaker": "",
+    "text": "So if you don't see something\nlisted as a supported",
+    "translated": "",
+    "start": 1304.169
+  },
+  {
+    "speaker": "",
+    "text": "parameter, please\ndon't use it.",
+    "translated": "",
+    "start": 1307.76
+  },
+  {
+    "speaker": "",
+    "text": "And if you do happen to find\nsome parameters, please don't",
+    "translated": "",
+    "start": 1309.15
+  },
+  {
+    "speaker": "",
+    "text": "complain if they ever break at\nsome point in the future.",
+    "translated": "",
+    "start": 1312.649
+  },
+  {
+    "speaker": "",
+    "text": "I guess that's the\nmain takeaway.",
+    "translated": "",
+    "start": 1315.95
+  },
+  {
+    "speaker": "",
+    "text": "That covers the list of all\nthe supported parameters.",
+    "translated": "",
+    "start": 1319.01
+  },
+  {
+    "speaker": "",
+    "text": "We had a lot of different\nweb material here.",
+    "translated": "",
+    "start": 1321.45
+  },
+  {
+    "speaker": "",
+    "text": "And be sure to check out the\nannotations on the video for",
+    "translated": "",
+    "start": 1324.169
+  },
+  {
+    "speaker": "",
+    "text": "links to everything that\nwe covered today.",
+    "translated": "",
+    "start": 1326.12
+  },
+  {
+    "speaker": "",
+    "text": "Thanks very much for watching.",
+    "translated": "",
+    "start": 1329.25
+  },
+  {
+    "speaker": "",
+    "text": "And we'll see everybody\nnext week.",
+    "translated": "",
+    "start": 1333.049
+  },
+  {
+    "text": "Cheers.",
+    "translated": "",
+    "start": 1337.309
+  }
+]
