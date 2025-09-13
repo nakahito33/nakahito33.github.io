@@ -10,7 +10,7 @@ const subtitleList = document.getElementById('subtitle-list');
 // --- メインの処理 ---
 
 // 1. 字幕JSONファイルを読み込む
-fetch('transcript.json')
+fetch('../csv/transcript.json')
     .then(response => response.json())
     .then(data => {
         subtitles = data;
@@ -84,3 +84,4 @@ function updateSubtitle() {
         });
     }
 }
+
