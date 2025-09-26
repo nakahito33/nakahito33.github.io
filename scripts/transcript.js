@@ -6,6 +6,8 @@ let subtitles = [];
 let subtitleInterval;
 const subtitleContainer = document.getElementById('subtitle-container');
 const subtitleList = document.getElementById('subtitle-list');
+// [変更] 字幕の現在の言語 ('en' または 'ja')
+let currentLang = 'en'; 
 
 // --- メインの処理 ---
 
@@ -16,6 +18,8 @@ fetch('../csv/transcript.json')
         subtitles = data;
         console.log('字幕データの読み込み完了');
         renderSubtitles();
+        // [追加] 言語切り替えボタンのイベントリスナーを設定
+        setupLangSwitcher(); 
     })
     .catch(error => {
         console.error('字幕ファイルの読み込みエラー:', error);
@@ -43,12 +47,19 @@ function onPlayerStateChange(event) {
     }
 }
 
-// 4. 字幕をDOMにレンダリング
+// [変更] 4. 字幕をDOMにレンダリング (言語に合わせて表示)
 function renderSubtitles() {
     subtitleList.innerHTML = '';
     subtitles.forEach((subtitle, index) => {
         const p = document.createElement('p');
-        p.textContent = subtitle.text;
+        // 現在の言語に基づいてテキストを選択
+        const subtitleText = currentLang === 'ja' ? 
+                             subtitle.translated : 
+                             subtitle.text;
+
+        const textToDisplay = `${subtitle.speaker}: ${subtitleText}`;
+                              
+        p.textContent = textToDisplay;
         p.dataset.index = index;
         subtitleList.appendChild(p);
     });
@@ -85,3 +96,34 @@ function updateSubtitle() {
     }
 }
 
+// [追加] 言語切り替えボタンのセットアップ
+function setupLangSwitcher() {
+    const langEnButton = document.getElementById('lang-en');
+    const langJaButton = document.getElementById('lang-ja');
+
+    langEnButton.addEventListener('click', () => {
+        setLanguage('en');
+    });
+
+    langJaButton.addEventListener('click', () => {
+        setLanguage('ja');
+    });
+}
+
+// [追加] 言語を設定し、字幕を再レンダリングする関数
+function setLanguage(lang) {
+    if (currentLang !== lang) {
+        currentLang = lang;
+        // 再生が止まっている場合は、字幕を再レンダリングする
+        if (player.getPlayerState() !== YT.PlayerState.PLAYING) {
+             renderSubtitles();
+        } else {
+            // 再生中は一旦止めてからレンダリングするとスムーズ
+            player.pauseVideo();
+            renderSubtitles();
+        }
+        
+        // アクティブな行へのスクロールも実行
+        updateSubtitle(); 
+    }
+}
