@@ -42,3 +42,27 @@ body {
     background-color: #e6f7ff;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
+
+/* 追加：/////////////////////////////////////////////////////*/
+/* 言語切り替えボタンのコンテナースタイル */
+#lang-switcher {
+    margin: 10px auto;
+    width: 560px; /* プレーヤーと同じ幅 */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* 言語切り替えボタンのスタイル */
+#lang-switcher button {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#lang-switcher button:hover {
+    background-color: #e0e0e0;
+}
