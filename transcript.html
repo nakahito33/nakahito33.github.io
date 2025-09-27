@@ -1,30 +1,84 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>字幕表示テスト</title>
+    <!-- デフォルトのcss -->
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/hamburger.css">
+    <!-- 翻訳部分のcss -->
     <link rel="stylesheet" href="css/transcript.css">
 </head>
+
 <body>
 
-    <h2>字幕表示テスト</h2>
-    
-    <div id="lang-switcher">
-        <button id="lang-en">English</button>
-        <button id="lang-ja">日本語</button>
-    </div>
-    
-    <div id="player"></div>
-
-    <div id="subtitle-container">
-        <div id="subtitle-list">
-            <p>動画を再生すると字幕が表示されます</p>
+    <header>
+        <div class="head">
+            <!-- ハンバーガーメニュ -->
+            <section class="hamburger" id="open_nav">
+                <div class="btn-trigger" id="btn01">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </section>
+            <!-- タイトル -->
+            <div class="title">
+                <h1><a href="index.html">CineLingua</a></h1>
+            </div>
         </div>
-    </div>
+        <nav class="nav">
+            <!-- ハンバーガーメニューの開いた中身 -->
+        </nav>
+    </header>
+
+    <!-- メイン -->
+    <main>
+        <h2>字幕表示テスト</h2>
+
+        <div id="lang-switcher">
+            <button id="lang-en">English</button>
+            <button id="lang-ja">日本語</button>
+        </div>
+
+        <div id="player"></div>
+
+        <div id="subtitle-container">
+            <div id="subtitle-list">
+                <p>動画を再生すると字幕が表示されます</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <small>🄫CineLingua</small>
+    </footer>
+
+
+
+    <!-- ハンバーガーメニューの開いた中身 -->
+    <nav id="nav">
+        <ul>
+            <li class="bo-da-"><a href="index.html">ホーム</a></li>
+            <li class="bo-da-"><a href="contents-1.html">ログイン画面</a></li><!-- ログイン画面の追加 -->
+            <li class="bo-da-"><a href="contents-2.html">映画・洋画</a></li>
+            <li class="bo-da-"><a href="contents-3.html">My単語帳</a></li>
+            <li class="bo-da-"><a href="contents-4.html">辞書</a></li>
+            <li class="bo-da-"><a href="transcript.html">!デモ用翻訳動画!ここ押したら飛ぶ</a></li>
+            <li class="last"><a href="contents-6.html">コンテンツ6</a></li>
+        </ul>
+    </nav>
+
+
+    <!--  JavaScriptの読み込み -->
+    <!-- <script src="scripts/main.js"></script> -->
 
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="scripts/transcript.js"></script>
+
 
 </body>
 
