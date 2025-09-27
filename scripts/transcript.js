@@ -86,7 +86,7 @@ function updateSubtitle() {
         activeElement.classList.add('active');
 
         // --- 上から530px余白をあけてスクロール ---
-        const marginTop = 530;
+        const marginTop = 600;
         const scrollPosition = activeElement.offsetTop - marginTop;
 
         subtitleContainer.scrollTo({
@@ -127,3 +127,4 @@ function setLanguage(lang) {
         updateSubtitle(); 
     }
 }
+
