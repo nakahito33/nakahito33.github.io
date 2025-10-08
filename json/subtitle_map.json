@@ -1,0 +1,14 @@
+{
+    "alice": {
+        "videoId": "BPNZdXZ5_HA",
+        "subtitle": "json/jimaku/alice.json"
+    },
+    "transcript": {
+        "videoId": "M7lc1UVf-VE",
+        "subtitle": "json/jimaku/transcript.json"
+    },
+    "default": {
+        "videoId": "unknown",
+        "subtitle": "json/jimaku/UNKNOWN.csv"
+    }
+}

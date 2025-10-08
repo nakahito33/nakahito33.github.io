@@ -20,61 +20,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let ytplayer;
   let eventsData;
-  let latestId = 0;
+  let latestTime = 0;
   let checkTime = null;
 
-  // CSV読み込み
-  fetch('csv/ALICE_IN_WONDERLAND.csv')
-    .then(response => response.text())
-    .then(text => {
-      eventsData = parseCSV(text);
-    });
-
-  // CSVをパースして扱いやすいように変換
-  function parseCSV(csvText) {
-    const lines = csvText.trim().split("\n");
-    const headers = lines[0].split(",");         // 1行目はヘッダー
-    const data = lines.slice(1).map(line => {    // 2行目以降を処理
-      const values = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-      return {
-        id: Number(values[0]),
-        time: parseTimeToSeconds(values[1].replace(/^"|"$/g, "")),
-        speaker: values[2],
-        en_text: values[3].replace(/^"|"$/g, ""),
-        ja_text: values[4].replace(/^"|"$/g, "")
-      };
-    });
-    return data;
-  }
-  
-  //秒数を変換
-  function parseTimeToSeconds(timeStr) {
-  const [hms, ms] = timeStr.split(',');
-  const [hours, minutes, seconds] = hms.split(':').map(Number);
-
-  return hours * 3600 + minutes * 60 + Number(seconds) + Number(ms) / 1000;
+  // URLからキーを取得
+  function getVideoFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("video") || "default";
   }
 
-  // 内容をリストに追加する関数
-  function addEventToList(en_text, ja_text, speaker) {
+  // 内容をリストに追加
+  function addEventToList(text, translated, speaker) {
     const enBox = document.querySelectorAll('.lang-text')[0];
     const jaBox = document.querySelectorAll('.lang-text')[1];
 
     const pEn = document.createElement('p');
-    pEn.textContent = `${speaker}: ${en_text}`;
-    if (enBox.firstChild) {
-      enBox.insertBefore(pEn, enBox.firstChild);  // 先頭に追加
-    } else {
-      enBox.appendChild(pEn); // 最初の要素は普通に追加(この処理消すとデータが空になるためエラー発生)
-    }
+    pEn.textContent = `${speaker}: ${text}`;
+    if (enBox.firstChild) enBox.insertBefore(pEn, enBox.firstChild);
+    else enBox.appendChild(pEn);
 
     const pJa = document.createElement('p');
-    pJa.textContent = `${speaker}: ${ja_text}`;
-     if (jaBox.firstChild) {
-      jaBox.insertBefore(pJa, jaBox.firstChild);
-    } else {
-      jaBox.appendChild(pJa);
-    }
+    pJa.textContent = `${speaker}: ${translated}`;
+    if (jaBox.firstChild) jaBox.insertBefore(pJa, jaBox.firstChild);
+    else jaBox.appendChild(pJa);
   }
 
   // 再生状態の変化を検知
@@ -82,30 +50,66 @@ document.addEventListener('DOMContentLoaded', function () {
     if (event.data === YT.PlayerState.PLAYING) {
       checkTime = setInterval(() => {
         const currentTime = ytplayer.getCurrentTime();
-
-        // JSONのイベントを確認
         eventsData.forEach(ev => {
-          if (ev.time <= currentTime && ev.id > latestId) {
-            addEventToList(ev.en_text, ev.ja_text, ev.speaker);
-            latestId = ev.id;
+          if (ev.start <= currentTime) {
+            addEventToList(ev.text, ev.translated, ev.speaker);
+            latestTime = ev.start;
           }
         });
       }, 500);
-
     } else if (event.data === YT.PlayerState.PAUSED) {
       clearInterval(checkTime);
     }
   }
 
-  // iframeのセットアップ
-  window.onYouTubeIframeAPIReady = function () {
-    ytplayer = new YT.Player('player', {
-      videoId: 'BPNZdXZ5_HA',             //ここ変更すると再生する動画が変えられる
-      events: {
-        onStateChange: onPlayerStateChange
+  // 初期化処理
+  async function init() {
+    const video = getVideoFromUrl();
+    console.log("URLから取得したvideo:", video);
+
+    // JSONマップ読み込み
+    const mapResponse = await fetch("json/subtitle_map.json");
+    if (!mapResponse.ok) {
+      console.error("subtitle_map.json が見つかりません", mapResponse.status);
+      return;
+    }
+    const map = await mapResponse.json();
+    const entry = map[video] || map["default"];
+
+    const videoId = entry.videoId;
+    const subtitlePath = entry.subtitle;
+
+    // 字幕JSON読み込み
+    try {
+      const res = await fetch(subtitlePath);
+      if (!res.ok) throw new Error(`字幕JSONが見つかりません: ${res.status}`);
+      eventsData = await res.json(); // JSON配列として読み込む
+    } catch (err) {
+      console.error(err);
+      eventsData = []; // 読み込めなければ空配列
+    }
+
+    // YouTubeプレイヤー初期化
+    window.onYouTubeIframeAPIReady = function () {
+      if (!videoId || videoId === "unknown") {
+        document.getElementById('player').innerHTML = '<p>unknown</p>';
+        return;
       }
-    });
-  };
+
+      ytplayer = new YT.Player('player', {
+        videoId: videoId,
+        events: {
+          onStateChange: onPlayerStateChange,
+          onError: function () {
+            document.getElementById('player').innerHTML = '<p>unknown</p>';
+          }
+        }
+      });
+    };
+  }
+
+  // DOM読み込み後に初期化
+  window.addEventListener("DOMContentLoaded", init);
 
   // YouTube IFrame API スクリプト読み込み
   const scriptTag = document.createElement('script');
