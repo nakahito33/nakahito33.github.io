@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
       checkTime = setInterval(() => {
         const currentTime = ytplayer.getCurrentTime();
         eventsData.forEach(ev => {
-          if (ev.start <= currentTime) {
+          if (ev.start <= currentTime && ev.start > latestTime) {
             addEventToList(ev.text, ev.translated, ev.speaker);
             latestTime = ev.start;
           }
