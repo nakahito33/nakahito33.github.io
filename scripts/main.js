@@ -22,6 +22,31 @@ document.addEventListener('DOMContentLoaded', function () {
   let eventsData;
   let latestTime = 0;
   let checkTime = null;
+  let wordbook = JSON.parse(localStorage.getItem("wordbook") || "[]");
+
+  function saveWordbook() {
+    localStorage.setItem("wordbook", JSON.stringify(wordbook));
+    renderWordbook();
+  }
+
+  function renderWordbook() {
+    const list = document.getElementById("wordbook-list");
+    list.innerHTML = "";
+    wordbook.forEach(w => {
+      const li = document.createElement("li");
+      li.textContent = w;
+      list.appendChild(li);
+    });
+  }
+
+  function addToWordbook(text) {
+    console.log("クリック検知:", text);
+    if (!wordbook.includes(text)) {
+      wordbook.push(text);
+      saveWordbook();
+      console.log("単語帳に追加:", text);
+    }
+  }
 
   // URLからキーを取得
   function getVideoFromUrl() {
@@ -36,11 +61,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const pEn = document.createElement('p');
     pEn.textContent = `${speaker}: ${text}`;
-    if (enBox.firstChild) enBox.insertBefore(pEn, enBox.firstChild);
-    else enBox.appendChild(pEn);
+    pEn.addEventListener('click', () => addToWordbook(text));
+
 
     const pJa = document.createElement('p');
     pJa.textContent = `${speaker}: ${translated}`;
+    pJa.addEventListener('click', () => addToWordbook(translated));
+
+    if (enBox.firstChild) enBox.insertBefore(pEn, enBox.firstChild);
+    else enBox.appendChild(pEn);
+
     if (jaBox.firstChild) jaBox.insertBefore(pJa, jaBox.firstChild);
     else jaBox.appendChild(pJa);
   }
@@ -50,6 +80,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (event.data === YT.PlayerState.PLAYING) {
       checkTime = setInterval(() => {
         const currentTime = ytplayer.getCurrentTime();
+        
+        // 動画が戻された場合、字幕をクリア
+        if (currentTime < latestTime) {
+          document.querySelectorAll('.lang-text').forEach(box => box.innerHTML = '');
+          latestTime = 0;
+        }
+        
         eventsData.forEach(ev => {
           if (ev.start <= currentTime && ev.start > latestTime) {
             addEventToList(ev.text, ev.translated, ev.speaker);

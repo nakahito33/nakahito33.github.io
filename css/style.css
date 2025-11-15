@@ -143,6 +143,22 @@ main {
   display: block;
 }
 
+.lang-text p {
+  cursor: pointer;
+  transition: background-color 0.15s ease;  /*色変化を滑らかにする*/
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.lang-text p:hover {
+  background-color: #f0f0f0;
+  /* マウスを近づけると薄い灰色 */
+}
+
+.lang-text p:active {
+  background-color: #d0d0d0;
+  /* 押したとき少し暗い灰色 */
+}
 /* クイズ部分のスタイル */
 .right {
   width: 35%; /* 変更：右側の割合を調整 */
