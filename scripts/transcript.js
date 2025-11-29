@@ -12,7 +12,7 @@ let currentLang = 'en';
 // --- メインの処理 ---
 
 // 1. 字幕JSONファイルを読み込む
-fetch('../csv/transcript.json')
+fetch('../csv/jimaku/transcript.json')
     .then(response => response.json())
     .then(data => {
         subtitles = data;
@@ -127,4 +127,5 @@ function setLanguage(lang) {
         updateSubtitle(); 
     }
 }
+
 
