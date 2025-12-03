@@ -55,13 +55,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 単語帳リストを画面に描画
   function renderWordbook() {
-    const list = document.getElementById("wordbook-list");
+    const list = document.getElementById("wordbook-list"); // id=wordbook-listであるもの、<ul>をlistに格納する
     if (!list) return; // エラー防止
 
-    list.innerHTML = "";
-    wordbook.forEach(w => {
-      const li = document.createElement("li");
-      li.textContent = w;
+    list.innerHTML = ""; // 既存のリストの初期化
+    wordbook.forEach(w => { // wordbook配列の要素をひとつづつとりだし、wに代入してループ処理を実行する
+      const li = document.createElement("li"); // 新しい<li>をHTMLに作成
+      li.textContent = w; // <li>のテキスト内容を現在のwにする
       list.appendChild(li);
     });
   }
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // ★修正箇所：関数が定義されたので、ここで外部に公開します★
+  // 修正箇所：関数が定義されたので、ここで外部に公開します
   window.addToWordbook = addToWordbook;
 
   // 初期表示時に単語帳を描画
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-/*
+/*　この下がもともとあった部分
 
 'use strict';
 
