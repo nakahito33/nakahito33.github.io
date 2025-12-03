@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-/*　この下がもともとあった部分
+/* この下がもともとのmain.js コメントアウトしてる
 
 'use strict';
 
