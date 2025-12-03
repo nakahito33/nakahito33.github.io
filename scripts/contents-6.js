@@ -102,8 +102,8 @@ function updateSubtitleSync() {
  * 3. スクロール位置の調整（見やすい位置に固定）
  */
 function scrollToActiveElement(container, activeElement) {
-    // コンテナの上から 50px の位置に、ハイライトされた行が来るようにスクロール
-    const fixedTopOffset = 150; 
+    // コンテナの上から 178px の位置に、ハイライトされた行が来るようにスクロール
+    const fixedTopOffset = 178; 
     const scrollPosition = activeElement.offsetTop - fixedTopOffset;
     
     container.scrollTo({
