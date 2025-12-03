@@ -24,6 +24,12 @@ document.addEventListener('DOMContentLoaded', function () {
   let checkTime = null;
   let wordbook = JSON.parse(localStorage.getItem("wordbook") || "[]");
 
+  // --- 変更点 1: グローバル変数・関数の公開 ---
+  window.ytplayer = ytplayer;
+  window.eventsData = eventsData;
+  window.addToWordbook = addToWordbook;
+  // --------------------
+
   function saveWordbook() {
     localStorage.setItem("wordbook", JSON.stringify(wordbook));
     renderWordbook();
@@ -54,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return params.get("video") || "default";
   }
 
-  // 内容をリストに追加
+  // 内容をリストに追加 (使われなくなりましたが、構造保持のため残しています)
   function addEventToList(text, translated, speaker) {
     const enBox = document.querySelectorAll('.lang-text')[0];
     const jaBox = document.querySelectorAll('.lang-text')[1];
@@ -77,26 +83,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 再生状態の変化を検知
   function onPlayerStateChange(event) {
-    if (event.data === YT.PlayerState.PLAYING) {
-      checkTime = setInterval(() => {
-        const currentTime = ytplayer.getCurrentTime();
-        
-        // 動画が戻された場合、字幕をクリア
-        if (currentTime < latestTime) {
-          document.querySelectorAll('.lang-text').forEach(box => box.innerHTML = '');
-          latestTime = 0;
-        }
-        
-        eventsData.forEach(ev => {
-          if (ev.start <= currentTime && ev.start > latestTime) {
-            addEventToList(ev.text, ev.translated, ev.speaker);
-            latestTime = ev.start;
-          }
-        });
-      }, 500);
-    } else if (event.data === YT.PlayerState.PAUSED) {
-      clearInterval(checkTime);
+    // --- 変更点 2: 既存の字幕ロジックを削除し、contents-6.jsに委譲 ---
+    if (window.handlePlayerStateChange) {
+      window.handlePlayerStateChange(event);
     }
+    // --------------------
   }
 
   // 初期化処理
@@ -104,23 +95,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const video = getVideoFromUrl();
     console.log("URLから取得したvideo:", video);
 
-    // JSONマップ読み込み
-    const mapResponse = await fetch("json/subtitle_map.json");
-    if (!mapResponse.ok) {
-      console.error("subtitle_map.json が見つかりません", mapResponse.status);
-      return;
-    }
-    const map = await mapResponse.json();
-    const entry = map[video] || map["default"];
-
-    const videoId = entry.videoId;
-    const subtitlePath = entry.subtitle;
+    // --- 字幕パスと動画IDの特定方法を変更 ---
+    // NOTE: subtitle_map.jsonをスキップし、特定のファイルパスを直接使用
+    const videoId = 'M7lc1UVf-VE'; // デモ動画IDを直接指定
+    const subtitlePath = 'json/jimaku/transcript.json'; // 指定されたパスを直接使用
 
     // 字幕JSON読み込み
     try {
       const res = await fetch(subtitlePath);
       if (!res.ok) throw new Error(`字幕JSONが見つかりません: ${res.status}`);
       eventsData = await res.json(); // JSON配列として読み込む
+
+      // --- 変更点 3: 初期表示の呼び出しを contents-6.jsに委譲 ---
+      if (window.initializeTranscriptDisplay) {
+        window.initializeTranscriptDisplay(eventsData);
+      }
+      // --------------------
+
     } catch (err) {
       console.error(err);
       eventsData = []; // 読み込めなければ空配列
@@ -142,6 +133,8 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         }
       });
+      // ytplayerオブジェクトが生成されたら、window.ytplayerも更新
+      window.ytplayer = ytplayer;
     };
   }
 
@@ -153,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
   scriptTag.src = 'https://www.youtube.com/iframe_api';
   document.body.appendChild(scriptTag);
 
-  // 翻訳タブの切り替え機能
+  // 翻訳タブの切り替え機能 (※ contents-6.jsで再定義しているため、こちらを削除しても動作しますが、構造保持のため残しています)
   const tabButtons = document.querySelectorAll('.tab-button');
   const langContents = document.querySelectorAll('.lang-text');
 
@@ -178,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
     button.addEventListener('click', () => {
       const answerText = button.nextElementSibling;
       if (answerText) {
-      // クリックされたらhiddenクラスをつけ外し
+        // クリックされたらhiddenクラスをつけ外し
         answerText.classList.toggle('hidden');
       }
     });
