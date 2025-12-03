@@ -83,6 +83,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 再生状態の変化を検知
   function onPlayerStateChange(event) {
+    // デバッグ用ログ: これが出れば main.js は正常です
+    console.log('main.js: Player State Change Detected ->', event.data);
+
     // --- 変更点 2: 既存の字幕ロジックを削除し、contents-6.jsに委譲 ---
     if (window.handlePlayerStateChange) {
       window.handlePlayerStateChange(event);
@@ -96,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log("URLから取得したvideo:", video);
 
     // --- 字幕パスと動画IDの特定方法を変更 ---
-    // NOTE: subtitle_map.jsonをスキップし、特定のファイルパスを直接使用
     const videoId = 'M7lc1UVf-VE'; // デモ動画IDを直接指定
     const subtitlePath = 'json/jimaku/transcript.json'; // 指定されたパスを直接使用
 
@@ -106,16 +108,23 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!res.ok) throw new Error(`字幕JSONが見つかりません: ${res.status}`);
       eventsData = await res.json(); // JSON配列として読み込む
 
+      // データをグローバル変数にセット（重要）
+      window.eventsData = eventsData;
+
       // --- 変更点 3: 初期表示の呼び出しを contents-6.jsに委譲 ---
       if (window.initializeTranscriptDisplay) {
         window.initializeTranscriptDisplay(eventsData);
       }
       // --------------------
-
+      
     } catch (err) {
       console.error(err);
       eventsData = []; // 読み込めなければ空配列
     }
+
+    // 🚨 修正ポイント: 現在のオリジン（URL）を取得 🚨
+    // これにより http://127.0.0.1:5501 などのローカル環境でも通信が許可されます
+    const currentOrigin = window.location.origin;
 
     // YouTubeプレイヤー初期化
     window.onYouTubeIframeAPIReady = function () {
@@ -126,6 +135,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
       ytplayer = new YT.Player('player', {
         videoId: videoId,
+        // 🚨 修正ポイント: host と origin を明示的に設定して通信エラーを防ぐ 🚨
+        host: 'https://www.youtube.com',
+        playerVars: {
+            'origin': currentOrigin, 
+            'enablejsapi': 1,
+            'rel': 0,
+            'playsinline': 1
+        },
         events: {
           onStateChange: onPlayerStateChange,
           onError: function () {
@@ -134,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
       // ytplayerオブジェクトが生成されたら、window.ytplayerも更新
-      window.ytplayer = ytplayer;
+      window.ytplayer = ytplayer; 
     };
   }
 
@@ -146,20 +163,16 @@ document.addEventListener('DOMContentLoaded', function () {
   scriptTag.src = 'https://www.youtube.com/iframe_api';
   document.body.appendChild(scriptTag);
 
-  // 翻訳タブの切り替え機能 (※ contents-6.jsで再定義しているため、こちらを削除しても動作しますが、構造保持のため残しています)
+  // 翻訳タブの切り替え機能
   const tabButtons = document.querySelectorAll('.tab-button');
   const langContents = document.querySelectorAll('.lang-text');
 
   tabButtons.forEach((button, index) => {
     button.addEventListener('click', () => {
-      // 全部のボタンのactiveクラスを削除
       tabButtons.forEach(btn => btn.classList.remove('active'));
-      // クリックしたものにactiveクラスを追加
       button.classList.add('active');
 
-      // すべての翻訳を非表示
       langContents.forEach(content => content.classList.remove('active'));
-      // クリックされたボタンのものだけ表示
       langContents[index].classList.add('active');
     });
   });
@@ -171,7 +184,6 @@ document.addEventListener('DOMContentLoaded', function () {
     button.addEventListener('click', () => {
       const answerText = button.nextElementSibling;
       if (answerText) {
-        // クリックされたらhiddenクラスをつけ外し
         answerText.classList.toggle('hidden');
       }
     });
