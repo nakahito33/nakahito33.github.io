@@ -62,15 +62,15 @@ document.addEventListener('DOMContentLoaded', function () {
     wordbook.forEach(w => { // wordbook配列の要素をひとつづつとりだし、wに代入してループ処理を実行する
       const li = document.createElement("li"); // 新しい<li>をHTMLに作成
       li.textContent = w; // <li>のテキスト内容を現在のwにする
-      list.appendChild(li);
+      list.appendChild(li); // ulタグの中にliタグを作成
     });
   }
 
   // 単語を追加する関数
   function addToWordbook(text) {
-    console.log("クリック検知:", text);
-    if (!wordbook.includes(text)) {
-      wordbook.push(text);
+    console.log("クリック検知:", text); // クリックを検知したら出力
+    if (!wordbook.includes(text)) { // textと同じ単語が存在するかチェック
+      wordbook.push(text); // wordbookの末尾に新しい配列textを追加
       saveWordbook();
       console.log("単語帳に追加:", text);
     }
@@ -134,16 +134,16 @@ document.addEventListener('DOMContentLoaded', function () {
    */
   
   // URLから動画IDなどを取得するヘルパー関数
-  function getVideoFromUrl() {
+  function getVideoFromUrl() { // ここよくわかんないyoutubeのURLを読み込む？
     const params = new URLSearchParams(window.location.search);
     return params.get("video") || "default";
   }
 
-  // プレーヤーの状態変化時（再生・一時停止など）
+  // プレーヤーの状態変化時（再生・一時停止など）が起きたときに実行される
   function onPlayerStateChange(event) {
-    console.log('main.js: Player State Change Detected ->', event.data);
+    console.log('main.js: Player State Change Detected ->', event.data); // 1再生中2一時停止0終了
 
-    // 外部ファイル（contents-6.js等）の関数があれば実行
+    // 外部ファイル（contents-6.js等）の関数があれば実行の
     if (window.handlePlayerStateChange) {
       window.handlePlayerStateChange(event);
     }
