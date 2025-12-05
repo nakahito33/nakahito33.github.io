@@ -10,32 +10,35 @@ const jaTextContainer = document.querySelectorAll('.lang-text')[1]; // 日本語
 const subtitleContainer = document.querySelector('.translation-content'); // スクロールコンテナ
 
 // 状態管理用の変数
-let checkTimeInterval = null;
-let currentLineIndex = -1; 
+let checkTimeInterval = null; // 動画の再生開始に合わせたタイマーIDの保持
+let currentLineIndex = -1; // ハイライトされている字幕の行のインデックス番号の保持
 
 
 /**
  * 1. 全字幕をDOMに描画し、クリックイベントを設定します。
  */
 function initializeTranscriptDisplay(data) {
-    console.log('Transcript Display Initializing...'); 
+    console.log('字幕の描画処理がしっかり開始されています。'); 
     
     // コンテンツをクリア
-    enTextContainer.innerHTML = '';
+    enTextContainer.innerHTML = ''; // 字幕コンテナの中身を空にする（指定されたHTMLの内部にあるものをすべて削除）
     jaTextContainer.innerHTML = '';
-    currentLineIndex = -1;
+    currentLineIndex = -1; // youtubeの状態関数を初期状態に
     
     // 全てのセリフをDOMに事前に描画
-    data.forEach((ev, index) => {
+    data.forEach((ev, index) => { // dataに入っているセリフを一つずつ取り出しforループ開始
+    // evには"speaker"などが、indexには現在処理しているセリフのインデックス番号が入っている
         
         // --- 英語 ---
-        const spanEn = document.createElement('span');
+        const spanEn = document.createElement('span'); // spanタグを生成
         spanEn.textContent = `${ev.speaker ? ev.speaker + ': ' : ''}${ev.text}`;
-        spanEn.dataset.index = index; 
-        spanEn.addEventListener('click', () => {
-             if (window.addToWordbook) window.addToWordbook(ev.text); 
+        spanEn.dataset.index = index; // <span data-index="0">...</span>となる。 
+
+// ここだけちょっと単語帳入ってる
+        spanEn.addEventListener('click', () => { // 字幕に対してクリックしたとき
+             if (window.addToWordbook) window.addToWordbook(ev.text); // クリックされた英語字幕のテキストが単語帳データに保存される。
         });
-        enTextContainer.appendChild(spanEn);
+        enTextContainer.appendChild(spanEn); // 新しい英語字幕の<span>要素をコンテナの末尾に追加する
         
         // --- 日本語 ---
         const spanJa = document.createElement('span');
@@ -55,10 +58,10 @@ function initializeTranscriptDisplay(data) {
 function updateSubtitleSync() {
     if (!window.ytplayer || !window.eventsData || window.ytplayer.getPlayerState() !== window.YT.PlayerState.PLAYING) {
         return;
-    }
+    } // ytplayerオブジェクトがまだ読み込まれてない場合。字幕データが存在しない場合。youtubeが再生中(PLAYING)でない場合。処理を中止する。
 
-    const currentTime = window.ytplayer.getCurrentTime();
-    let activeSubtitleIndex = -1;
+    const currentTime = window.ytplayer.getCurrentTime(); // 動画が再生されてからの秒数を変えす
+    let activeSubtitleIndex = -1; // 動画に対応する字幕データの配列インデックス
 
     // 現在の時間に対応する字幕を探す
     for (let i = 0; i < window.eventsData.length; i++) {

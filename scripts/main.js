@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // YouTube APIが準備できた時に呼ばれる関数を定義
     window.onYouTubeIframeAPIReady = function () {
-      if (!videoId || videoId === "unknown") {
+      if (!videoId || videoId === "unknown") { // 動画IDがない場合の処理
         const playerDiv = document.getElementById('player');
         if(playerDiv) playerDiv.innerHTML = '<p>unknown</p>';
         return;
