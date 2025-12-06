@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ログイン画面</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/hamburger.css">
+  <link rel="stylesheet" href="css/contents-1.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="head">
+      <!-- ハンバーガーメニュ -->
+      <section class="hamburger" id="open_nav">
+        <div class="btn-trigger" id="btn01">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </section>
+      <!-- タイトル -->
+      <div class="title">
+        <h1><a href="index.html">CineLingua</a></h1>
+      </div>
+    </div>
+    <nav class="nav">
+      <!-- ハンバーガーメニューの開いた中身 -->
+    </nav>
+  </header>
+
+  <main>
+    <!-- メインログイン部分 -->
+    <div class="forms-container">
+      <div class="form-section">
+        <h1 class="login-title">ログイン</h1>
+
+        <form id="loginForm">
+          <!-- 入力部分 -->
+          <div class="form-item">
+            <label for="loginEmail">メールアドレス</label>
+            <input type="email" id="loginEmail" name="loginEmail" required>
+          </div>
+          <div class="form-item">
+            <label for="loginPassword">パスワード</label>
+            <input type="password" id="loginPassword" name="loginPassword" required>
+          </div>
+          <!-- ボタン部分 -->
+          <a href="index.html" class="form-button" id="loginButton">ログイン</a>
+        </form>
+
+      </div>
+      
+      <!-- メイン新規登録部分 -->
+      <div class="form-section">
+        <h1 class="register-title">新規登録</h1>
+
+        <form id="registerForm">
+          <!-- 入力部分 -->
+          <div class="form-item">
+            <label for="registerEmail">メールアドレス</label>
+            <input type="email" id="registerEmail" name="registerEmail" required>
+          </div>
+          <div class="form-item">
+            <label for="registerPassword">パスワード</label>
+            <input type="password" id="registerPassword" name="registerPassword" required>
+          </div>
+          <!-- ボタン部分 -->
+          <a href="index.html" class="form-button" id="registerButton">新規登録</a>
+        </form>
+
+      </div>
+
+    </div> 
+
+  </main>
+
+  <!-- フッター -->
+  <footer>
+    <small>🄫CineLingua</small>
+  </footer>
+
+  
+  <!-- ハンバーガーメニューの開いた中身 -->
+  <nav id="nav">
+    <ul>
+      <li class="bo-da-"><a href="index.html">ホーム</a></li>
+      <li class="bo-da-"><a href="contents-1.html">ログイン画面</a></li>
+      <li class="bo-da-"><a href="contents-2.html">コンテンツ2</a></li>
+      <li class="bo-da-"><a href="contents-3.html">コンテンツ3</a></li>
+      <li class="bo-da-"><a href="contents-4.html">コンテンツ4</a></li>
+      <li class="bo-da-"><a href="contents-5.html">コンテンツ5</a></li>
+      <li class="last"><a href="contents-6.html">コンテンツ6</a></li>
+    </ul>
+  </nav>
+
+  
+  <!--  JavaScriptの読み込み -->
+  <script src="scripts/main.js"></script>
+  <script src="scripts/contents-1.js"></script>
+
+</body>
+
+</html>
