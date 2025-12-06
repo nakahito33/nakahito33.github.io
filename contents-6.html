@@ -2,37 +2,39 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CineLingua</title>
-
-    <link rel="stylesheet" href="css/style.css">
-
-    <link rel="stylesheet" href="css/hamburger.css">
-    <link rel="stylesheet" href="css/contents-6.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CineLingua</title>
+  <!--  swiperを追加  -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/hamburger.css">
+  <link rel="stylesheet" href="css/contents-6.css">
 </head>
 
 <body>
 
-    <header>
-        <div class="head">
-            <section class="hamburger" id="open_nav">
-                <div class="btn-trigger" id="btn01">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </section>
-            <div class="title">
-                <h1><a href="index.html">CineLingua</a></h1>
-            </div>
+  <header>
+    <div class="head">
+      <!-- ハンバーガーメニュ -->
+      <section class="hamburger" id="open_nav">
+        <div class="btn-trigger" id="btn01">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <nav class="nav">
-        </nav>
-    </header>
+      </section>
+      <!-- タイトル -->
+      <div class="title">
+        <h1><a href="index.html">字幕付き映画</a></h1>
+      </div>
+    </div>
+    <nav class="nav">
+      <!-- ハンバーガーメニューの開いた中身 -->
+    </nav>
+  </header>
 
-    <main>
+  <main>
 
         <div id="player"></div>
 
@@ -49,30 +51,36 @@
 
     </main>
 
-    <footer class="footer">
-        <small>🄫CineLingua</small>
-    </footer>
+  <!-- フッター -->
+  <footer class="footer">
+    <small>🄫CineLingua</small>
+  </footer>
 
 
 
-    <nav id="nav">
-        <ul>
-            <li class="bo-da-"><a href="index.html">ホーム</a></li>
-            <li class="bo-da-"><a href="contents-1.html">ログイン画面</a></li>
-            <li class="bo-da-"><a href="contents-2.html">映画・洋画</a></li>
-            <li class="bo-da-"><a href="contents-3.html">My単語帳</a></li>
-            <li class="bo-da-"><a href="contents-4.html">辞書</a></li>
-            <li class="bo-da-"><a href="transcript.html">!デモ用翻訳動画!ここ押したら飛ぶ</a></li>
-            <li class="last"><a href="contents-6.html">コンテンツ6</a></li>
-        </ul>
-    </nav>
+  <!-- ハンバーガーメニューの開いた中身 -->
+  <nav id="nav">
+    <ul>
+      <li class="bo-da-"><a href="index.html">ホーム</a></li>
+      <li class="bo-da-"><a href="contents-1.html">映画・洋画</a></li><!-- ログイン画面の追加 -->
+      <li class="bo-da-"><a href="contents-2.html">My単語帳</a></li>
+      <li class="bo-da-"><a href="contents-3.html">辞書</a></li>
+      <li class="bo-da-"><a href="contents-4.html">なし</a></li>
+      <li class="bo-da-"><a href="contents-5.html">なし</a></li>
+      <li class="last"><a href="contents-6.html">字幕付き映画</a></li>
+    </ul>
+  </nav>
 
 
+  <script src="https://www.youtube.com/iframe_api"></script>
 
-    <script src="https://www.youtube.com/iframe_api"></script>
+  <!--  JavaScriptの読み込み -->
+  <script src="scripts/main.js"></script>
+  <!--  swiperを追加  -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+  <!--  JavaScriptの読み込み -->
+  <script src="scripts/contents-6.js"></script>
 
-    <script src="scripts/main.js"></script>
-    <script src="scripts/contents-6.js"></script>
 </body>
 
 
