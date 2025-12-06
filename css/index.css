@@ -5,8 +5,22 @@
 
 
 
-.swiper {
-    padding-top: 40px;
+/* スライド自体の設定 */
+.swiper-slide {
+    height: auto;
+    /* スライド間の隙間調整(HTML1で横幅を調節するとうまくいかなかった) */
+    overflow: hidden; 
+    /* 非アクティブなスライドを少し薄くする場合（お好みで） */
+    transition: opacity 0.3s; 
+    
+}
+
+/* スライド内の画像をレスポンシブにする */
+.swiper-slide img {
+    width: 100%;       /* 親要素(スライド)の幅に合わせる */
+    height: 100%;      /* 高さも合わせる */
+    object-fit: cover; /* 比率を保ってトリミング */
+    vertical-align: bottom; /* 画像下の隙間削除 */
 }
 
 .swiper-pagination-bullet {
@@ -58,4 +72,8 @@ main {
 .container-img {
     padding-left: 40px;
     margin-bottom: 40px;
+}
+
+.container-img img{
+    margin-right: 20px;
 }
