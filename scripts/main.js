@@ -8,19 +8,47 @@
 // 複数の関数からアクセスされる変数を定義
 let ytplayer;
 let eventsData;
+// wordbookのデータ構造をオブジェクトの配列に変更: [{en: 'word', ja: '単語', learned: false}, ...]
 let wordbook = JSON.parse(localStorage.getItem("wordbook") || "[]");
 
 // 変数はここで公開してOK
 window.ytplayer = ytplayer;
 window.eventsData = eventsData;
-// ※ addToWordbook の公開は、関数を作ったあと（下の方）で行います
+// ★ contents-2.jsでデータ操作を行うため、wordbookを公開
+window.wordbook = wordbook; 
+
+// 単語帳に単語を追加する関数 (字幕クリック時に呼ばれることを想定)
+// ※ 日本語訳は不明なので空のまま追加
+function addToWordbook(enText) {
+  if (!enText || typeof enText !== 'string') {
+    return;
+  }
+  
+  // 既に存在するかのチェック (英単語でチェック)
+  const exists = window.wordbook.some(w => w.en && w.en.toLowerCase() === enText.toLowerCase());
+
+  if (!exists) {
+    const newWord = { en: enText, ja: "", learned: false };
+    window.wordbook.push(newWord);
+    
+    // main.jsで公開されている保存関数を呼び出し、再描画をトリガー
+    if (window.saveWordbook) {
+      window.saveWordbook();
+      console.log("単語帳に追加:", newWord);
+    }
+  }
+}
+
+// ★ addToWordbookをグローバルに公開（contents-6.htmlなどから呼び出されるため）
+window.addToWordbook = addToWordbook;
+
 
 // DOM読み込み完了後に各機能を実行
 document.addEventListener('DOMContentLoaded', function () {
 
   /**
    * ============================================================
-   * 1. ハンバーガーメニュー
+   * 1. ハンバーガーメニュー (変更なし)
    * ============================================================
    */
   const openNav = document.getElementById('open_nav');
@@ -44,48 +72,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /**
    * ============================================================
-   * 2. 単語帳生成の部分
+   * 2. 単語帳生成の部分 (contents-2.jsへの移譲のため、ロジックを最小化)
    * ============================================================
    */
+  
   // 単語帳をローカルストレージに保存
+  // contents-2.jsがデータを操作した後、この関数を呼び出す。
   function saveWordbook() {
     localStorage.setItem("wordbook", JSON.stringify(wordbook));
-    renderWordbook();
-  }
-
-  // 単語帳リストを画面に描画
-  function renderWordbook() {
-    const list = document.getElementById("wordbook-list"); // id=wordbook-listであるもの、<ul>をlistに格納する
-    if (!list) return; // エラー防止
-
-    list.innerHTML = ""; // 既存のリストの初期化
-    wordbook.forEach(w => { // wordbook配列の要素をひとつづつとりだし、wに代入してループ処理を実行する
-      const li = document.createElement("li"); // 新しい<li>をHTMLに作成
-      li.textContent = w; // <li>のテキスト内容を現在のwにする
-      list.appendChild(li); // ulタグの中にliタグを作成
-    });
-  }
-
-  // 単語を追加する関数
-  function addToWordbook(text) {
-    console.log("クリック検知:", text); // クリックを検知したら出力
-    if (!wordbook.includes(text)) { // textと同じ単語が存在するかチェック
-      wordbook.push(text); // wordbookの末尾に新しい配列textを追加
-      saveWordbook();
-      console.log("単語帳に追加:", text);
+    
+    // contents-2.jsで定義された描画関数を呼び出し、再描画を委譲
+    if (window.renderWordbook) {
+      window.renderWordbook(); 
     }
   }
 
-  // 修正箇所：関数が定義されたので、ここで外部に公開します
-  window.addToWordbook = addToWordbook;
+  // 単語帳リストを画面に描画 (contents-2.jsで上書きされるため、内容は空でOK)
+  function renderWordbook() {
+    // 描画ロジックは contents-2.js へ移動
+  }
 
-  // 初期表示時に単語帳を描画
-  renderWordbook();
+  // ★ saveWordbook と renderWordbook をグローバルに公開 (contents-2.jsで利用・上書きするため)
+  window.saveWordbook = saveWordbook;
+  window.renderWordbook = renderWordbook; 
+
+  // 初期表示時の単語帳描画処理は削除 (contents-2.jsに移譲)
 
 
   /**
    * ============================================================
-   * 3. 翻訳タブの切り替え
+   * 3. 翻訳タブの切り替え (変更なし)
    * ============================================================
    */
   const tabButtons = document.querySelectorAll('.tab-button');
@@ -111,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /**
    * ============================================================
-   * 4. クイズの答え表示機能
+   * 4. クイズの答え表示機能 (変更なし)
    * ============================================================
    */
   const answerButtons = document.querySelectorAll('.answer-button');
@@ -129,19 +145,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /**
    * ============================================================
-   * 5. YouTubeの字幕表示＆それに付随した機能
+   * 5. YouTubeの字幕表示＆それに付随した機能 (変更なし)
    * ============================================================
    */
   
   // URLから動画IDなどを取得するヘルパー関数
-  function getVideoFromUrl() { // ここよくわかんないyoutubeのURLを読み込む？
+  function getVideoFromUrl() {
     const params = new URLSearchParams(window.location.search);
     return params.get("video") || "default";
   }
 
   // プレーヤーの状態変化時（再生・一時停止など）が起きたときに実行される
   function onPlayerStateChange(event) {
-    console.log('main.js: Player State Change Detected ->', event.data); // 1再生中2一時停止0終了
+    console.log('main.js: Player State Change Detected ->', event.data);
 
     // 外部ファイル（contents-6.js等）の関数があれば実行の
     if (window.handlePlayerStateChange) {
@@ -199,8 +215,8 @@ document.addEventListener('DOMContentLoaded', function () {
         events: {
           onStateChange: onPlayerStateChange,
           onError: function () {
-             const playerDiv = document.getElementById('player');
-             if(playerDiv) playerDiv.innerHTML = '<p>Error loading player</p>';
+              const playerDiv = document.getElementById('player');
+              if(playerDiv) playerDiv.innerHTML = '<p>Error loading player</p>';
           }
         }
       });
