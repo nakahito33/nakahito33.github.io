@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CineLingua</title>
+  <title>単語帳</title>
   <!--  swiperを追加  -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/style.css">
@@ -34,78 +34,16 @@
     </nav>
   </header>
 
-  <!-- 上部の画像がスライドしているところ -->
-  <div class="swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="images/Google.png" alt="" width="320" height="213" />
-      </div>
-      <div class="swiper-slide">
-        <img src="images/不思議の国のアリス.jpg" alt="" width="320" height="213" />
-      </div>
-      <div class="swiper-slide">
-        <img src="images/風と共に去りぬ.jpg" alt="" width="320" height="213" />
-      </div>
-      <div class="swiper-slide">
-        <img src="images/Google.png" alt="" width="320" height="213" />
-      </div>
-      <div class="swiper-slide">
-        <img src="images/不思議の国のアリス.jpg" alt="" width="320" height="213" />
-      </div>
-      <div class="swiper-slide">
-        <img src="images/風と共に去りぬ.jpg" alt="" width="320" height="213" />
-      </div>
-    </div>
-    <!-- ページネーション -->
-    <div class="swiper-pagination"></div>
-    <!-- 前後の矢印 -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
+  <body>
+    <ul id="wordbook-list"></ul>
 
-  <main>
-    <!-- おすすめ -->
-    <div class="container">
-      <h1>おすすめ</h1>
-      <div class="container-img">
-        <a href="contents-6.html?video=transcript"><img src="images/Google.png" alt="" width="213" height="142" /></a>
-        <a href="contents-6.html?video=alice"><img src="images/不思議の国のアリス.jpg" alt="" width="213" height="142" /></a>
-        <img src="images/風と共に去りぬ.jpg" alt="" width="213" height="142" />
-      </div>
-    </div>
+    <script>
+    </script>
+    <!--  JavaScriptの読み込み -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/contents-3.js"></script>
 
-    <!-- レベル別 -->
-    <div class="container">
-      <h1>レベル別洋画</h1>
-      <h2>優しい</h2>
-      <div class="container-img">
-        <a href="contents-6.html?video=transcript"><img src="images/Google.png" alt="" width="213" height="142" /></a>
-        <a href="contents-6.html?video=alice"><img src="images/不思議の国のアリス.jpg" alt="" width="213" height="142" /></a>
-        <img src="images/風と共に去りぬ.jpg" alt="" width="213" height="142" />
-      </div>
-      <h2>普通</h2>
-      <div class="container-img">
-        <a href="contents-6.html?video=transcript"><img src="images/Google.png" alt="" width="213" height="142" /></a>
-        <a href="contents-6.html?video=alice"><img src="images/不思議の国のアリス.jpg" alt="" width="213" height="142" /></a>
-        <img src="images/風と共に去りぬ.jpg" alt="" width="213" height="142" />
-      </div>
-      <h2>難しい</h2>
-      <div class="container-img">
-        <a href="contents-6.html?video=transcript"><img src="images/Google.png" alt="" width="213" height="142" /></a>
-        <a href="contents-6.html?video=alice"><img src="images/不思議の国のアリス.jpg" alt="" width="213" height="142" /></a>
-        <img src="images/風と共に去りぬ.jpg" alt="" width="213" height="142" />
-      </div>
-    </div>
-
-    <!-- ランキング -->
-    <div class="container">
-      <h1>ランキング</h1>
-      <div class="container-img">
-        <a href="contents-6.html?video=transcript"><img src="images/Google.png" alt="" width="213" height="142" /></a>
-        <a href="contents-6.html?video=alice"><img src="images/不思議の国のアリス.jpg" alt="" width="213" height="142" /></a>
-        <img src="images/風と共に去りぬ.jpg" alt="" width="213" height="142" />
-      </div>
-  </main>
+  </body>
 
   <!-- フッター -->
   <footer class="footer">
@@ -118,12 +56,12 @@
   <nav id="nav">
     <ul>
       <li class="bo-da-"><a href="index.html">ホーム</a></li>
-      <li class="bo-da-"><a href="contents-1.html">ログイン画面</a></li><!-- ログイン画面の追加 -->
-      <li class="bo-da-"><a href="contents-2.html">映画・洋画</a></li>
-      <li class="bo-da-"><a href="contents-3.html">My単語帳</a></li>
-      <li class="bo-da-"><a href="contents-4.html">辞書</a></li>
-      <li class="bo-da-"><a href="contents-5.html">コンテンツ5</a></li>
-      <li class="last"><a href="contents-6.html">コンテンツ6</a></li>
+      <li class="bo-da-"><a href="contents-1.html">映画・洋画</a></li><!-- ログイン画面の追加 -->
+      <li class="bo-da-"><a href="contents-2.html">My単語帳</a></li>
+      <li class="bo-da-"><a href="contents-3.html">辞書</a></li>
+      <li class="bo-da-"><a href="contents-4.html">なし</a></li>
+      <li class="bo-da-"><a href="contents-5.html">なし</a></li>
+      <li class="last"><a href="contents-6.html">字幕付き映画</a></li>
     </ul>
   </nav>
 
@@ -131,7 +69,7 @@
   <!--  JavaScriptの読み込み -->
   <script src="scripts/main.js"></script>
   <!--  swiperを追加  -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
   <!--  JavaScriptの読み込み -->
   <script src="scripts/contents-2.js"></script>
 
