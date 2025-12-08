@@ -11,7 +11,7 @@
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/hamburger.css">
-  <!-- <link rel="stylesheet" href="css/必要なCSS"> -->
+  <link rel="stylesheet" href="css/contents-3.css">
 </head>
 
 <body>
@@ -37,7 +37,27 @@
   </header>
 
   <main>
-    <!-- メインを書く -->
+    <div class="dictionary-container">
+        <section class="search-section">
+            <h2>英単語辞書検索</h2>
+            <form id="dictionary-form" action="#">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    name="word" 
+                    placeholder="ここに検索したい英単語を入力" 
+                    required
+                >
+                <button type="submit" id="search-button">検索</button>
+            </form>
+        </section>
+        
+        <section class="results-section">
+            <div id="search-results">
+                <p class="initial-message">検索したい単語を入力して、「検索」ボタンを押してください。</p>
+            </div>
+        </section>
+    </div>
   </main>
 
   <!-- フッター -->
@@ -63,7 +83,7 @@
   <!--  swiperを追加  -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
   <!--  JavaScriptの読み込み -->
-  <!-- <script src="scripts/必要なJS"></script> -->
+  <script src="scripts/contents-3.js"></script>
 
 </body>
 
