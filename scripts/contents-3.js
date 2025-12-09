@@ -50,12 +50,6 @@ function renderDictionaryResult(data) {
  * @returns {Promise<object>} - 辞書データのPromise。
  */
 async function fetchDictionaryData(word) {
-    // 検索単語に応じてAIエージェントが結果を生成
-    let result = await google.search({queries: [`英語 ${word} の定義、品詞、例文3つ、類義語と反意語`]});
-    
-    // ここでGoogle Searchの結果を解析し、構造化されたデータに変換する処理を実装する必要があります。
-    // 現状では、AIアシスタントである私自身が、直接構造化されたデータを生成します。
-
     // 検索結果を私のAIエージェント機能で生成
     let aiResponse = await generateDictionaryResponse(word);
     
@@ -69,49 +63,45 @@ async function generateDictionaryResponse(word) {
     // 検索単語を小文字に統一
     const lowerWord = word.toLowerCase().trim();
 
-    // 実際のアプリケーションでは、ここで外部API (例: Google Gemini API) を呼び出します。
+    // 実際のアプリケーションでは、ここで外部APIを呼び出します。
     // ここでは、私（Gemini）がそのAPIの応答をシミュレートします。
     
-    // 例外的な単語の模擬データ (実際にはAIが生成)
-    if (lowerWord === 'resilient') {
+    // 1. デモ単語: everybody
+    if (lowerWord === 'everybody') {
         return {
-            word: "Resilient",
-            definition: "困難、圧力、または予期せぬ変化から、すぐに立ち直る、回復力のある、弾力性のある。",
-            partOfSpeech: "形容詞",
+            word: "Everybody",
+            definition: "すべての人。すべての者。一般的な意味で、グループ全体を指す。",
+            partOfSpeech: "代名詞 (Pronoun)",
             examples: [
-                "Despite the major setback, the team proved to be resilient and finished the project on time.",
-                "The local economy is surprisingly resilient to global market fluctuations.",
-                "Children are often more resilient than adults give them credit for."
+                "Everybody seems happy about the long weekend.",
+                "Please make sure everybody has a copy of the report.",
+                "Is everybody ready to start the presentation?"
             ],
-            synonyms: ["Flexible", "Tough", "Hardy", "Buoyant"],
-            antonyms: ["Fragile", "Vulnerable", "Weak"]
+            synonyms: ["Everyone", "All", "Each and every person"],
+            antonyms: ["Nobody", "No one"]
         };
-    } else if (lowerWord === 'elucidate') {
+    } 
+    // 2. デモ単語: welcome
+    else if (lowerWord === 'welcome') {
          return {
-            word: "Elucidate",
-            definition: "何かをより明確に説明すること、特に複雑な問題を詳細に解き明かすこと。",
-            partOfSpeech: "動詞",
+            word: "Welcome",
+            definition: "（動詞）誰かを歓迎する。（形容詞）歓迎される、喜ばれる。（間投詞）挨拶。",
+            partOfSpeech: "動詞 / 形容詞 / 間投詞",
             examples: [
-                "The professor was asked to elucidate the core concepts of quantum physics.",
-                "Could you please elucidate the process for filing a tax return?",
-                "Historical documents can often elucidate the motivations of political leaders."
+                "We welcome constructive criticism from our users. (動詞)",
+                "The cool rain was a welcome relief after the long dry spell. (形容詞)",
+                "Welcome to the CineLingua dictionary! (間投詞)"
             ],
-            synonyms: ["Clarify", "Explain", "Illuminate", "Explicate"],
-            antonyms: ["Obscure", "Confuse", "Complicate"]
+            synonyms: ["Greet", "Receive", "Accept", "Pleasant"],
+            antonyms: ["Reject", "Exclude", "Unwanted"]
         };
-    } else {
-        // AIエージェントに直接問い合わせる（複雑な単語処理はAIに任せる）
-        const query = `英単語 '${word}' の定義、品詞、例文2つ、類義語と反意語を日本語で簡潔に解説してください。`;
-        const result = await google.search({queries: [query]});
-        
-        // 外部検索の結果は整形が必要ですが、ここではユーザーに返すために一旦整形をスキップします。
-        // ※ 実際のアプリでは、ここで外部検索結果をパースし、renderDictionaryResultに渡せる形式に変換する必要があります。
-
-        // 検索結果を直接表示する代替ロジック
+    } 
+    // 3. その他の単語 (フォールバック)
+    else {
          return {
             word: word,
-            definition: result, // 検索結果の生テキストを定義として表示
-            partOfSpeech: "N/A",
+            definition: "現在、デモ単語 ('everybody', 'welcome') 以外の検索は、情報が登録されていないため行えません。（デモ中）",
+            partOfSpeech: "情報なし",
             examples: [],
             synonyms: [],
             antonyms: []
