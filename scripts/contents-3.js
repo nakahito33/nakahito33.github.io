@@ -12,7 +12,7 @@ let dictionaryData = null;
  */
 async function loadDictionary() {
     try {
-        const response = await fetch('json/words.json');
+        const response = await fetch('json/dictionary/words.json');
         if (!response.ok) throw new Error('辞書データが見つかりません');
         dictionaryData = await response.json();
     } catch (error) {
