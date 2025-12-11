@@ -1,61 +1,138 @@
-@charset "UTF-8";
+/* contents-2.css */
+/* 単語帳のCSSを書きたい */
 
-/* Google Fontsを読み込む */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
-
-
-
-.swiper {
-    padding-top: 40px;
+/* 単語追加フォームのスタイル */
+.add-word-form {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border: 1px solid #e0e0e0;
 }
 
-.swiper-pagination-bullet {
-  background: #ffc9a3;/* ページネーションの色 */
+.add-word-form h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ffc9a3;
+  padding-bottom: 5px;
 }
 
-.swiper-pagination-bullet-active {
-  background: #ff8b5e;/* ページネーションの色 */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
-.swiper-button-prev, .swiper-button-next {
-  color: #ff8b5e; /* 矢印の色 */
+.input-group input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
-/* main部分ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-/* main {
-    width: 95%;
-    max-width: 1200px;
-    margin: 24px auto;
-    overflow-x: hidden; 横スクロールを無効化
-    display: flex;
-}
-/* main部分ーおすすめ 
-.container-img {
-    overflow-x: scroll; スクロール
-    gap: 16px;
-    padding-bottom: 20px;width: 100%;
+#add-word-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff8b5e; /* main.jsのボタンに合わせた色 */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
 }
 
-.container-img::-webkit-scrollbar {
-    display: none;スクロールバーを隠す
+#add-word-button:hover {
+  background-color: #d9480f;
 }
 
-.container-img {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-} */
-/* おすすめ部分の画像をスクロールさせたいんだけど、マジできないーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-main {
-    display: block;
+
+/* 単語リストのスタイル */
+#wordbook-list {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 0;
+  list-style: none;
 }
 
-.container {
-    width: 80%;
-    border-bottom: solid 2px #ffc9a3;
-    margin: 0 auto;
+.word-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  transition: background-color 0.2s;
 }
 
-.container-img {
-    padding-left: 40px;
-    margin-bottom: 40px;
+.word-item.learned {
+  /* 記憶済みの単語のスタイル */
+  background-color: #e6ffe6; /* 薄い緑 */
+  border-left: 5px solid #4CAF50; /* 緑の強調線 */
+  opacity: 0.8;
+}
+
+.word-text {
+  display: flex;
+  gap: 15px;
+  flex-grow: 1;
+  background: pink;
+}
+
+.english {
+  font-weight: bold;
+  color: #333;
+}
+
+.japanese {
+  color: #666;
+}
+
+.word-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.learned-button {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #f0f0f0;
+  transition: background-color 0.2s;
+}
+
+.word-item.learned .learned-button {
+  background-color: #4CAF50;
+  color: #fff;
+  border-color: #4CAF50;
+}
+
+.delete-button {
+  background-color: #ff6666;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 30px;
+  height: 30px;
+  line-height: 1;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.delete-button:hover {
+  background-color: #cc0000;
+}
+
+.empty-list-message {
+  text-align: center;
+  color: #999;
+  padding: 20px;
 }

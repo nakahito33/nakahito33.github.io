@@ -1,16 +1,16 @@
-<!-- contents-2.html -->
+<!-- contents-6.html -->
 <!doctype html>
 <html>
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>単語帳</title>
+  <title>字幕付き動画</title>
   <!--  swiperを追加  -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/hamburger.css">
-  <link rel="stylesheet" href="css/contents-2.css">
+  <link rel="stylesheet" href="css/contents-6.css">
 </head>
 
 <body>
@@ -35,22 +35,28 @@
     </nav>
   </header>
 
-  <div class="add-word-form">
-    <h2>単語の追加</h2>
-    <div class="input-group">
-      <input type="text" id="input-english" placeholder="英語 (English)">
-      <input type="text" id="input-japanese" placeholder="日本語 (Japanese)">
-    </div>
-    <button id="add-word-button">単語を追加</button>
-  </div>
+  <main>
 
-  <ul id="wordbook-list"></ul>
+        <div id="player"></div>
 
+        <div class="translation-section">
+            <div class="language-tabs">
+                <button class="tab-button active">英語</button>
+                <button class="tab-button">日本語</button>
+            </div>
+            <div class="translation-content">
+                <div class="lang-text active"></div>
+                <div class="lang-text"></div>
+            </div>
+        </div>
+
+    </main>
 
   <!-- フッター -->
   <footer class="footer">
     <small>🄫CineLingua</small>
   </footer>
+
 
 
   <!-- ハンバーガーメニューの開いた中身 -->
@@ -64,10 +70,16 @@
   </nav>
 
 
+  <script src="https://www.youtube.com/iframe_api"></script>
+
   <!--  JavaScriptの読み込み -->
   <script src="scripts/main.js"></script>
-  <script src="scripts/contents-2.js"></script>
+  <!--  swiperを追加  -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+  <!--  JavaScriptの読み込み -->
+  <script src="scripts/contents-6.js"></script>
 
 </body>
+
 
 </html>

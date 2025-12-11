@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+/* =======================================
+   CineLingua コンテンツ3 (辞書) 用スタイル
+   ======================================= */
+
+/* 辞書全体のコンテナ */
+.dictionary-container {
+    /* 辞書ページでは、メインコンテンツを左右に分割する代わりに中央に配置します */
+    width: 100%;
+    /* mainのCSSで設定された左右のgapを無視し、子要素を中央に配置 */
+}
+
+/* 検索フォームセクション (quiz-sectionのデザインを流用) */
+.search-section {
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px; /* 結果エリアとの間にスペースを確保 */
+    border: 1px solid #e0e0e0;
+}
+
+.search-section h2 {
+    font-size: 22px;
+    border-bottom: 2px solid #ffc9a3;
+    padding-bottom: 8px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+#dictionary-form {
+    display: flex;
+    gap: 10px;
+}
+
+#search-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none; /* フォーカス時のデフォルト枠線を削除 */
+    transition: border-color 0.3s;
+}
+
+#search-input:focus {
+    border-color: #ff8b5e; /* フォーカス時にブランドカラーを適用 */
+}
+
+#search-button {
+    /* answer-buttonのスタイルを流用 */
+    background-color: #ff8b5e;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+#search-button:hover {
+    opacity: 0.8;
+}
+
+/* 検索結果表示エリア */
+.results-section {
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    min-height: 250px; /* ある程度の高さを確保 */
+}
+
+/* 検索結果の個々の項目 */
+#search-results h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 1px dotted #e0e0e0;
+    padding-bottom: 5px;
+}
+
+/* 品詞 */
+.part-of-speech {
+    display: inline-block;
+    background-color: #ffc9a3; /* ブランドのサブカラー */
+    color: #333;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+/* 定義リスト */
+dl {
+    margin: 20px 0;
+    padding-left: 15px;
+    border-left: 3px solid #ff8b5e; /* ブランドカラーの縦線 */
+}
+
+dt {
+    font-weight: 700;
+    color: #555;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+dd {
+    margin-left: 0;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* 例文のリスト */
+.example-sentences ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.example-sentences li {
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    border-left: 4px solid #e0e0e0;
+}
+
+/* 類義語・反意語セクション */
+.synonyms-antonyms {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px dashed #e0e0e0;
+}
+
+.synonyms-antonyms p {
+    margin-top: 10px;
+    line-height: 1.8;
+}
+
+.synonyms-antonyms strong {
+    color: #ff8b5e;
+}
+
+/* 初期のメッセージ */
+.initial-message {
+    color: #777;
+    padding: 15px;
+    text-align: center;
+}

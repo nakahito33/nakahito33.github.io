@@ -1,2797 +1,2798 @@
 [
   {
-    "speaker": "",
-    "text": "JEFF POSNICK: Hey, everybody.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "Hey, everybody.",
+    "translated": "皆さん、こんにちは。",
     "start": 10.349
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Welcome to this week's show of\nYouTube Developers Live.",
-    "translated": "",
+    "translated": "今週のYouTube Developers Liveへようこそ。",
     "start": 11.349
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "I'm Jeff Posnick coming to\nyou from New York City.",
-    "translated": "",
+    "translated": "私はニューヨーク市からお送りしているジェフ・ポスニックです。",
     "start": 14.03
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "I'm a member of the Developer\nRelations team.",
-    "translated": "",
+    "translated": "デベロッパーリレーションズチームの一員です。",
     "start": 16.18
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And this week I'm really excited\nto talk to you about",
-    "translated": "",
+    "translated": "そして今週は、皆さんに",
     "start": 19.42
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "different ways of customizing\nthe YouTube-embedded player.",
-    "translated": "",
+    "translated": "YouTube埋め込みプレイヤーをカスタマイズするさまざまな方法についてお話しできることを大変嬉しく思っています。",
     "start": 21.49
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Before I get started though, I\nwant a couple of ground rules",
-    "translated": "",
+    "translated": "しかし、始める前に、いくつかの基本ルールについてお話ししたいと思います。",
     "start": 24.54
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "to just talk about what we're\ngoing to be covering in",
-    "translated": "",
+    "translated": "今日の番組で何を扱うのかについてです。",
     "start": 28.029
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "today's show.",
-    "translated": "",
+    "translated": "今日の番組で何を扱うのかについてです。",
     "start": 31.539
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "There are a lot of different\nembedded players, and there's",
-    "translated": "",
+    "translated": "埋め込みプレイヤーには多くの種類があり、",
     "start": 32.539
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "lots of ways to customize\nthem.",
-    "translated": "",
+    "translated": "それらをカスタマイズする方法もたくさんあります。",
     "start": 34.399
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "But for this particular show,\nwe're going to be focusing on",
-    "translated": "",
+    "translated": "しかし、この特定の番組では、",
     "start": 36.8
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "customizing be iframe-embedded\nplayer, which is our current",
-    "translated": "",
+    "translated": "iframe埋め込みプレイヤーのカスタマイズに焦点を当てます。これは現在、",
     "start": 39.92
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "recommended way of embedding\nvideos on web pages.",
-    "translated": "",
+    "translated": "ウェブページに動画を埋め込むための推奨される方法です。",
     "start": 45.17
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And we're going to specifically\nfocus on the",
-    "translated": "",
+    "translated": "そして、特に焦点を当てるのは、",
     "start": 48.699
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "options that are most relevant\nfor desktop web browsers.",
-    "translated": "",
+    "translated": "デスクトップウェブブラウザに最も関連性の高いオプションです。",
     "start": 50.219
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "A lot of these customization\noptions we'll talk about do",
-    "translated": "",
+    "translated": "私たちが話すこれらのカスタマイズオプションの多くは、",
     "start": 54.899
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "have some effect with mobile\nbrowser playback, but not all",
-    "translated": "",
+    "translated": "モバイルブラウザでの再生にもある程度の効果がありますが、すべてではありません。",
     "start": 58.17
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "of them do.",
-    "translated": "",
+    "translated": "すべてではありません。",
     "start": 62.159
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And we're going to just focus\ntoday on how these options",
-    "translated": "",
+    "translated": "そして今日は、これらのオプションが",
     "start": 63.159
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "affect desktop playback.",
-    "translated": "",
+    "translated": "デスクトップ再生にどのように影響するかだけに焦点を当てます。",
     "start": 66.5
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Another thing that we're not\ngoing to be covering today is",
-    "translated": "",
+    "translated": "今日扱わないもう一つのことは、",
     "start": 68.6
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "using the JavaScript API for\ncontrolling playback.",
-    "translated": "",
+    "translated": "再生を制御するためのJavaScript APIの使用です。",
     "start": 70.88
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "This is obviously a very\ninteresting topic and a very",
-    "translated": "",
+    "translated": "これは明らかに非常に興味深く、非常に",
     "start": 75.1
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "important topic, it's just a\nlittle bit outside the scope",
-    "translated": "",
+    "translated": "重要なトピックですが、私たちが話したい範囲から少し外れています。",
     "start": 76.84
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "of what we wanted\nto talk about.",
-    "translated": "",
+    "translated": "私たちが話したい範囲から少し外れています。",
     "start": 78.76
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So we're not going to be\ncovering any of the methods",
-    "translated": "",
+    "translated": "したがって、JavaScriptで使用できるメソッドは扱いません。",
     "start": 80.53
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "that you could use in JavaScript\nto start playback",
-    "translated": "",
+    "translated": "再生を開始したり、",
     "start": 83.14
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "or control playback, or receive\nevents when playback",
-    "translated": "",
+    "translated": "再生を制御したり、再生の変更時にイベントを受け取ったりするためにJavaScriptで使用できるメソッドは扱いません。",
     "start": 85.28
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "changes happen in the player.",
-    "translated": "",
+    "translated": "再生の変更時にイベントを受け取ったりするためにJavaScriptで使用できるメソッドは扱いません。",
     "start": 89.37
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "What we are going to be covering\nis things that are",
-    "translated": "",
+    "translated": "私たちが扱うのは、",
     "start": 91.28
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "covered in the documentation\non the specific page, so if",
-    "translated": "",
+    "translated": "特定のページにあるドキュメントで説明されている事柄です。したがって、",
     "start": 93.829
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "you pull that up, we'll\nshare that with you.",
-    "translated": "",
+    "translated": "もしそれをご覧いただければ、共有します。",
     "start": 98.039
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And as I'm going through this\ndemo, a lot of what I'm going",
-    "translated": "",
+    "translated": "そして、このデモを進めるにあたり、私が扱うことの多くは、",
     "start": 101.32
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "to be covering refers to\nspecific web pages.",
-    "translated": "",
+    "translated": "特定のウェブページを参照しています。",
     "start": 104.759
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "When we go back and post this\nvideo on YouTube, I'll have",
-    "translated": "",
+    "translated": "私たちがこの動画をYouTubeに投稿する際には、",
     "start": 107.259
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "annotations linking to all the\nweb pages, so that you could",
-    "translated": "",
+    "translated": "すべてのウェブページへのリンクを示すアノテーションを付けますので、",
     "start": 110.25
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "go there and check them\nout yourself.",
-    "translated": "",
+    "translated": "そこに行って自分で確認することができます。",
     "start": 112.619
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So this is our main jumping off\npoint for talking about",
-    "translated": "",
+    "translated": "これが、",
     "start": 116.95
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "the customization that\nyou could do to the",
-    "translated": "",
+    "translated": "皆さんがYouTube埋め込みiframeプレイヤーに対して行えるカスタマイズについて話すための主な出発点です。",
     "start": 120.909
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "YouTube-embedded\niframe player.",
-    "translated": "",
+    "translated": "YouTube埋め込みiframeプレイヤーに対して行えるカスタマイズについて話すための主な出発点です。",
     "start": 123.06
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And you could get here from\nour main Developers.Googl",
-    "translated": "",
+    "translated": "そして、ここには、私たちのメインのDevelopers.Google.com/YouTubeのドキュメントからアクセスできます。",
     "start": 126.59
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "e.com/YouTubedocumentation.",
-    "translated": "",
+    "translated": "Developers.Google.com/YouTubeのドキュメントからアクセスできます。",
     "start": 129.91
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And everything in this parameter\nsection in the docks",
-    "translated": "",
+    "translated": "そして、ドキュメントのこのパラメータセクションにあるすべてが、今から話すことの対象となります。",
     "start": 133.08
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "is fair game for what we're\ngoing to talk about now.",
-    "translated": "",
+    "translated": "今から話すことの対象となります。",
     "start": 137.471
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "One other thing before I\nactually get into explaining",
-    "translated": "",
+    "translated": "実際にこれらのパラメータの説明に入る前にもう一つ、",
     "start": 140.96
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "these parameters is explain\nthe two different types of",
-    "translated": "",
+    "translated": "これらのパラメータを説明する前にもう一つ、iframe埋め込みプレイヤーを",
     "start": 144.33
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "ways that you can load the\niframe-embedded player onto",
-    "translated": "",
+    "translated": "皆さんのウェブページに読み込むことができる2つの異なる方法について説明します。",
     "start": 146.75
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "your web page.",
-    "translated": "",
+    "translated": "皆さんのウェブページに読み込むことができる2つの異なる方法について説明します。",
     "start": 151.01
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And we're kind of agnostic as\nto the way in which you load",
-    "translated": "",
+    "translated": "そして、皆さんがそれを読み込む方法については、私たちはどちらでも構いません。これらのパラメータは、",
     "start": 152.79
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "it, these parameters are going\nto behave the same way",
-    "translated": "",
+    "translated": "これらのパラメータは、どちらの方法でも同じように動作します。",
     "start": 155.58
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "regardless.",
-    "translated": "",
+    "translated": "どちらの方法でも同じように動作します。",
     "start": 157.41
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "But I just wanted to point out\nthat there are two different",
-    "translated": "",
+    "translated": "しかし、2つの異なる方法があるということを指摘しておきたかっただけです。",
     "start": 158.41
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "ways of doing it.",
-    "translated": "",
+    "translated": "2つの異なる方法があるということを指摘しておきたかっただけです。",
     "start": 160.39
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "The first way is using the\niframes kind of like YouTube",
-    "translated": "",
+    "translated": "最初の方法は、iframeのYouTubeプレイヤーのような",
     "start": 162.52
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "player, YT.",
-    "translated": "",
+    "translated": "プレイヤー、つまり、YT.",
     "start": 168.08
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Player constructor.",
-    "translated": "",
+    "translated": "Playerコンストラクターを使用する方法です。",
     "start": 169.72
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And this is a more programmatic\nway of loading",
-    "translated": "",
+    "translated": "そして、これはiframeプレイヤーを",
     "start": 170.72
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "the iframe player onto\nyour web page.",
-    "translated": "",
+    "translated": "皆さんのウェブページに読み込む、よりプログラム的な方法です。",
     "start": 173.22
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So I have this jsFiddle right\nhere that demonstrates what",
-    "translated": "",
+    "translated": "それで、ここにその様子を示すjsFiddleを用意しました。",
     "start": 174.93
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "that will look like.",
-    "translated": "",
+    "translated": "その様子を示すjsFiddleを用意しました。",
     "start": 178.05
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "It basically involves loading\nin this JavaScript API and",
-    "translated": "",
+    "translated": "基本的に、このJavaScript APIを読み込み、",
     "start": 179.79
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "calling the YT.",
-    "translated": "",
+    "translated": "YT.",
     "start": 183.98
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Player constructor, and passing\nin the ID of a div",
-    "translated": "",
+    "translated": "Playerコンストラクターを呼び出し、ページ上にあるdivのIDを渡すというものです。",
     "start": 185.08
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "that's on your page.",
-    "translated": "",
+    "translated": "ページ上にあるdivのIDを渡すというものです。",
     "start": 188.14
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And you'll see here that there\nis this playerVars section",
-    "translated": "",
+    "translated": "そして、ここにはYT.",
     "start": 190.49
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "that you could pass\nin to the YT.",
-    "translated": "",
+    "translated": "Playerコンストラクターに渡すことができるplayerVarsセクションがあることがわかります。",
     "start": 193.6
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Player constructors.",
-    "translated": "",
+    "translated": "Playerコンストラクターに渡すことができるplayerVarsセクションがあることがわかります。",
     "start": 195.49
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So this is where you get to\nspecify all the options that",
-    "translated": "",
+    "translated": "ですから、YT.",
     "start": 196.49
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "we're going to be covering today\nif you're using the YT.",
-    "translated": "",
+    "translated": "Playerコンストラクターを使用している場合、今日扱うすべてのオプションを指定できるのがここです。",
     "start": 199.48
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "PLayer constructor.",
-    "translated": "",
+    "translated": "Playerコンストラクターを使用している場合、今日扱うすべてのオプションを指定できるのがここです。",
     "start": 201.65
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And just quickly jumping over\nhere, this is where I stole",
-    "translated": "",
+    "translated": "そして、ここにすぐに飛び移ると、これは私がiframe APIの",
     "start": 203.16
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "that code from in our Getting\nStarted guide",
-    "translated": "",
+    "translated": "Getting Startedガイドからそのコードを拝借した場所です。",
     "start": 207.07
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "for the iframe API.",
-    "translated": "",
+    "translated": "iframe APIのGetting Startedガイドからそのコードを拝借した場所です。",
     "start": 210.22
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "We talk about how you could\nactually get that code.",
-    "translated": "",
+    "translated": "実際にそのコードをどのように取得できるかについて説明しています。",
     "start": 212.77
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So feel free to borrow it there\nor from that jsFiddle.",
-    "translated": "",
+    "translated": "ですから、そちらからでも、このjsFiddleからでも、ご自由に借用してください。",
     "start": 216.93
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "The second way that you load\nthe iframe player onto your",
-    "translated": "",
+    "translated": "iframeプレイヤーをページに読み込む2番目の方法は、",
     "start": 220.2
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "page is just with a simple\niframe tag that you could add",
-    "translated": "",
+    "translated": "皆さんが任意のウェブページに追加できるシンプルなiframeタグを使用する方法です。",
     "start": 221.95
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "to any web page.",
-    "translated": "",
+    "translated": "皆さんが任意のウェブページに追加できるシンプルなiframeタグを使用する方法です。",
     "start": 225.37
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And this has the same sort of\nparameters that the YT.",
-    "translated": "",
+    "translated": "そして、これはYT.",
     "start": 227.74
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Player constructor is,\nkind under the hood.",
-    "translated": "",
+    "translated": "Playerコンストラクターが内部的に持っているのと同じ種類のパラメータを持っています。",
     "start": 230.58
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "They really end up creating\nthe same thing.",
-    "translated": "",
+    "translated": "実際には、これらは同じものを作成することになります。",
     "start": 232.27
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Just that the YT.",
-    "translated": "",
+    "translated": "ただ、YT.",
     "start": 234.75
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Player constructor is a\nprogrammatic way of creating",
-    "translated": "",
+    "translated": "Playerコンストラクターは、JavaScriptを使用してこのタグを作成するプログラム的な方法であるというだけです。",
     "start": 235.75
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "this tag using JavaScript.",
-    "translated": "",
+    "translated": "JavaScriptを使用してこのタグを作成するプログラム的な方法であるというだけです。",
     "start": 238.8
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "This is if you're just writing\nout [? initiable ?]",
-    "translated": "",
+    "translated": "これは、皆さんが単に初期のテンプレートを記述している場合、あるいは",
     "start": 240.84
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "template, or even if you're not\na JavaScript programmer at",
-    "translated": "",
+    "translated": "あるいは、皆さんがJavaScriptプログラマーでなくても、ページにいくつかのHTMLを含めたいだけであれば、このタグを使用できます。",
     "start": 242.86
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "all and just want to include\nsome HTML on your page, you",
-    "translated": "",
+    "translated": "ページにいくつかのHTMLを含めたいだけであれば、このタグを使用できます。",
     "start": 246.06
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "could use this tag.",
-    "translated": "",
+    "translated": "このタグを使用できます。",
     "start": 249.71
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And the same parameters we are\ngoing to be talking about can",
-    "translated": "",
+    "translated": "そして、私たちがこれから話すのと同じパラメータは、iframeタグのソースとして使用するURLの",
     "start": 252.43
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "go at the very end of the URL\nthat you use as a source of",
-    "translated": "",
+    "translated": "ちょうど最後に配置することができます。",
     "start": 255.59
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "the iframe tag.",
-    "translated": "",
+    "translated": "ちょうど最後に配置することができます。",
     "start": 259.34
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So over here we have autoplay\nequals 0 and",
-    "translated": "",
+    "translated": "ですから、ここではautoplayが0、そして",
     "start": 260.419
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "controls equals 0.",
-    "translated": "",
+    "translated": "controlsが0となっています。",
     "start": 263.18
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And that corresponds to what\nwe're seeing over here for the",
-    "translated": "",
+    "translated": "そして、それはこちらでplayerVarsについて見ているものに対応しています。",
     "start": 265.139
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "playerVars.",
-    "translated": "",
+    "translated": "playerVarsについて見ているものに対応しています。",
     "start": 269.81
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And the actual documentation for\nusing that iframe tag is",
-    "translated": "",
+    "translated": "そして、そのiframeタグを使用するための実際のドキュメントは、",
     "start": 270.81
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "found over here.",
-    "translated": "",
+    "translated": "こちらで見つけることができます。",
     "start": 276.14
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "If you look in the docs over\nhere, we give some examples.",
-    "translated": "",
+    "translated": "こちらのドキュメントを見ると、いくつかの例が示されています。",
     "start": 278.25
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So that's the ground rules for\nhow you actually will use",
-    "translated": "",
+    "translated": "さて、これが、皆さんが実際に",
     "start": 284.12
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "these parameters that\nwe are going to be",
-    "translated": "",
+    "translated": "これから説明するこれらのパラメータを皆さんのコードでどのように使用するかについての基本ルールです。",
     "start": 287.93
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "describing in your own code.",
-    "translated": "",
+    "translated": "これから説明するこれらのパラメータを皆さんのコードでどのように使用するかについての基本ルールです。",
     "start": 289.101
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So I just wanted to run through\npretty much from the",
-    "translated": "",
+    "translated": "それで、私はただ、ほぼ最初から、これらのパラメータすべてを",
     "start": 292.22
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "top, all these parameters\nhere.",
-    "translated": "",
+    "translated": "最初から、これらのパラメータすべてをざっと見ていきたいと思いました。",
     "start": 294.9
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "We do have really nice\nexplanations what they mean in",
-    "translated": "",
+    "translated": "ドキュメントには、それらが何を意味するのかについての非常に良い説明があります。",
     "start": 296.97
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "the documentation.",
-    "translated": "",
+    "translated": "ドキュメントには、それらが何を意味するのかについての非常に良い説明があります。",
     "start": 300.66
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So it's going to be a little bit\nrepetitive in some cases.",
-    "translated": "",
+    "translated": "ですから、場合によっては少し繰り返しになるかもしれません。",
     "start": 301.69
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "But I did want to highlight some\nspecific ones that are",
-    "translated": "",
+    "translated": "しかし、私は最も役立つ特定のものをいくつか強調したいと思いました。",
     "start": 305.91
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "the most useful.",
-    "translated": "",
+    "translated": "最も役立つ特定のものをいくつか強調したいと思いました。",
     "start": 308.55
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So autohide comes in\nhandy quite a bit.",
-    "translated": "",
+    "translated": "それで、**autohide**はかなり役立ちます。",
     "start": 309.58
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "This is something that controls\nthe behavior of the",
-    "translated": "",
+    "translated": "これは、多かれ少なかれ、YouTubeプレイヤーの",
     "start": 313.76
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "controls, more or less, that\nare on the bottom of the",
-    "translated": "",
+    "translated": "下部にある**コントロール**の動作を制御するものです。",
     "start": 317.96
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "YouTube Player.",
-    "translated": "",
+    "translated": "下部にある**コントロール**の動作を制御するものです。",
     "start": 321.401
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "It's not necessarily the initial\nstate of the controls,",
-    "translated": "",
+    "translated": "それは必ずしもコントロールの**初期状態**ではなく、",
     "start": 322.94
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "but it's more like what happens\nthe controls once",
-    "translated": "",
+    "translated": "再生が開始された後にコントロールがどうなるかというものです。",
     "start": 326.47
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "playback starts.",
-    "translated": "",
+    "translated": "再生が開始された後にコントロールがどうなるかというものです。",
     "start": 328.6
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And I'm going to demonstrate\nthe ways of setting those",
-    "translated": "",
+    "translated": "そして、これらの異なる値を設定する方法を、こちらの",
     "start": 330.79
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "different values by going to\nthis page over here, which is",
-    "translated": "",
+    "translated": "YouTubeプレイヤーデモであるこちらのページに行って実演します。",
     "start": 333.83
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "our YouTube player demo.",
-    "translated": "",
+    "translated": "YouTubeプレイヤーデモであるこちらのページに行って実演します。",
     "start": 337.68
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So this is another really\ngreat resource.",
-    "translated": "",
+    "translated": "これもまた、本当に素晴らしいリソースです。",
     "start": 339.66
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And it's an alternative to\nwriting this code over here or",
-    "translated": "",
+    "translated": "そして、これはこちらのコードを書いたり、あるいは",
     "start": 342.67
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "writing this in jsFiddle.",
-    "translated": "",
+    "translated": "jsFiddleにこれを書いたりする代わりとなるものです。",
     "start": 347.33
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "It's just a way to play around\nwith these parameters in a",
-    "translated": "",
+    "translated": "これは、これらのパラメータを**ライブ設定**で試すことができる方法です。",
     "start": 348.33
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "live setting.",
-    "translated": "",
+    "translated": "ライブ設定で試すことができる方法です。",
     "start": 351.81
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And we can think of it like our\nAPI explorer, if you've",
-    "translated": "",
+    "translated": "そして、もし皆さんが私たちのデータAPIでAPIエクスプローラを使ったことがあるなら、それと同じように考えることができます。",
     "start": 354.41
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "ever used that for\nour data APIs.",
-    "translated": "",
+    "translated": "私たちのデータAPIでAPIエクスプローラを使ったことがあるなら、それと同じように考えることができます。",
     "start": 357.21
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "This is the equivalent\nfor our player APIs.",
-    "translated": "",
+    "translated": "これは私たちのプレイヤーAPIにおける同等のものです。",
     "start": 360.55
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So what it lets you do is go\nover here on the right and",
-    "translated": "",
+    "translated": "それで、皆さんができることは、右側のこちらに行き、",
     "start": 363.9
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "start choosing different values\nfor the parameters.",
-    "translated": "",
+    "translated": "パラメータの異なる値を選択し始めることです。",
     "start": 366.97
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And I'm not going to do this\nfor every single parameter",
-    "translated": "",
+    "translated": "そして、すべてのパラメータについてこれを行うつもりはありませんが、",
     "start": 369.71
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "that we didn't talk about, but\njust to show you how you could",
-    "translated": "",
+    "translated": "皆さんがコードを書くことなく、リアルタイムでどのように実験できるかを示すために、",
     "start": 371.57
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "experiment in real time\nwithout having",
-    "translated": "",
+    "translated": "皆さんがコードを書くことなく、リアルタイムでどのように実験できるかを示すために、",
     "start": 375.0
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "to write any code.",
-    "translated": "",
+    "translated": "コードを書くことなく、リアルタイムでどのように実験できるかを示すために、",
     "start": 376.91
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Let me just try setting autohide\nto 0 over here.",
-    "translated": "",
+    "translated": "ここで**autohide**を**0**に設定してみましょう。",
     "start": 378.23
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "I'm going to click\nUpdate Player.",
-    "translated": "",
+    "translated": "「プレイヤーを更新」をクリックします。",
     "start": 381.24
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And once I set it,\nBegin Playback.",
-    "translated": "",
+    "translated": "設定したら、再生を開始します。",
     "start": 384.05
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "This is a very old video.",
-    "translated": "",
+    "translated": "これは非常に古い動画です。",
     "start": 388.72
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Actually, part of what I plan\non doing is replacing the",
-    "translated": "",
+    "translated": "実は、私が計画していることの一部は、このデモで使用しているデフォルトの動画をこの動画に置き換えることです。",
     "start": 391.16
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "default video that we use in\nthis demo with this video, so",
-    "translated": "",
+    "translated": "このデモで使用しているデフォルトの動画をこの動画に置き換えることです。",
     "start": 394.08
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "we'll have a very meta\nexperience, if you happen to",
-    "translated": "",
+    "translated": "もし皆さんがこのデモページでこれらのパラメータを試している最中にこれを視聴することになれば、非常に**メタ**な体験になるでしょう。",
     "start": 397.23
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "be watching this while on the\ndemo page trying out these",
-    "translated": "",
+    "translated": "もし皆さんがこのデモページでこれらのパラメータを試している最中にこれを視聴することになれば、非常に**メタ**な体験になるでしょう。",
     "start": 399.68
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "parameters.",
-    "translated": "",
+    "translated": "非常に**メタ**な体験になるでしょう。",
     "start": 402.5
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So the main thing to keep in\nmind though is that the",
-    "translated": "",
+    "translated": "それで、覚えておくべき主なことは、",
     "start": 404.11
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "controls at the bottom\nover here did not",
-    "translated": "",
+    "translated": "ここの下部にある**コントロール**が、再生中に**消えなかった**ということです。",
     "start": 407.03
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "disappear during playback.",
-    "translated": "",
+    "translated": "再生中に**消えなかった**ということです。",
     "start": 408.56
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And if I were to go over here\nand change the autohide to 1,",
-    "translated": "",
+    "translated": "そして、もし私がこちらに行って**autohide**を**1**に変更し、",
     "start": 411.2
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Update Player--",
-    "translated": "",
+    "translated": "「プレイヤーを更新」をクリックすると--",
     "start": 416.65
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "it says, loading in the player\nwith the parameters--",
-    "translated": "",
+    "translated": "「パラメータでプレイヤーを読み込み中」と表示されます--",
     "start": 417.7
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "you'll see that when I mouse\nover, the controls are there.",
-    "translated": "",
+    "translated": "マウスオーバーすると、**コントロール**があることがわかります。",
     "start": 423.09
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "When I move the mouse away,\nthe controls disappear.",
-    "translated": "",
+    "translated": "マウスを離すと、コントロールは消えます。",
     "start": 425.87
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So for experiences where you\nwant maybe a more of lean-back",
-    "translated": "",
+    "translated": "ですから、人々がコントロールと**やり取り**することのない、**リラックス**して見るような状況で、",
     "start": 428.12
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "type of situation, where people\naren't going to be",
-    "translated": "",
+    "translated": "人々がコントロールと**やり取り**することのない、**リラックス**して見るような状況で、",
     "start": 433.15
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "interacting with the controls,\nor you don't want the controls",
-    "translated": "",
+    "translated": "あるいは、コントロールが動画再生の上に**オーバーレイ**してほしくない場合に、これは非常に便利なパラメータです。",
     "start": 435.43
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "to overlay the video playback,\nit's a very useful parameter.",
-    "translated": "",
+    "translated": "あるいは、コントロールが動画再生の上に**オーバーレイ**してほしくない場合に、これは非常に便利なパラメータです。",
     "start": 437.31
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Autoplay is next on the\nlist alphabetically.",
-    "translated": "",
+    "translated": "アルファベット順で次に来るのは**autoplay**です。",
     "start": 441.71
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Somewhat self-explanatory, if\nyou add in the autoplay",
-    "translated": "",
+    "translated": "多少**自己説明的**ですが、**autoplay**パラメータを追加すると、",
     "start": 445.032
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "parameter, then the video will\nstart playing back as soon as",
-    "translated": "",
+    "translated": "iframe埋め込みがページに読み込まれるとすぐに、動画が再生を開始します。",
     "start": 447.36
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "the iframe embed is loaded\non the page.",
-    "translated": "",
+    "translated": "iframe埋め込みがページに読み込まれるとすぐに、動画が再生を開始します。",
     "start": 451.419
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "I'll give a quick demo\nof that over here.",
-    "translated": "",
+    "translated": "ここでそれの簡単なデモをお見せします。",
     "start": 454.77
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And this time, instead of using\nthe player demo page,",
-    "translated": "",
+    "translated": "そして今回、プレイヤーデモページを使う代わりに、",
     "start": 458.19
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "I'm going to use that jsFiddle\nthat we have set up.",
-    "translated": "",
+    "translated": "私たちが設定したあのjsFiddleを使用します。",
     "start": 463.48
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And I'm going to just change\nthe autoplay value to 1.",
-    "translated": "",
+    "translated": "そして、**autoplay**の値を**1**に変更するだけです。",
     "start": 466.3
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "I'm going to click Run.",
-    "translated": "",
+    "translated": "「実行」をクリックします。",
     "start": 468.43
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And you could see,\nhere's the embed.",
-    "translated": "",
+    "translated": "ご覧のとおり、これが埋め込みです。",
     "start": 470.37
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "It started playing as soon\nas the page loads.",
-    "translated": "",
+    "translated": "ページが読み込まれるとすぐに再生が始まりました。",
     "start": 472.69
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So there are certain scenarios\nwhere that's useful, certain",
-    "translated": "",
+    "translated": "ですから、それが便利なシナリオもあれば、そうでないシナリオもあります。",
     "start": 475.81
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "scenarios where it's not.",
-    "translated": "",
+    "translated": "そうでないシナリオもあります。",
     "start": 477.77
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "You have to use your judgment\nas to whether autoplaying is",
-    "translated": "",
+    "translated": "自動再生が適切かどうかは、皆さんの判断に委ねられます。",
     "start": 478.99
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "the right thing to do.",
-    "translated": "",
+    "translated": "自動再生が適切かどうかは、皆さんの判断に委ねられます。",
     "start": 482.52
   },
   {
-    "speaker": "",
-    "text": "cc_load_policy is something that\ncontrols whether closed",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "**cc_load_policy** is something that\ncontrols whether closed",
+    "translated": "**cc_load_policy**は、クローズドキャプションまたは字幕が**デフォルトで表示されるかどうか**を制御するものです。",
     "start": 484.91
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "captions or subtitles are\ndisplayed by default.",
-    "translated": "",
+    "translated": "**デフォルトで表示されるかどうか**を制御するものです。",
     "start": 489.03
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And the default behavior--\nwe don't set anything for",
-    "translated": "",
+    "translated": "そして、デフォルトの動作（cc_load_policyに何も設定しない場合）は、",
     "start": 493.53
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "cc_load_policy--",
-    "translated": "",
+    "translated": "cc_load_policyに何も設定しない場合）は、",
     "start": 497.3
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "is that the user's preferences\n[? basic ?] on YouTube.",
-    "translated": "",
+    "translated": "YouTubeに基づいたユーザーの設定が適用されます。",
     "start": 498.3
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "There is a way of going in and\nsaying whether you want closed",
-    "translated": "",
+    "translated": "クローズドキャプションが必要か、そうでないかを設定する方法があります。",
     "start": 501.18
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "captions or you don't want\nclosed captions.",
-    "translated": "",
+    "translated": "クローズドキャプションが必要か、そうでないかを設定する方法があります。",
     "start": 503.389
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "That's normally what\ntakes effect.",
-    "translated": "",
+    "translated": "それが通常、有効になるものです。",
     "start": 506.06
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "If you have a specific video and\nyou know that you always",
-    "translated": "",
+    "translated": "特定の動画があり、常にクローズドキャプションを**表示させたい**とわかっている場合は、",
     "start": 507.27
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "want the closed captions to\nbe shown, you could set",
-    "translated": "",
+    "translated": "常にクローズドキャプションを**表示させたい**とわかっている場合は、",
     "start": 509.38
   },
   {
-    "speaker": "",
-    "text": "cc_load_policy to 1.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "**cc_load_policy** to **1**.",
+    "translated": "**cc_load_policy**を**1**に設定できます。",
     "start": 511.86
   },
   {
-    "speaker": "",
-    "text": "Color's a bit interesting.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "**Color's** a bit interesting.",
+    "translated": "**Color**は少し興味深いパラメータです。",
     "start": 514.37
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "It's not something that I see\nwidely used and necessarily,",
-    "translated": "",
+    "translated": "広く使われているとは限りませんが、",
     "start": 516.599
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "but there are some cases where\nyou might want a little bit of",
-    "translated": "",
+    "translated": "プレイヤーに、言ってみれば、**ちょっとしたセンス**を加えたい場合があり、",
     "start": 521.019
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "flair, let's say,\nin your player.",
-    "translated": "",
+    "translated": "プレイヤーに、言ってみれば、**ちょっとしたセンス**を加えたい場合があり、",
     "start": 524.029
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And you don't want the\ndefault behavior.",
-    "translated": "",
+    "translated": "デフォルトの動作にしたくない場合です。",
     "start": 525.67
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So I'm going to go to the\nplayer demo page really",
-    "translated": "",
+    "translated": "それで、すぐにプレイヤーデモページに行って、それが何をするのかをお見せします。",
     "start": 528.05
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "quickly and just show\nyou what it does.",
-    "translated": "",
+    "translated": "それが何をするのかをお見せします。",
     "start": 533.089
   },
   {
-    "speaker": "",
-    "text": "You could set color to white\ninstead of red, and you update",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "You could set **color** to **white**\ninstead of red, and you update",
+    "translated": "**color**を赤の代わりに**白**に設定して、プレイヤーを更新します。",
     "start": 534.999
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "the player.",
-    "translated": "",
+    "translated": "プレイヤーを更新します。",
     "start": 542.779
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Controls should look slightly\ndifferent depending upon",
-    "translated": "",
+    "translated": "コントロールは、赤か白かによって、わずかに異なって見えるはずです。",
     "start": 545.06
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "whether they're red or white.",
-    "translated": "",
+    "translated": "赤か白かによって、わずかに異なって見えるはずです。",
     "start": 546.99
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So it just basically changes the\nbranding a little bit on",
-    "translated": "",
+    "translated": "つまり、基本的にプレイヤーの**ブランディング**を少し変えるだけです。",
     "start": 548.91
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "the player.",
-    "translated": "",
+    "translated": "プレイヤーの**ブランディング**を少し変えるだけです。",
     "start": 551.829
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Not necessarily the most useful\nthing in the world, but",
-    "translated": "",
+    "translated": "世界で最も有用なものとは限りませんが、",
     "start": 553.819
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "it does give you a little\nbit more control.",
-    "translated": "",
+    "translated": "それは皆さんに少し**多くの制御**を与えます。",
     "start": 555.661
   },
   {
-    "speaker": "",
-    "text": "Speaking of control, next item\nalphabetically is controls.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "Speaking of control, next item\nalphabetically is **controls**.",
+    "translated": "制御と言えば、アルファベット順で次に来るのは**controls**です。",
     "start": 558.72
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And this is actually\nquite useful.",
-    "translated": "",
+    "translated": "そして、これは実際、非常に有用です。",
     "start": 562.449
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "There are cases where you can\nactually see a lot of",
-    "translated": "",
+    "translated": "実際、この値をデフォルトから特定のオプションである**2**に変更することで、多くの**パフォーマンス上の利点**を得られる場合があります。",
     "start": 564.61
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "performance benefits by changing\nthis value from the",
-    "translated": "",
+    "translated": "実際、この値をデフォルトから特定のオプションである**2**に変更することで、多くの**パフォーマンス上の利点**を得られる場合があります。",
     "start": 569.3
   },
   {
-    "speaker": "",
-    "text": "defaults to a specific\noption, which is 2.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "defaults to a specific\noption, which is **2**.",
+    "translated": "特定のオプションである**2**に変更することで、多くの**パフォーマンス上の利点**を得られる場合があります。",
     "start": 573.16
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "We have a note in the\ndocumentation explaining more",
-    "translated": "",
+    "translated": "ドキュメントには、これが何をするのかについて詳しく説明したメモがあります。",
     "start": 578.079
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "about what this does.",
-    "translated": "",
+    "translated": "これが何をするのかについて詳しく説明したメモがあります。",
     "start": 580.24
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And if you read the note, it\nsays that controls=2 can give",
-    "translated": "",
+    "translated": "そして、そのメモを読むと、`controls=2`はデフォルトの動作よりも**パフォーマンスの向上**をもたらすと書かれています。",
     "start": 582.47
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "you a performance improvement\nover the default behavior.",
-    "translated": "",
+    "translated": "デフォルトの動作よりも**パフォーマンスの向上**をもたらすと書かれています。",
     "start": 585.509
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And the reason why that is is\ncontrols=2 has a way of",
-    "translated": "",
+    "translated": "その理由は、`controls=2`には、iframe埋め込みプレイヤーを読み込む方法があり、それがデフォルトでは**基盤となるFlashプレイヤーを初期化しない**からです。",
     "start": 589.42
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "loading the iframe embedded\nplayer that does not",
-    "translated": "",
+    "translated": "iframe埋め込みプレイヤーを読み込む方法があり、それがデフォルトでは**基盤となるFlashプレイヤーを初期化しない**からです。",
     "start": 593.399
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "initialize the underlying\nFlash player by default.",
-    "translated": "",
+    "translated": "基盤となるFlashプレイヤーを初期化しないからです。",
     "start": 595.86
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "It doesn't initialize it until\nyou actually click on the",
-    "translated": "",
+    "translated": "実際に動画の**サムネイルをクリックして再生を開始する**まで、初期化されません。",
     "start": 600.97
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "video thumbnail to start\nthe playback.",
-    "translated": "",
+    "translated": "実際に動画の**サムネイルをクリックして再生を開始する**まで、初期化されません。",
     "start": 604.819
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "This obviously only applies to\nplaybacks that do involve the",
-    "translated": "",
+    "translated": "これは明らかに、Flashプレイヤーが関与する再生にのみ適用されます。",
     "start": 607.68
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Flash player.",
-    "translated": "",
+    "translated": "Flashプレイヤーが関与する再生にのみ適用されます。",
     "start": 612.189
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "The iframe player might decide\nthat HTML5 video is going to",
-    "translated": "",
+    "translated": "iframeプレイヤーは、代わりに**HTML5ビデオ**が使用されると判断するかもしれません。その場合、これはそれほど重要ではありません。",
     "start": 613.67
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "be used instead, in which case\nthis isn't quite as important.",
-    "translated": "",
+    "translated": "HTML5ビデオ**が使用されると判断するかもしれません。その場合、これはそれほど重要ではありません。",
     "start": 616.56
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "But in situations where Flash\nplayback is being used, you",
-    "translated": "",
+    "translated": "しかし、**Flash再生**が使用されている状況では、`controls=2`を設定することで、**顕著なパフォーマンス上の利点**を本当に得ることができます。",
     "start": 619.48
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "could really see a significant\nperformance benefit from",
-    "translated": "",
+    "translated": "顕著なパフォーマンス上の利点**を本当に得ることができます。",
     "start": 621.79
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "setting controls=2.",
-    "translated": "",
+    "translated": "顕著なパフォーマンス上の利点**を本当に得ることができます。",
     "start": 624.86
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And that might be the default\nthat we use at some point in",
-    "translated": "",
+    "translated": "そして、ここで述べられているように、いくつかのUIの問題が解決され次第、将来的にはこれがデフォルトになるかもしれません。",
     "start": 626.56
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "the future, as mentioned here,\nas soon as some UI issues are",
-    "translated": "",
+    "translated": "ここで述べられているように、いくつかのUIの問題が解決され次第、将来的にはこれがデフォルトになるかもしれません。",
     "start": 629.94
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "worked out.",
-    "translated": "",
+    "translated": "解決され次第、将来的にはこれがデフォルトになるかもしれません。",
     "start": 633.139
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And I'm going to give you an\nexample of how you could see",
-    "translated": "",
+    "translated": "そして、そのパフォーマンス上の利点をどのように確認できるかの例をお見せします。",
     "start": 634.139
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "that performance benefit.",
-    "translated": "",
+    "translated": "そのパフォーマンス上の利点をどのように確認できるかの例をお見せします。",
     "start": 637.389
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "It mainly comes across\nwhen you have--",
-    "translated": "",
+    "translated": "それは主に、皆さんが持っている場合に現れます--",
     "start": 639.61
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "let's say, I don't want to say\na specific number, but if you",
-    "translated": "",
+    "translated": "特定の数字は言いたくありませんが、もし皆さんが同じページに**複数のiframe埋め込み**を持っている場合です。",
     "start": 641.679
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "have multiple iframe embeds\non the same page.",
-    "translated": "",
+    "translated": "同じページに**複数のiframe埋め込み**を持っている場合です。",
     "start": 644.35
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So this one over here has--",
-    "translated": "",
+    "translated": "それで、こちらのものには--",
     "start": 646.24
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "I think there might be 50 from\nthe Google Developers channel.",
-    "translated": "",
+    "translated": "Google Developersチャンネルから、おそらく50個あると思います。",
     "start": 648.929
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So the first thing that we're\ngoing to look at is behavior",
-    "translated": "",
+    "translated": "それで、まず最初に見るのは、`controls=1`、または`controls`を省略した場合の、ほぼ**デフォルト**の動作です。",
     "start": 652.249
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "pretty much by default, where\nthere's controls=1 or if you",
-    "translated": "",
+    "translated": "`controls=1`、または`controls`を省略した場合の、ほぼ**デフォルト**の動作です。",
     "start": 656.009
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "leave out controls.",
-    "translated": "",
+    "translated": "`controls`を省略した場合の、ほぼ**デフォルト**の動作です。",
     "start": 660.3
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "It's the default.",
-    "translated": "",
+    "translated": "それがデフォルトです。",
     "start": 661.589
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And it can take some time for\nthese underlying Flash players",
-    "translated": "",
+    "translated": "そして、これらの基盤となるFlashプレイヤーがすべて**初期化**されるのには時間がかかり、ページ上で操作の準備が整ったように見えるまでに、いくらか**遅延**が加わることがあります。",
     "start": 662.61
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "to all initialize, and can add\nsome latency to the point",
-    "translated": "",
+    "translated": "すべての初期化に時間がかかり、ページ上で操作の準備が整ったように見えるまでに、いくらか**遅延**が加わることがあります。",
     "start": 668.529
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "where things look like\nthey're ready to be",
-    "translated": "",
+    "translated": "ページ上で操作の準備が整ったように見えるまでに、いくらか**遅延**が加わることがあります。",
     "start": 672.879
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "interacted with on the page.",
-    "translated": "",
+    "translated": "ページ上で操作の準備が整ったように見えるまでに、いくらか**遅延**が加わることがあります。",
     "start": 675.509
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So not necessarily the\nbest user experience.",
-    "translated": "",
+    "translated": "ですから、必ずしも最高のユーザーエクスペリエンスではありません。",
     "start": 677.3
   },
   {
-    "speaker": "",
-    "text": "If you take the same thing and\nyou change it to controls",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "If you take the same thing and\nyou change it to **controls**",
+    "translated": "同じことを行い、それを明示的に`controls`",
     "start": 680.55
   },
   {
-    "speaker": "",
-    "text": "equals 2 explicitly, then you\nshould see a much better",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "equals **2** explicitly, then you\nshould see a much better",
+    "translated": "を**2**に変更すると、はるかに優れた**パフォーマンス**が得られるはずです。",
     "start": 682.629
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "performance.",
-    "translated": "",
+    "translated": "はるかに優れた**パフォーマンス**が得られるはずです。",
     "start": 686.309
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "It's quite remarkable,\nactually.",
-    "translated": "",
+    "translated": "実際、それは非常に注目に値します。",
     "start": 687.55
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So what's going on?",
-    "translated": "",
+    "translated": "では、何が起こっているのでしょうか？",
     "start": 690.759
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "[? You can see ?] now again,\nit's just loading in these",
-    "translated": "",
+    "translated": "ご覧のとおり、今、それは単にこれらの**サムネイル**を読み込んでいるだけです。",
     "start": 691.759
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "thumbnails.",
-    "translated": "",
+    "translated": "**サムネイル**を読み込んでいるだけです。",
     "start": 693.68
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "It's not initializing the Flash\nplayer for each video.",
-    "translated": "",
+    "translated": "各動画のFlashプレイヤーを**初期化していません**。",
     "start": 694.68
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And you could have--",
-    "translated": "",
+    "translated": "そして、皆さんは--",
     "start": 698.189
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "I don't want to say you should\nput thousands of embeds on the",
-    "translated": "",
+    "translated": "何千もの埋め込みを同じページに配置すべきだとは言いませんが、もし皆さんがたまたまページに**多数の埋め込み**を持っている場合、違いがわかるでしょう。",
     "start": 700.899
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "same page-- but if you do happen\nto have a large number",
-    "translated": "",
+    "translated": "何千もの埋め込みを同じページに配置すべきだとは言いませんが、もし皆さんがたまたまページに**多数の埋め込み**を持っている場合、違いがわかるでしょう。",
     "start": 702.869
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "of embeds on the page, you\nwill see a difference.",
-    "translated": "",
+    "translated": "ページに**多数の埋め込み**を持っている場合、違いがわかるでしょう。",
     "start": 705.689
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So very important to\nkeep that in mind.",
-    "translated": "",
+    "translated": "ですから、それを覚えておくことは非常に重要です。",
     "start": 709.519
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "A few other parameters\nthat are not",
-    "translated": "",
+    "translated": "その他にも、必ずしもそれほど**面白くない**パラメータがいくつかあります。",
     "start": 710.91
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "necessarily as exciting.",
-    "translated": "",
+    "translated": "それほど**面白くない**パラメータがいくつかあります。",
     "start": 713.72
   },
   {
-    "speaker": "",
-    "text": "There's keyboard support for\nthe ActionScript player.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "There's **keyboard** support for\nthe ActionScript player.",
+    "translated": "ActionScriptプレイヤーには**keyboard**サポートがあります。",
     "start": 715.92
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "I'm not really sure why you\nwould want to turn this off.",
-    "translated": "",
+    "translated": "なぜこれをオフにしたいのか、私にはよくわかりません。",
     "start": 720.86
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "I think it's actually kind of\nnice to keep it on, but we do",
-    "translated": "",
+    "translated": "オンにしておくのは実際には良いことだと思いますが、もし必要であれば**オフにする**というオプションがあります。",
     "start": 723.119
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "have the option of turning\nit off if you want.",
-    "translated": "",
+    "translated": "もし必要であれば**オフにする**というオプションがあります。",
     "start": 725.23
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "This particular parameter\nis quite important, the",
-    "translated": "",
+    "translated": "この特定のパラメータは非常に重要です。それは",
     "start": 729.369
   },
   {
-    "speaker": "",
-    "text": "enablejsapi.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "**enablejsapi**.",
+    "translated": "**enablejsapi**です。",
     "start": 733.17
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And what it'll let you do is\nensure that you are able to",
-    "translated": "",
+    "translated": "そして、これが皆さんに可能にすることは、JavaScript APIを使用してページ上のiframeプレイヤーと**通信**できることを保証することです。",
     "start": 734.459
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "talk to the iframe player\non the page using",
-    "translated": "",
+    "translated": "JavaScript APIを使用してページ上のiframeプレイヤーと**通信**できることを保証することです。",
     "start": 738.389
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "the JavaScript API.",
-    "translated": "",
+    "translated": "JavaScript APIを使用してページ上のiframeプレイヤーと**通信**できることを保証することです。",
     "start": 741.249
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So as I mentioned, we're not\nactually going to be covering",
-    "translated": "",
+    "translated": "ですから、申し上げたように、このセッションではJavaScript APIについては実際には扱いませんが、",
     "start": 742.3
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "anything about the JavaScript\nAPI in this particular",
-    "translated": "",
+    "translated": "この特定のセッションではJavaScript APIについては実際には扱いませんが、",
     "start": 745.709
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "session, but plenty of\npeople have used it.",
-    "translated": "",
+    "translated": "多くの人が使用しています。",
     "start": 748.529
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And the one case where you\nreally need to be sure you're",
-    "translated": "",
+    "translated": "そして、皆さんがこれを**明示的に**設定する必要がある唯一のケースは、iframeタグを**ページに直接記述**している場合です。",
     "start": 751.709
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "explicitly setting this is when\nyou're writing the iframe",
-    "translated": "",
+    "translated": "iframeタグを**ページに直接記述**している場合です。",
     "start": 754.18
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "tag directly to the page.",
-    "translated": "",
+    "translated": "iframeタグを**ページに直接記述**している場合です。",
     "start": 757.339
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So kind of like this.",
-    "translated": "",
+    "translated": "だいたいこんな感じです。",
     "start": 761.86
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Because when you're\nusing the YT.",
-    "translated": "",
+    "translated": "なぜなら、YT.",
     "start": 765.369
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Player constructor, it pretty\nmuch will be set automatically",
-    "translated": "",
+    "translated": "Playerコンストラクターを使用している場合は、デフォルトで**自動的に設定**されるからです。",
     "start": 766.709
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "for you by default.",
-    "translated": "",
+    "translated": "デフォルトで**自動的に設定**されるからです。",
     "start": 770.269
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Just because by virtue of the\nfact that you're using",
-    "translated": "",
+    "translated": "皆さんがプレイヤーを初期化するためにJavaScriptを使用しているという事実のおかげで、皆さんはJavaScriptでプレイヤーと通信したいと考える可能性が高いからです。",
     "start": 772.939
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "JavaScript to initialize the\nplayer, chances are you are",
-    "translated": "",
+    "translated": "皆さんはJavaScriptでプレイヤーと通信したいと考える可能性が高いからです。",
     "start": 774.579
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "going to want to talk to the\nplayer with JavaScript.",
-    "translated": "",
+    "translated": "皆さんはJavaScriptでプレイヤーと通信したいと考える可能性が高いからです。",
     "start": 777.0
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So it always gets set for you.",
-    "translated": "",
+    "translated": "ですから、常に皆さんのために設定されます。",
     "start": 779.24
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "But that's not the case if you\nexplicitly are writing an",
-    "translated": "",
+    "translated": "しかし、皆さんが明示的にiframeタグをページに記述している場合は、そうではありません。",
     "start": 780.36
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "iframe tag to a page.",
-    "translated": "",
+    "translated": "明示的にiframeタグをページに記述している場合は、そうではありません。",
     "start": 783.04
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So you really do need to make\nsure there that you have",
-    "translated": "",
+    "translated": "ですから、そこで`enablejsapi`が**1**に設定されていることを確認する必要があります。",
     "start": 784.769
   },
   {
-    "speaker": "",
-    "text": "enabled jsapi set to 1.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "**enabled jsapi** set to **1**.",
+    "translated": "`enablejsapi`が**1**に設定されていることを確認する必要があります。",
     "start": 786.9
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And that's necessary in order to\ntalk to the iframe player.",
-    "translated": "",
+    "translated": "そして、それはiframeプレイヤーと通信するために必要です。",
     "start": 790.589
   },
   {
-    "speaker": "",
-    "text": "The end tag, and a little\nbit further down",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "The **end** tag, and a little\nbit further down",
+    "translated": "**end**タグ、そしてアルファベット順で少し下にあるのが**start**です。",
     "start": 797.44
   },
   {
-    "speaker": "",
-    "text": "the alphabet is start.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "the alphabet is **start**.",
+    "translated": "アルファベット順で少し下にあるのが**start**です。",
     "start": 800.119
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So these are two corresponding\ntags.",
-    "translated": "",
+    "translated": "これらは対応する2つのタグです。",
     "start": 802.1
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "This gives you a really easy way\nof putting an embed on a",
-    "translated": "",
+    "translated": "これを使うと、**カスタムの終了時刻**と**カスタムの開始時刻**を持つ埋め込みをページに配置する非常に簡単な方法が得られます。",
     "start": 804.459
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "page that has its custom end\ntime and a custom start time.",
-    "translated": "",
+    "translated": "**カスタムの終了時刻**と**カスタムの開始時刻**を持つ埋め込みをページに配置する非常に簡単な方法が得られます。",
     "start": 807.029
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So if you have a three-minute\nvideo and you really want to",
-    "translated": "",
+    "translated": "ですから、もし皆さんが3分間の動画を持っていて、本当にその動画の真ん中の**30秒**を埋め込みたい場合は、",
     "start": 811.269
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "embed 30 seconds in the middle\nof the video, you could use",
-    "translated": "",
+    "translated": "本当にその動画の真ん中の**30秒**を埋め込みたい場合は、",
     "start": 815.779
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "those two tags to do it.",
-    "translated": "",
+    "translated": "これら2つのタグを使用してそれを行うことができます。",
     "start": 817.66
   },
   {
-    "speaker": "",
-    "text": "As soon as playback reaches\nthe end tag, playback will",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "As soon as playback reaches\nthe **end** tag, playback will",
+    "translated": "再生が**end**タグに到達するとすぐに、再生は実質的に**停止**します。",
     "start": 818.819
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "effectively stop.",
-    "translated": "",
+    "translated": "再生は実質的に**停止**します。",
     "start": 823.179
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So that could be useful.",
-    "translated": "",
+    "translated": "ですから、それは有用かもしれません。",
     "start": 824.819
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "fs parameter--",
-    "translated": "",
+    "translated": "**fs**パラメータ--",
     "start": 827.149
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "not super useful anymore.",
-    "translated": "",
+    "translated": "もはやそれほど**有用ではありません**。",
     "start": 829.089
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Basically, it lets you control\nwhether there is a full-screen",
-    "translated": "",
+    "translated": "基本的に、ActionScript 3.0プレイヤーに**全画面ボタン**があるかどうかを制御できます。",
     "start": 830.519
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "button on the ActionScript\n3.0 player.",
-    "translated": "",
+    "translated": "ActionScript 3.0プレイヤーに**全画面ボタン**があるかどうかを制御できます。",
     "start": 834.35
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "But I don't think it has an\neffect on the HTML5 player.",
-    "translated": "",
+    "translated": "しかし、HTML5プレイヤーには**影響しない**と思います。",
     "start": 836.93
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So not really sure why you would\nwant to change that.",
-    "translated": "",
+    "translated": "ですから、なぜそれを変更したいのか、私にはよくわかりません。",
     "start": 840.019
   },
   {
-    "speaker": "",
-    "text": "iv_load_policy is something that\ncontrols whether, I guess",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "**iv_load_policy** is something that\ncontrols whether, I guess",
+    "translated": "**iv_load_policy**は、インタラクティブな動画アノテーションとでも言いましょうか--",
     "start": 844.619
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "interactive video\nannotations--",
-    "translated": "",
+    "translated": "インタラクティブな動画アノテーションとでも言いましょうか--",
     "start": 847.989
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "for lack of a better way of\ndescribing it-- is shown on",
-    "translated": "",
+    "translated": "他に良い言い方が見つかりませんが-- それが動画に**デフォルトで表示されるかどうか**を制御するものです。",
     "start": 851.389
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "your video by default.",
-    "translated": "",
+    "translated": "それが動画に**デフォルトで表示されるかどうか**を制御するものです。",
     "start": 854.129
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So there's a couple of different\nvalues over here.",
-    "translated": "",
+    "translated": "それで、ここにはいくつかの異なる値があります。",
     "start": 856.629
   },
   {
-    "speaker": "",
-    "text": "You use 1 or 3.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "You use **1** or **3**.",
+    "translated": "**1**または**3**を使用します。",
     "start": 858.379
   },
   {
-    "speaker": "",
-    "text": "Basically, setting at 1 will\nmake sure that those",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "Basically, setting at **1** will\nmake sure that those",
+    "translated": "基本的に、**1**に設定すると、それらの**アノテーションが表示される**ようになります。",
     "start": 860.069
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "annotations are shown.",
-    "translated": "",
+    "translated": "**アノテーションが表示される**ようになります。",
     "start": 862.48
   },
   {
-    "speaker": "",
-    "text": "Setting it to 3 will make\nsure that they're",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "Setting it to **3** will make\nsure that they're",
+    "translated": "**3**に設定すると、それらは**デフォルトでは表示されない**ようになります。",
     "start": 863.829
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "not shown by default.",
-    "translated": "",
+    "translated": "**デフォルトでは表示されない**ようになります。",
     "start": 864.959
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "But at any point, the user can\nchange the setting explicitly",
-    "translated": "",
+    "translated": "しかし、いつでも、ユーザーはプレイヤー内で**明示的に**設定を変更して、アノテーションを表示または非表示にすることができます。",
     "start": 866.35
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "in the player, if they want to\nshow or hide the annotations.",
-    "translated": "",
+    "translated": "アノテーションを表示または非表示にすることができます。",
     "start": 869.799
   },
   {
-    "speaker": "",
-    "text": "List is a really interesting\none.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "**List** is a really interesting\none.",
+    "translated": "**List**は本当に興味深いパラメータです。",
     "start": 874.7
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And there is quite a bit to\ntalk about with list.",
-    "translated": "",
+    "translated": "そして、listについては話すことがかなりあります。",
     "start": 876.089
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So I'm actually going to defer\nat this point to a whole blog",
-    "translated": "",
+    "translated": "それで、この点については、**list**パラメータと、それに関連する**listType**パラメータが取りうるさまざまな値について説明するために、私たちがまとめた**ブログ記事全体**に委ねたいと思います。",
     "start": 879.0
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "post that we put together to\ntalk about the different types",
-    "translated": "",
+    "translated": "listパラメータと、それに関連する**listType**パラメータが取りうるさまざまな値について説明するために、私たちがまとめた**ブログ記事全体**に委ねたいと思います。",
     "start": 882.79
   },
   {
-    "speaker": "",
-    "text": "of values that the list\nparameter and the listType",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "of values that the **list**\nparameter and the **listType**",
+    "translated": "list**パラメータと、それに関連する**listType**パラメータが取りうるさまざまな値について説明するために、私たちがまとめた**ブログ記事全体**に委ねたいと思います。",
     "start": 886.66
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "parameter, which is\nan associated",
-    "translated": "",
+    "translated": "listType**パラメータが取りうるさまざまな値について説明するために、私たちがまとめた**ブログ記事全体**に委ねたいと思います。",
     "start": 891.12
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "parameter, can take.",
-    "translated": "",
+    "translated": "listType**パラメータが取りうるさまざまな値について説明するために、私たちがまとめた**ブログ記事全体**に委ねたいと思います。",
     "start": 893.019
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "I'll link to this blog post in\nthe video annotations, so you",
-    "translated": "",
+    "translated": "このブログ記事へのリンクを動画のアノテーションに記載しますので、",
     "start": 894.019
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "can read it in more detail.",
-    "translated": "",
+    "translated": "より詳細に読むことができます。",
     "start": 896.769
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "But the long and short of it is\nthat it's a really easy way",
-    "translated": "",
+    "translated": "しかし、要するに、これは、ページ上のシンプルな埋め込みプレイヤーを使用して、",
     "start": 898.1
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "to take a simple embedded player\non your page and use",
-    "translated": "",
+    "translated": "事前に動画IDを**ハードコード**することなく、動画のリストを表示するための本当に簡単な方法です。",
     "start": 901.329
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "that to display a list of videos\nwithout having to hard",
-    "translated": "",
+    "translated": "事前に動画IDを**ハードコード**することなく、動画のリストを表示するための本当に簡単な方法です。",
     "start": 905.689
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "code the video IDs in advance.",
-    "translated": "",
+    "translated": "事前に動画IDを**ハードコード**することなく、動画のリストを表示するための本当に簡単な方法です。",
     "start": 909.019
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So you could have one specific\nplayer on your page and say,",
-    "translated": "",
+    "translated": "ですから、ページに1つの特定のプレイヤーを用意し、「特定のYouTube",
     "start": 911.7
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "play back the most recent videos\nfrom a specific YouTube",
-    "translated": "",
+    "translated": "チャンネル、特定のプレイリスト、あるいは特定の**検索語句**から、**最新の動画**を再生してくれ」と言うことができます。",
     "start": 914.769
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "channel or specific playlist or\nspecific search term, even.",
-    "translated": "",
+    "translated": "チャンネル、特定のプレイリスト、あるいは特定の**検索語句**から、**最新の動画**を再生してくれ」と言うことができます。",
     "start": 917.8
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So you could say, this is an\nembedded player that will show",
-    "translated": "",
+    "translated": "ですから、これはYouTube APIからの検索に一致する最新の動画を表示する埋め込みプレイヤーだ、と言うことができます。",
     "start": 923.459
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "the latest videos that\nmatch the search",
-    "translated": "",
+    "translated": "YouTube APIからの検索に一致する最新の動画を表示する埋め込みプレイヤーだ、と言うことができます。",
     "start": 926.799
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "from the YouTube API.",
-    "translated": "",
+    "translated": "YouTube APIからの検索に一致する最新の動画を表示する埋め込みプレイヤーだ、と言うことができます。",
     "start": 929.019
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Something along those lines.",
-    "translated": "",
+    "translated": "そのような感じです。",
     "start": 930.779
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "It's quite useful.",
-    "translated": "",
+    "translated": "これは非常に有用です。",
     "start": 932.829
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "I don't think as many people\nknow about it as they should.",
-    "translated": "",
+    "translated": "知っているべきほど多くの人がこれを知っているとは思えません。",
     "start": 933.939
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So hopefully people will watch\nthis and start using it a",
-    "translated": "",
+    "translated": "ですから、この動画を見て、もう少し使い始めることを願っています。",
     "start": 936.579
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "little bit more.",
-    "translated": "",
+    "translated": "もう少し使い始めることを願っています。",
     "start": 938.999
   },
   {
-    "speaker": "",
-    "text": "listType goes hand in hand\nwith the list parameter.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "**listType** goes hand in hand\nwith the **list** parameter.",
+    "translated": "**listType**は、**list**パラメータと密接に関連しています。",
     "start": 940.499
   },
   {
-    "speaker": "",
-    "text": "There is a loop parameter.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "There is a **loop** parameter.",
+    "translated": "**loop**パラメータがあります。",
     "start": 943.41
   },
   {
-    "speaker": "",
-    "text": "And the loop parameter will--",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "And the **loop** parameter will--",
+    "translated": "そして、**loop**パラメータは--",
     "start": 945.839
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "as explained in the\ndocumentation--",
-    "translated": "",
+    "translated": "ドキュメントで説明されているように--",
     "start": 949.089
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "allow you to automatically\nrestart playback of a video",
-    "translated": "",
+    "translated": "再生が終了したときに、動画の再生を**自動的に再開**できるようにします。",
     "start": 951.6
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "when the playback has ended.",
-    "translated": "",
+    "translated": "再生が終了したときに、動画の再生を**自動的に再開**できるようにします。",
     "start": 955.549
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "You have to have a little bit of\na hack, if you're trying to",
-    "translated": "",
+    "translated": "単一の動画に対してこれを行おうとしている場合は、少し**ハック**が必要です。つまり、**1つの動画エントリ**のみを含むプレイリストを作成するのです。",
     "start": 957.61
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "do this for a single video,\nwhere you create a playlist",
-    "translated": "",
+    "translated": "単一の動画に対してこれを行おうとしている場合は、少し**ハック**が必要です。つまり、**1つの動画エントリ**のみを含むプレイリストを作成するのです。",
     "start": 960.111
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "that has only one video\nentry in it.",
-    "translated": "",
+    "translated": "つまり、**1つの動画エントリ**のみを含むプレイリストを作成するのです。",
     "start": 962.1
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So we have a little bit\nmore info there.",
-    "translated": "",
+    "translated": "それで、そこにもう少し情報があります。",
     "start": 964.39
   },
   {
-    "speaker": "",
-    "text": "modestbranding is something\nthat's covered in a different",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "**modestbranding** is something\nthat's covered in a different",
+    "translated": "**modestbranding**は、別で取り上げているブログ記事で説明されているもので、そのリンクもアノテーションから提供します。",
     "start": 966.779
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "blog post, which we will also\nlink to from the annotation.",
-    "translated": "",
+    "translated": "そのリンクもアノテーションから提供します。",
     "start": 969.91
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And it talks about the option\ndown here at the bottom.",
-    "translated": "",
+    "translated": "そして、ここにある下部のオプションについて説明しています。",
     "start": 972.41
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "It's not exactly a fully\nlogoless player.",
-    "translated": "",
+    "translated": "これは完全に**ロゴなし**のプレイヤーというわけではありません。",
     "start": 977.769
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "There still is a YouTube logo\ninvolved that shows, I think,",
-    "translated": "",
+    "translated": "依然としてYouTubeのロゴが関与しており、それは一時停止画面の右上隅か、またはキュー画面に表示されると思います。",
     "start": 980.529
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "on the pause screen in the upper\nright-hand corner, or in",
-    "translated": "",
+    "translated": "一時停止画面の右上隅か、またはキュー画面に表示されると思います。",
     "start": 985.089
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "the queued screen.",
-    "translated": "",
+    "translated": "キュー画面に表示されると思います。",
     "start": 987.869
   },
   {
-    "speaker": "",
-    "text": "But it is one parameter that you\ncould set to tone down the",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "But it is one parameter that you\ncould set to** tone down the**",
+    "translated": "しかし、これはプレイヤー上のYouTubeの**ブランディングを抑える**ために設定できるパラメータの1つです。",
     "start": 989.579
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "YouTube branding\non the player.",
-    "translated": "",
+    "translated": "プレイヤー上のYouTubeの**ブランディングを抑える**ために設定できるパラメータの1つです。",
     "start": 993.749
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And that's something that you\nmight want to keep in mind if",
-    "translated": "",
+    "translated": "そして、これは、埋め込みたいが、完全に**YouTube風**にしたくないというシナリオがある場合に、覚えておきたいことです。",
     "start": 996.699
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "you have a scenario where you\nwant to embed, but don't want",
-    "translated": "",
+    "translated": "埋め込みたいが、完全に**YouTube風**にしたくないというシナリオがある場合に、覚えておきたいことです。",
     "start": 1000.87
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "to make it fully YouTubed.",
-    "translated": "",
+    "translated": "完全に**YouTube風**にしたくないというシナリオがある場合に、覚えておきたいことです。",
     "start": 1003.819
   },
   {
-    "speaker": "",
-    "text": "The origin parameter is\nsomething that can be used",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "The **origin** parameter is\nsomething that can be used",
+    "translated": "**origin**パラメータは、iframe埋め込みタグを使用しており、JavaScriptを使用してiframe埋め込みと**やり取り**する際に使用できます。",
     "start": 1007.35
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "when you are using the iframe\nembed tag, and you're going to",
-    "translated": "",
+    "translated": "iframe埋め込みタグを使用しており、JavaScriptを使用してiframe埋め込みと**やり取り**する際に使用できます。",
     "start": 1011.559
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "be interacting with the iframe\nembed using JavaScript.",
-    "translated": "",
+    "translated": "JavaScriptを使用してiframe埋め込みと**やり取り**する際に使用できます。",
     "start": 1015.41
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So as mentioned before, you\nmight want to explicitly put",
-    "translated": "",
+    "translated": "ですから、前述したように、明示的に`enablejsapi`を",
     "start": 1020.299
   },
   {
-    "speaker": "",
-    "text": "in enablejsapi.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "in **enablejsapi**.",
+    "translated": "入れる必要があるかもしれません。",
     "start": 1022.509
   },
   {
-    "speaker": "",
-    "text": "You also might want to\nput in the origin",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "You also might want to\nput in the **origin**",
+    "translated": "また、こちらの**origin**パラメータを入れる必要があるかもしれません。",
     "start": 1023.819
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "parameter over here.",
-    "translated": "",
+    "translated": "また、こちらの**origin**パラメータを入れる必要があるかもしれません。",
     "start": 1026.77
   },
   {
-    "speaker": "",
-    "text": "And you set it equal to the full\nURL for your web page.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "And you set it equal to the **full\nURL** for your web page.",
+    "translated": "そして、それを皆さんのウェブページの**完全なURL**に等しく設定します。",
     "start": 1028.37
   },
   {
-    "speaker": "",
-    "text": "And this is a security mechanism\nto make sure that",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "And this is a **security mechanism**\nto make sure that",
+    "translated": "そして、これは、皆さんのホストウェブページから実行されているJavaScriptのみがプレイヤーと**通信**できるようにするための**セキュリティメカニズム**です。",
     "start": 1032.9
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "only JavaScript that's run from\nyour host web page is",
-    "translated": "",
+    "translated": "皆さんのホストウェブページから実行されているJavaScriptのみがプレイヤーと**通信**できるようにするための**セキュリティメカニズム**です。",
     "start": 1037.319
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "able to talk to the player.",
-    "translated": "",
+    "translated": "プレイヤーと**通信**できるようにするための**セキュリティメカニズム**です。",
     "start": 1040.069
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And if you're using the YT.",
-    "translated": "",
+    "translated": "そして、YT.",
     "start": 1043.169
   },
   {
-    "speaker": "",
-    "text": "Player constructor, it gets\nset automatically for you.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "Player constructor, it gets\nset **automatically** for you.",
+    "translated": "Playerコンストラクターを使用している場合は、**自動的に設定**されます。",
     "start": 1044.959
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So this is another instance\nwhere you really only have to",
-    "translated": "",
+    "translated": "ですから、これは皆さんが**明示的に**iframeタグを記述している場合にのみ、これについて心配する必要があるもう1つの例です。",
     "start": 1047.27
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "worry about this when you're\nexplicitly writing out an",
-    "translated": "",
+    "translated": "明示的に**iframeタグ**を記述している場合にのみ、これについて心配する必要があるもう1つの例です。",
     "start": 1049.549
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "iframe tag.",
-    "translated": "",
+    "translated": "**iframeタグ**を記述している場合にのみ、これについて心配する必要があるもう1つの例です。",
     "start": 1052.399
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And sometimes people run into\nissues where they explicitly",
-    "translated": "",
+    "translated": "そして、人々が明示的にiframeタグを使用していて、JavaScriptを使用してそれと通信しようとしているのに、コードがうまくいかないという問題に遭遇することがあります。",
     "start": 1054.89
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "were using the iframe tag, and\nthey're trying to talk to it",
-    "translated": "",
+    "translated": "iframeタグを使用していて、JavaScriptを使用してそれと通信しようとしているのに、コードがうまくいかないという問題に遭遇することがあります。",
     "start": 1058.22
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "using JavaScript, but their\ncode just isn't working.",
-    "translated": "",
+    "translated": "JavaScriptを使用してそれと通信しようとしているのに、コードがうまくいかないという問題に遭遇することがあります。",
     "start": 1061.24
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "One thing to debug in that case\nis check to see whether",
-    "translated": "",
+    "translated": "そのような場合にデバッグすべきことの1つは、**origin**パラメータを**設定しているかどうか**を確認することです。",
     "start": 1065.22
   },
   {
-    "speaker": "",
-    "text": "you are setting the\norigin parameter.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "you are setting the\n**origin** parameter.",
+    "translated": "**origin**パラメータを**設定しているかどうか**を確認することです。",
     "start": 1067.669
   },
   {
-    "speaker": "",
-    "text": "And if you are, make sure that\nit's really set to the full",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "And if you are, make sure that\nit's really set to the **full**",
+    "translated": "そして、設定している場合は、それがサイトの**ホスト名**の**完全なURL**に本当に設定されていることを確認してください。",
     "start": 1069.51
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "URL of the host name\nfor your site.",
-    "translated": "",
+    "translated": "サイトの**ホスト名**の**完全なURL**に本当に設定されていることを確認してください。",
     "start": 1073.82
   },
   {
-    "speaker": "",
-    "text": "playerapiid--",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "**playerapiid**--",
+    "translated": "**playerapiid**--",
     "start": 1077.72
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "this isn't really relevant\nanymore.",
-    "translated": "",
+    "translated": "これはもはやそれほど**関連性はありません**。",
     "start": 1079.69
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "It's more of a way of using the\nolder JavaScript API for",
-    "translated": "",
+    "translated": "これは、プレイヤーを識別するために**古いJavaScript API**を使用する方法です。",
     "start": 1081.77
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "identifying your player.",
-    "translated": "",
+    "translated": "プレイヤーを識別するために**古いJavaScript API**を使用する方法です。",
     "start": 1084.889
   },
   {
-    "speaker": "",
-    "text": "There's a playlist parameter\nwhich is easily confused with",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "There's a **playlist** parameter\nwhich is easily confused with",
+    "translated": "**list**パラメータと混同されやすい**playlist**パラメータがあります。",
     "start": 1086.61
   },
   {
-    "speaker": "",
-    "text": "the list parameter.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "the **list** parameter.",
+    "translated": "**list**パラメータと混同されやすい**playlist**パラメータがあります。",
     "start": 1090.419
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And it is something that\nactually takes in a different",
-    "translated": "",
+    "translated": "そして、これは実際には**異なる値のセット**を受け取るものです。",
     "start": 1091.419
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "set of values.",
-    "translated": "",
+    "translated": "**異なる値のセット**を受け取るものです。",
     "start": 1093.889
   },
   {
-    "speaker": "",
-    "text": "The playlist parameter takes\nin a list of video IDs.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "The **playlist** parameter takes\nin a **list of video IDs**.",
+    "translated": "**playlist**パラメータは、**動画IDのリスト**を受け取ります。",
     "start": 1094.889
   },
   {
-    "speaker": "",
-    "text": "So this does not have to\nbe a real playlist, a",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "So this does not have to\nbe a **real playlist**, a",
+    "translated": "ですから、これはYouTube上に存在する**実際のプレイリスト**である必要はありません。",
     "start": 1098.74
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "[? list that ?] exists\non YouTube.",
-    "translated": "",
+    "translated": "YouTube上に存在する**実際のプレイリスト**である必要はありません。",
     "start": 1100.509
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "It doesn't have to be anything\nthat uploads",
-    "translated": "",
+    "translated": "特定のチャンネルからのアップロードである必要もありません。",
     "start": 1101.82
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "from a specific channel.",
-    "translated": "",
+    "translated": "特定のチャンネルからのアップロードである必要もありません。",
     "start": 1106.32
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "It could just be a list of any\nvideo IDs that you want.",
-    "translated": "",
+    "translated": "それは単に、皆さんが望む任意の動画IDのリストで構いません。",
     "start": 1107.809
   },
   {
-    "speaker": "",
-    "text": "And it's a way of generating a\ndynamic, on-the-fly playlist.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "And it's a way of generating a\n**dynamic, on-the-fly playlist**.",
+    "translated": "そして、これは**動的な、オンザフライのプレイリスト**を生成する方法です。",
     "start": 1110.69
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So some use cases where\nthat might be useful.",
-    "translated": "",
+    "translated": "それで、それが役立ついくつかのユースケースがあります。",
     "start": 1115.59
   },
   {
-    "speaker": "",
-    "text": "There's the rel parameter.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "There's the **rel** parameter.",
+    "translated": "**rel**パラメータがあります。",
     "start": 1119.09
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And this controls whether or not\nthe end screen of a video",
-    "translated": "",
+    "translated": "そして、これは動画の**終了画面**が**関連動画**を**表示するかどうか**を制御します。",
     "start": 1121.769
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "will display related\nvideos or not.",
-    "translated": "",
+    "translated": "関連動画を表示するかどうかを制御します。",
     "start": 1125.769
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Most folks are familiar with the\nfact that once you reach",
-    "translated": "",
+    "translated": "ほとんどの人は、YouTube動画の終わりに到達すると、再生を推奨する他の動画の**サムネイルの構成**が表示されるという事実に慣れています。",
     "start": 1129.2
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "the end of a YouTube video,\nyou'll see some configuration",
-    "translated": "",
+    "translated": "YouTube動画の終わりに到達すると、再生を推奨する他の動画の**サムネイルの構成**が表示されるという事実に慣れています。",
     "start": 1131.29
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "of thumbnails with suggestions\nfor other videos to play.",
-    "translated": "",
+    "translated": "再生を推奨する他の動画の**サムネイルの構成**が表示されるという事実に慣れています。",
     "start": 1135.62
   },
   {
-    "speaker": "",
-    "text": "We do have the ability to turn\nthat off if you feel like you",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "We do have the ability to turn\nthat **off** if you feel like you",
+    "translated": "埋め込みでそれが**不要**だと感じる場合は、それを**オフにする**機能があります。",
     "start": 1139.049
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "do not want that\non your embeds.",
-    "translated": "",
+    "translated": "埋め込みでそれが**不要**だと感じる場合は、それを**オフにする**機能があります。",
     "start": 1141.85
   },
   {
-    "speaker": "",
-    "text": "showinfo is something that will\ncontrol what is displayed",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "**showinfo** is something that will\ncontrol what is displayed",
+    "translated": "**showinfo**は、キュー状態のときに**最初に表示されるもの**を制御するものです。",
     "start": 1146.179
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "initially in the\nqueued states.",
-    "translated": "",
+    "translated": "キュー状態のときに**最初に表示されるもの**を制御するものです。",
     "start": 1152.669
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "There's ways of taking the\ndefault behavior and kind of",
-    "translated": "",
+    "translated": "デフォルトの動作を採用し、それを少し**抑える**方法があります。つまり、動画が始まる前に**あまり多くの情報**が表示されないようにするのです。",
     "start": 1155.269
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "toning it down a bit, again,\nwhere you don't see quite as",
-    "translated": "",
+    "translated": "動画が始まる前に**あまり多くの情報**が表示されないようにするのです。",
     "start": 1158.14
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "much before the video starts.",
-    "translated": "",
+    "translated": "動画が始まる前に**あまり多くの情報**が表示されないようにするのです。",
     "start": 1160.11
   },
   {
-    "speaker": "",
-    "text": "And you can set it to\nshow info equal",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "And you can set it to\n**show info equal**",
+    "translated": "そして、そうしたい場合は、`showinfo`を**0**に設定できます。",
     "start": 1163.38
   },
   {
-    "speaker": "",
-    "text": "0, if you want that.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "**0**, if you want that.",
+    "translated": "**0**に設定できます。",
     "start": 1165.14
   },
   {
-    "speaker": "",
-    "text": "showinfo's actually used\nin another case.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "**showinfo**'s actually used\nin another case.",
+    "translated": "**showinfo**は実際には**別のケース**でも使用されます。",
     "start": 1167.13
   },
   {
-    "speaker": "",
-    "text": "And that's when you're using\nthe list player.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "And that's when you're using\nthe **list player**.",
+    "translated": "それは、**リストプレイヤー**を使用している場合です。",
     "start": 1169.36
   },
   {
-    "speaker": "",
-    "text": "And explicitly setting showinfo\nequal to 1 will make",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "And explicitly setting **showinfo\nequal to 1** will make",
+    "translated": "そして、明示的に`showinfo`を**1に設定する**と、リストプレイヤーのプレイリスト内に**キューに入っている動画のリスト**が表示されるようになります。",
     "start": 1171.97
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "it so that there is a list of\nqueued videos in the playlist",
-    "translated": "",
+    "translated": "リストプレイヤーのプレイリスト内に**キューに入っている動画のリスト**が表示されるようになります。",
     "start": 1176.639
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "in your list player.",
-    "translated": "",
+    "translated": "リストプレイヤーのプレイリスト内に**キューに入っている動画のリスト**が表示されるようになります。",
     "start": 1181.25
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So if we look over here,\nthis is a case where",
-    "translated": "",
+    "translated": "それで、こちらを見ると、これは`showinfo`が**1**に設定されているケースです。",
     "start": 1182.57
   },
   {
-    "speaker": "",
-    "text": "showinfo is set to 1.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "**showinfo** is set to **1**.",
+    "translated": "`showinfo`が**1**に設定されているケースです。",
     "start": 1184.179
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "This is a playlist player that's\nloading everything from",
-    "translated": "",
+    "translated": "これは、Google Developersからすべてを読み込んでいるプレイリストプレイヤーです。",
     "start": 1187.33
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Google Developers.",
-    "translated": "",
+    "translated": "Google Developersからすべてを読み込んでいるプレイリストプレイヤーです。",
     "start": 1189.24
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And you'll see, before playback\nhas even started, you",
-    "translated": "",
+    "translated": "そして、再生が始まる前から、キューに入っているすべての動画の便利なサムネイルが表示されていることがわかります。",
     "start": 1190.74
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "have this handy thumbnail for\nall the videos that are queued",
-    "translated": "",
+    "translated": "キューに入っているすべての動画の便利なサムネイルが表示されていることがわかります。",
     "start": 1192.929
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "up in the playlist for\nthe next videos.",
-    "translated": "",
+    "translated": "次の動画のためにプレイリストにキューイングされています。",
     "start": 1196.399
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "It will let you choose what\nyou want to start with.",
-    "translated": "",
+    "translated": "これで、最初にどれから始めたいかを選ぶことができます。",
     "start": 1198.269
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So it is actually quite useful\nfor scenarios where you're",
-    "translated": "",
+    "translated": "ですから、リストプレイヤーを使っているシナリオでは、実際には非常に有用です。",
     "start": 1200.97
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "doing the list player.",
-    "translated": "",
+    "translated": "リストプレイヤーを使っているシナリオでは、実際には非常に有用です。",
     "start": 1204.46
   },
   {
-    "speaker": "",
-    "text": "Start parameter we really\ncovered before, hand in hand",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "**Start** parameter we really\ncovered before, hand in hand",
+    "translated": "**Start**パラメータについては、**end**パラメータと関連付けて、前に説明しました。",
     "start": 1208.659
   },
   {
-    "speaker": "",
-    "text": "with the end parameter.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "with the **end** parameter.",
+    "translated": "**end**パラメータと関連付けて、前に説明しました。",
     "start": 1212.57
   },
   {
-    "speaker": "",
-    "text": "And the last one is the\ntheme parameter.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "And the last one is the\n**theme** parameter.",
+    "translated": "そして、最後は**theme**パラメータです。",
     "start": 1214.46
   },
   {
-    "speaker": "",
-    "text": "This is something similar to\nthat earlier color parameter",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "This is something similar to\nthat earlier **color** parameter",
+    "translated": "これは、以前の**color**パラメータと似ており、プレイヤーのデフォルトの見た目を変更し、その点である程度のカスタマイズを可能にするものです。",
     "start": 1217.36
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "that just lets you change the\ndefault way that the player",
-    "translated": "",
+    "translated": "プレイヤーのデフォルトの見た目を変更し、その点である程度のカスタマイズを可能にするものです。",
     "start": 1219.309
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "looks and gives you some degree\nof customization in",
-    "translated": "",
+    "translated": "プレイヤーのデフォルトの見た目を変更し、その点である程度のカスタマイズを可能にするものです。",
     "start": 1223.21
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "that regard.",
-    "translated": "",
+    "translated": "その点である程度のカスタマイズを可能にするものです。",
     "start": 1226.61
   },
   {
-    "speaker": "",
-    "text": "There are now a couple of\ndeprecated parameters.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "There are now a couple of\n**deprecated** parameters.",
+    "translated": "現在、いくつかの**非推奨**のパラメータがあります。",
     "start": 1229.269
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "I'm not going to cover those.",
-    "translated": "",
+    "translated": "それらについては説明しません。",
     "start": 1232.039
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "They're deprecated\nfor a reason.",
-    "translated": "",
+    "translated": "それらは理由があって非推奨なのです。",
     "start": 1233.3
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "We don't want folks using\nthem anymore.",
-    "translated": "",
+    "translated": "私たちはもう皆さんにそれらを使ってほしくありません。",
     "start": 1234.659
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "I wanted to point out that\nthere are occasionally--",
-    "translated": "",
+    "translated": "指摘しておきたかったのは、時々--",
     "start": 1236.42
   },
   {
-    "speaker": "",
-    "text": "I don't want to say rumors--\nbut certain parameters out",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "I don't want to say **rumors**--\nbut certain parameters out",
+    "translated": "**噂**とは言いたくありませんが-- 人々が広めて「おい、このプレイヤーパラメータを使えばHTML5再生を**強制**できるぞ」とか、",
     "start": 1240.49
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "there that people pass around\nand say, hey, you can use this",
-    "translated": "",
+    "translated": "人々が広めて「おい、このプレイヤーパラメータを使えばHTML5再生を**強制**できるぞ」とか、",
     "start": 1244.309
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "player parameter to force HTML5\nplayback, or use this",
-    "translated": "",
+    "translated": "「このプレイヤーパラメータを使えば、特定の**画質レベル**で再生を**強制**できるぞ」などと言う、特定のパラメータが出回っているということです。",
     "start": 1246.97
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "player parameter to force\nplayback in a certain quality",
-    "translated": "",
+    "translated": "「このプレイヤーパラメータを使えば、特定の**画質レベル**で再生を**強制**できるぞ」などと言う、特定のパラメータが出回っているということです。",
     "start": 1251.139
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "level or something along\nthose lines.",
-    "translated": "",
+    "translated": "「このプレイヤーパラメータを使えば、特定の**画質レベル**で再生を**強制**できるぞ」などと言う、特定のパラメータが出回っているということです。",
     "start": 1253.759
   },
   {
-    "speaker": "",
-    "text": "Those are undocumented\nfor a reason.",
-    "translated": "",
+    "speaker": "JEFF POSNICK",
+    "text": "Those are **undocumented\nfor a reason**.",
+    "translated": "それらは**理由があってドキュメントに記載されていない**のです。",
     "start": 1256.309
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "We really do not want people to\nuse parameters that aren't",
-    "translated": "",
+    "translated": "私たちは、ドキュメントに**明示的に記載されていない**パラメータを人々に使ってほしくありません。その理由の1つは、",
     "start": 1258.399
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "explicitly mentioned in the\ndocumentation, partly because",
-    "translated": "",
+    "translated": "ドキュメントに**明示的に記載されていない**パラメータを人々に使ってほしくありません。その理由の1つは、",
     "start": 1261.98
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "we're not fully committed\nto supporting them.",
-    "translated": "",
+    "translated": "私たちがそれらをサポートすることに**完全にコミットしていない**からです。",
     "start": 1264.32
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "They might sometimes work in\nsome cases, and they might",
-    "translated": "",
+    "translated": "それらは場合によっては機能するかもしれませんが、将来的には**いつでも機能しなくなる**可能性があります。",
     "start": 1266.529
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "stop working at any time\nin the future.",
-    "translated": "",
+    "translated": "将来的には**いつでも機能しなくなる**可能性があります。",
     "start": 1270.5
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So we really don't want people\nto build things that rely on",
-    "translated": "",
+    "translated": "ですから、私たちは人々にそれらのパラメータに**依存**するものを構築してほしくありません。",
     "start": 1272.309
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "those parameters.",
-    "translated": "",
+    "translated": "それらのパラメータに**依存**するものを構築してほしくありません。",
     "start": 1275.09
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And there's also just cases\nwhere we want control to be in",
-    "translated": "",
+    "translated": "また、**埋め込みを視聴している人**の手に制御を委ねたい場合もあります。",
     "start": 1277.19
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "the hands of the person who's\nviewing the embed.",
-    "translated": "",
+    "translated": "**埋め込みを視聴している人**の手に制御を委ねたい場合もあります。",
     "start": 1282.07
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So we want control over the\ndefault playback to really lie",
-    "translated": "",
+    "translated": "ですから、デフォルトの再生に関する制御は、実際にウェブブラウザを使用しており、Flashを有効にしているかもしれない人にかかっていてほしいのです。",
     "start": 1285.44
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "in the person who's using the\nweb browser and might have",
-    "translated": "",
+    "translated": "ウェブブラウザを使用しており、Flashを有効にしているかもしれない人にかかっていてほしいのです。",
     "start": 1290.7
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Flash enabled.",
-    "translated": "",
+    "translated": "Flashを有効にしているかもしれない人にかかっていてほしいのです。",
     "start": 1293.84
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Or the default auto quality for\nthe quality level in many",
-    "translated": "",
+    "translated": "あるいは、多くの場合、画質レベルのデフォルトの自動画質が、**最高の再生体験**を提供します。",
     "start": 1295.87
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "cases gives the best playback\nexperience.",
-    "translated": "",
+    "translated": "最高の再生体験**を提供します。",
     "start": 1301.169
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "So if you don't see something\nlisted as a supported",
-    "translated": "",
+    "translated": "ですから、サポートされているパラメータとしてリストに載っていないものを見かけたとしても、**使用しないでください**。",
     "start": 1304.169
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "parameter, please\ndon't use it.",
-    "translated": "",
+    "translated": "**使用しないでください**。",
     "start": 1307.76
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And if you do happen to find\nsome parameters, please don't",
-    "translated": "",
+    "translated": "そして、もし何らかのパラメータを見つけたとしても、将来的にそれらが壊れた場合に**苦情を言わないでください**。",
     "start": 1309.15
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "complain if they ever break at\nsome point in the future.",
-    "translated": "",
+    "translated": "将来的にそれらが壊れた場合に**苦情を言わないでください**。",
     "start": 1312.649
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "I guess that's the\nmain takeaway.",
-    "translated": "",
+    "translated": "それが主な要点だと思います。",
     "start": 1315.95
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "That covers the list of all\nthe supported parameters.",
-    "translated": "",
+    "translated": "これで、サポートされているすべてのパラメータのリストを網羅しました。",
     "start": 1319.01
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "We had a lot of different\nweb material here.",
-    "translated": "",
+    "translated": "ここでは、たくさんのさまざまなウェブ資料がありました。",
     "start": 1321.45
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And be sure to check out the\nannotations on the video for",
-    "translated": "",
+    "translated": "そして、今日取り上げたすべてへのリンクについては、必ず動画の**アノテーション**を確認してください。",
     "start": 1324.169
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "links to everything that\nwe covered today.",
-    "translated": "",
+    "translated": "今日取り上げたすべてへのリンクについては、必ず動画の**アノテーション**を確認してください。",
     "start": 1326.12
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "Thanks very much for watching.",
-    "translated": "",
+    "translated": "ご視聴いただき、誠にありがとうございます。",
     "start": 1329.25
   },
   {
-    "speaker": "",
+    "speaker": "JEFF POSNICK",
     "text": "And we'll see everybody\nnext week.",
-    "translated": "",
+    "translated": "それでは、また来週お会いしましょう。",
     "start": 1333.049
   },
   {
+    "speaker": "JEFF POSNICK",
     "text": "Cheers.",
-    "translated": "",
+    "translated": "乾杯（さようなら）。",
     "start": 1337.309
   }
 ]

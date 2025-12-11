@@ -1,0 +1,936 @@
+{
+  "i": {
+    "word": "I",
+    "definition": "（代名詞）私。話し手自身を指す。",
+    "partOfSpeech": "代名詞",
+    "examples": [
+      "I am Jeff Posnick. (私はジェフ・ポスニックです。)",
+      "I am a member of the team. (私はチームの一員です。)"
+    ],
+    "synonyms": ["Myself"],
+    "antonyms": ["You"]
+  },
+  "am": {
+    "word": "Am",
+    "definition": "（動詞）〜である、存在する。主語が「I」の時のbe動詞の現在形。",
+    "partOfSpeech": "動詞",
+    "examples": [
+      "I am coming to you from New York. (ニューヨークからお送りしています。)",
+      "I am excited. (私はわくわくしています。)"
+    ],
+    "synonyms": ["Be", "Exist"],
+    "antonyms": []
+  },
+  "hey": {
+    "word": "Hey",
+    "definition": "（間投詞）やあ、おい。注意を引いたり、親しい挨拶に使う。",
+    "partOfSpeech": "間投詞",
+    "examples": [
+      "Hey, everybody. (やあ、皆さん。)",
+      "Hey, look at this! (おい、これを見て！)"
+    ],
+    "synonyms": ["Hi", "Hello"],
+    "antonyms": []
+  },
+  "everybody": {
+    "word": "Everybody",
+    "definition": "（代名詞）すべての人、皆さん。",
+    "partOfSpeech": "代名詞",
+    "examples": [
+      "Hey, everybody. (やあ、皆さん。)",
+      "Everybody is welcome. (誰でも歓迎します。)"
+    ],
+    "synonyms": ["Everyone"],
+    "antonyms": ["Nobody"]
+  },
+  "welcome": {
+    "word": "Welcome",
+    "definition": "（間投詞）ようこそ。（動詞）歓迎する。",
+    "partOfSpeech": "間投詞 / 動詞",
+    "examples": [
+      "Welcome to this week's show. (今週の番組へようこそ。)",
+      "We welcome you. (私たちはあなたを歓迎します。)"
+    ],
+    "synonyms": ["Greet"],
+    "antonyms": ["Reject"]
+  },
+  "to": {
+    "word": "To",
+    "definition": "（前置詞）〜へ、〜に対して。方向や対象を示す。",
+    "partOfSpeech": "前置詞",
+    "examples": [
+      "Welcome to the show. (番組へようこそ。)",
+      "Talk to you. (あなたに話す。)"
+    ],
+    "synonyms": ["Toward"],
+    "antonyms": ["From"]
+  },
+  "this": {
+    "word": "This",
+    "definition": "（代名詞・形容詞）これ、この。近くにある物や現在を指す。",
+    "partOfSpeech": "代名詞 / 形容詞",
+    "examples": [
+      "This week's show. (今週の番組。)",
+      "What is this? (これは何ですか？)"
+    ],
+    "synonyms": [],
+    "antonyms": ["That"]
+  },
+  "week": {
+    "word": "Week",
+    "definition": "（名詞）週、一週間（7日間）。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "This week's show. (今週の番組。)",
+      "See you next week. (また来週会いましょう。)"
+    ],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "show": {
+    "word": "Show",
+    "definition": "（名詞）番組、ショー。（動詞）見せる。",
+    "partOfSpeech": "名詞 / 動詞",
+    "examples": [
+      "YouTube Developers Live show. (YouTubeデベロッパーライブという番組。)",
+      "Show me the code. (私にコードを見せて。)"
+    ],
+    "synonyms": ["Program", "Display"],
+    "antonyms": ["Hide"]
+  },
+  "of": {
+    "word": "Of",
+    "definition": "（前置詞）〜の、〜に関する。所有や所属を示す。",
+    "partOfSpeech": "前置詞",
+    "examples": [
+      "Show of YouTube Developers. (YouTubeデベロッパーの番組。)",
+      "Member of the team. (チームのメンバー。)"
+    ],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "youtube": {
+    "word": "YouTube",
+    "definition": "（固有名詞）世界最大の動画共有プラットフォーム。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "YouTube Developers Live. (YouTubeデベロッパーライブ。)",
+      "Watch YouTube. (YouTubeを見る。)"
+    ],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "developers": {
+    "word": "Developers",
+    "definition": "（名詞）開発者。ソフトウェアやシステムを作る人々。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "YouTube Developers Live. (YouTubeデベロッパーライブ。)",
+      "We are developers. (私たちは開発者です。)"
+    ],
+    "synonyms": ["Programmers", "Creators"],
+    "antonyms": ["Users"]
+  },
+  "live": {
+    "word": "Live",
+    "definition": "（形容詞・副詞）生の、ライブの。（動詞）住む、生きる。",
+    "partOfSpeech": "形容詞 / 動詞",
+    "examples": [
+      "Developers Live. (デベロッパーライブ。)",
+      "I live in Tokyo. (私は東京に住んでいます。)"
+    ],
+    "synonyms": ["Real-time", "Reside"],
+    "antonyms": ["Recorded", "Die"]
+  },
+  "coming": {
+    "word": "Coming",
+    "definition": "（動詞comeの現在分詞）来ている、送っている。",
+    "partOfSpeech": "動詞",
+    "examples": [
+      "Coming to you from New York. (ニューヨークからお届けしています。)",
+      "Winter is coming. (冬が来つつある。)"
+    ],
+    "synonyms": ["Approaching"],
+    "antonyms": ["Going"]
+  },
+  "you": {
+    "word": "You",
+    "definition": "（代名詞）あなた、あなたたち。",
+    "partOfSpeech": "代名詞",
+    "examples": [
+      "Coming to you. (あなたにお届けする。)",
+      "Thank you. (ありがとう。)"
+    ],
+    "synonyms": [],
+    "antonyms": ["Me", "I"]
+  },
+  "from": {
+    "word": "From",
+    "definition": "（前置詞）〜から。起点や出身を示す。",
+    "partOfSpeech": "前置詞",
+    "examples": [
+      "From New York City. (ニューヨーク市から。)",
+      "Where are you from? (出身はどこですか？)"
+    ],
+    "synonyms": [],
+    "antonyms": ["To"]
+  },
+  "new": {
+    "word": "New",
+    "definition": "（形容詞）新しい、新興の。",
+    "partOfSpeech": "形容詞",
+    "examples": [
+      "New York City. (ニューヨーク市。)",
+      "I have a new idea. (新しいアイデアがあります。)"
+    ],
+    "synonyms": ["Fresh", "Modern"],
+    "antonyms": ["Old"]
+  },
+  "york": {
+    "word": "York",
+    "definition": "（固有名詞）ニューヨークの一部。地名。",
+    "partOfSpeech": "名詞",
+    "examples": ["New York City. (ニューヨーク市。)"],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "city": {
+    "word": "City",
+    "definition": "（名詞）都市、市、都会。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "New York City. (ニューヨーク市。)",
+      "I live in a big city. (私は大都市に住んでいます。)"
+    ],
+    "synonyms": ["Town", "Metropolis"],
+    "antonyms": ["Country", "Village"]
+  },
+  "member": {
+    "word": "Member",
+    "definition": "（名詞）一員、メンバー。",
+    "partOfSpeech": "名詞",
+    "examples": ["Member of the team. (チームのメンバー。)"],
+    "synonyms": ["Part"],
+    "antonyms": []
+  },
+  "the": {
+    "word": "The",
+    "definition": "（冠詞）その。特定のものを指す定冠詞。",
+    "partOfSpeech": "冠詞",
+    "examples": ["The Developer Relations team. (そのデベロッパーリレーションズチーム。)"],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "developer": {
+    "word": "Developer",
+    "definition": "（名詞）開発者（単数形）。",
+    "partOfSpeech": "名詞",
+    "examples": ["Developer Relations team. (デベロッパーリレーションズチーム。)"],
+    "synonyms": ["Creator"],
+    "antonyms": []
+  },
+  "relations": {
+    "word": "Relations",
+    "definition": "（名詞）関係、交渉。広報などの活動。",
+    "partOfSpeech": "名詞",
+    "examples": ["Developer Relations team. (デベロッパーリレーションズチーム。)"],
+    "synonyms": ["Connections"],
+    "antonyms": []
+  },
+  "team": {
+    "word": "Team",
+    "definition": "（名詞）チーム、組。",
+    "partOfSpeech": "名詞",
+    "examples": ["The Developer Relations team. (そのデベロッパーリレーションズチーム。)"],
+    "synonyms": ["Group"],
+    "antonyms": []
+  },
+  "and": {
+    "word": "And",
+    "definition": "（接続詞）そして、〜と。並列を示す。",
+    "partOfSpeech": "接続詞",
+    "examples": [
+      "I'm excited and happy. (私はわくわくしていて幸せです。)"
+    ],
+    "synonyms": ["Plus"],
+    "antonyms": []
+  },
+  "really": {
+    "word": "Really",
+    "definition": "（副詞）本当に、非常に。",
+    "partOfSpeech": "副詞",
+    "examples": [
+      "I'm really excited. (本当にわくわくしています。)"
+    ],
+    "synonyms": ["Truly", "Very"],
+    "antonyms": []
+  },
+  "excited": {
+    "word": "Excited",
+    "definition": "（形容詞）興奮した、わくわくした。",
+    "partOfSpeech": "形容詞",
+    "examples": [
+      "I'm excited to talk. (お話しできるのが楽しみです。)"
+    ],
+    "synonyms": ["Thrilled"],
+    "antonyms": ["Bored"]
+  },
+  "talk": {
+    "word": "Talk",
+    "definition": "（動詞）話す、語る。",
+    "partOfSpeech": "動詞",
+    "examples": [
+      "Talk to you about different ways. (さまざまな方法についてあなたに話す。)"
+    ],
+    "synonyms": ["Speak", "Chat"],
+    "antonyms": ["Silence"]
+  },
+  "about": {
+    "word": "About",
+    "definition": "（前置詞）〜について、〜に関して。",
+    "partOfSpeech": "前置詞",
+    "examples": [
+      "Talk to you about customising. (カスタマイズについてあなたに話す。)"
+    ],
+    "synonyms": ["Regarding"],
+    "antonyms": []
+  },
+  "different": {
+    "word": "Different",
+    "definition": "（形容詞）異なる、さまざまな。",
+    "partOfSpeech": "形容詞",
+    "examples": [
+      "Different ways. (さまざまな方法。)",
+      "Many different players. (多くの異なるプレイヤー。)"
+    ],
+    "synonyms": ["Various"],
+    "antonyms": ["Same"]
+  },
+  "ways": {
+    "word": "Ways",
+    "definition": "（名詞）方法、道。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "Different ways of customizing. (カスタマイズのさまざまな方法。)"
+    ],
+    "synonyms": ["Methods"],
+    "antonyms": []
+  },
+  "customizing": {
+    "word": "Customizing",
+    "definition": "（動詞の現在分詞）カスタマイズすること。",
+    "partOfSpeech": "動詞",
+    "examples": [
+      "Ways of customizing the player. (プレイヤーをカスタマイズする方法。)"
+    ],
+    "synonyms": ["Personalizing"],
+    "antonyms": []
+  },
+  "embedded": {
+    "word": "Embedded",
+    "definition": "（形容詞）埋め込まれた。",
+    "partOfSpeech": "形容詞",
+    "examples": [
+      "YouTube-embedded player. (YouTubeの埋め込みプレイヤー。)"
+    ],
+    "synonyms": ["Integrated"],
+    "antonyms": []
+  },
+  "player": {
+    "word": "Player",
+    "definition": "（名詞）再生機、プレイヤー。",
+    "partOfSpeech": "名詞",
+    "examples": ["YouTube-embedded player. (YouTubeの埋め込みプレイヤー。)"],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "before": {
+    "word": "Before",
+    "definition": "（接続詞・前置詞）〜の前に。",
+    "partOfSpeech": "接続詞 / 前置詞",
+    "examples": [
+      "Before I get started. (私が始める前に。)"
+    ],
+    "synonyms": ["Earlier"],
+    "antonyms": ["After"]
+  },
+  "get": {
+    "word": "Get",
+    "definition": "（動詞）〜になる、得る。ここでは「始める」の一部。",
+    "partOfSpeech": "動詞",
+    "examples": [
+      "Before I get started. (私が始める前に。)"
+    ],
+    "synonyms": ["Become"],
+    "antonyms": []
+  },
+  "started": {
+    "word": "Started",
+    "definition": "（動詞の過去分詞）開始された。",
+    "partOfSpeech": "動詞",
+    "examples": [
+      "Before I get started. (私が始める前に。)"
+    ],
+    "synonyms": ["Began"],
+    "antonyms": ["Finished"]
+  },
+  "though": {
+    "word": "Though",
+    "definition": "（副詞）しかしながら、けれども。",
+    "partOfSpeech": "副詞",
+    "examples": [
+      "Before I get started though. (けれども、私が始める前に。)"
+    ],
+    "synonyms": ["However"],
+    "antonyms": []
+  },
+  "want": {
+    "word": "Want",
+    "definition": "（動詞）〜したい、欲する。",
+    "partOfSpeech": "動詞",
+    "examples": [
+      "I want a couple of rules. (いくつかのルールを決めたいと思います。)"
+    ],
+    "synonyms": ["Desire"],
+    "antonyms": []
+  },
+  "couple": {
+    "word": "Couple",
+    "definition": "（名詞）いくつか、2、3の。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "A couple of ground rules. (いくつかの基本ルール。)"
+    ],
+    "synonyms": ["A few"],
+    "antonyms": []
+  },
+  "ground": {
+    "word": "Ground",
+    "definition": "（形容詞・名詞）基礎の、地面の。ここでは「基本ルール」の一部。",
+    "partOfSpeech": "名詞 / 形容詞",
+    "examples": ["Ground rules. (基本ルール。)"],
+    "synonyms": ["Base"],
+    "antonyms": []
+  },
+  "rules": {
+    "word": "Rules",
+    "definition": "（名詞）規則、ルール。",
+    "partOfSpeech": "名詞",
+    "examples": ["Ground rules. (基本ルール。)"],
+    "synonyms": ["Regulations"],
+    "antonyms": []
+  },
+  "just": {
+    "word": "Just",
+    "definition": "（副詞）ただ〜だけ、単に。",
+    "partOfSpeech": "副詞",
+    "examples": [
+      "Just talk about what we're covering. (私たちが扱う内容についてだけ話す。)"
+    ],
+    "synonyms": ["Only"],
+    "antonyms": []
+  },
+  "what": {
+    "word": "What",
+    "definition": "（関係代名詞・疑問詞）こと、もの、何。",
+    "partOfSpeech": "代名詞",
+    "examples": [
+      "What we're going to be covering. (私たちがカバーしようとしていること。)"
+    ],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "we": {
+    "word": "We",
+    "definition": "（代名詞）私たち。",
+    "partOfSpeech": "代名詞",
+    "examples": [
+      "What we're going to cover. (私たちがカバーしようとしていること。)"
+    ],
+    "synonyms": [],
+    "antonyms": ["They"]
+  },
+  "are": {
+    "word": "Are",
+    "definition": "（動詞）〜である。主語が「We」の時のbe動詞の現在形。",
+    "partOfSpeech": "動詞",
+    "examples": [
+      "We are going to be covering. (私たちはカバーするつもりです。)"
+    ],
+    "synonyms": ["Be"],
+    "antonyms": []
+  },
+  "going": {
+    "word": "Going",
+    "definition": "（動詞の現在分詞）〜するつもりである(be going to)。",
+    "partOfSpeech": "動詞",
+    "examples": [
+      "We are going to cover. (私たちはカバーするつもりです。)"
+    ],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "be": {
+    "word": "Be",
+    "definition": "（動詞）〜である、なる。",
+    "partOfSpeech": "動詞",
+    "examples": [
+      "Going to be covering. (カバーすることになる。)"
+    ],
+    "synonyms": ["Exist"],
+    "antonyms": []
+  },
+  "covering": {
+    "word": "Covering",
+    "definition": "（動詞の現在分詞）〜を扱う、カバーする。",
+    "partOfSpeech": "動詞",
+    "examples": [
+      "We're going to be covering. (私たちはカバーするつもりです。)"
+    ],
+    "synonyms": ["Addressing"],
+    "antonyms": ["Excluding"]
+  },
+  "in": {
+    "word": "In",
+    "definition": "（前置詞）〜の中で、〜において。",
+    "partOfSpeech": "前置詞",
+    "examples": [
+      "In today's show. (今日の番組の中で。)"
+    ],
+    "synonyms": ["Inside"],
+    "antonyms": ["Out"]
+  },
+  "today": {
+    "word": "Today",
+    "definition": "（名詞）今日。",
+    "partOfSpeech": "名詞",
+    "examples": ["Today's show. (今日の番組。)"],
+    "synonyms": [],
+    "antonyms": ["Yesterday", "Tomorrow"]
+  },
+  "there": {
+    "word": "There",
+    "definition": "（副詞）そこに、あそこに（文頭で「〜がある」）。",
+    "partOfSpeech": "副詞",
+    "examples": [
+      "There are a lot of players. (多くのプレイヤーがいます。)"
+    ],
+    "synonyms": [],
+    "antonyms": ["Here"]
+  },
+  "lot": {
+    "word": "Lot",
+    "definition": "（名詞）たくさん(a lot of)。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "A lot of different players. (多くのさまざまなプレイヤー。)"
+    ],
+    "synonyms": ["Many"],
+    "antonyms": ["Few"]
+  },
+  "players": {
+    "word": "Players",
+    "definition": "（名詞）再生機（複数形）。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "A lot of different players. (多くのさまざまなプレイヤー。)"
+    ],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "is": {
+    "word": "Is",
+    "definition": "（動詞）〜である。主語が3人称単数の時のbe動詞。",
+    "partOfSpeech": "動詞",
+    "examples": ["There is/there's... (あります/います...)"],
+    "synonyms": ["Be"],
+    "antonyms": []
+  },
+  "alice": {
+    "word": "Alice",
+    "definition": "（固有名詞）アリス。物語の主人公の名前。",
+    "partOfSpeech": "名詞",
+    "examples": ["Alice in Wonderland. (不思議の国のアリス。)"],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "wonderland": {
+    "word": "Wonderland",
+    "definition": "（名詞）不思議の国、おとぎの国。驚きに満ちた場所。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "Alice in Wonderland. (不思議の国のアリス。)",
+      "How do you get to Wonderland? (どうやって不思議の国へ行くのですか？)"
+    ],
+    "synonyms": ["Fairyland", "Dreamland"],
+    "antonyms": []
+  },
+  "how": {
+    "word": "How",
+    "definition": "（副詞）どのようにして、どんなふうに。方法や状態を尋ねる。",
+    "partOfSpeech": "副詞",
+    "examples": [
+      "How do you get to Wonderland? (どうやって不思議の国へ行くのですか？)",
+      "How are you? (お元気ですか？)"
+    ],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "do": {
+    "word": "Do",
+    "definition": "（助動詞）疑問文や否定文を作る。ここでは疑問文の補助。",
+    "partOfSpeech": "助動詞",
+    "examples": [
+      "How do you get there? (どうやってそこへ行くのですか？)",
+      "Do you like stars? (星は好きですか？)"
+    ],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "over": {
+    "word": "Over",
+    "definition": "（前置詞）〜を越えて、〜の上に。",
+    "partOfSpeech": "前置詞",
+    "examples": [
+      "Over the hill. (丘を越えて。)",
+      "The bird flew over the house. (鳥が家の上を飛んでいった。)"
+    ],
+    "synonyms": ["Above", "Across"],
+    "antonyms": ["Under"]
+  },
+  "hill": {
+    "word": "Hill",
+    "definition": "（名詞）丘、小山。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "Over the hill. (丘を越えて。)",
+      "The sun rose behind the hill. (太陽が丘の向こうから昇った。)"
+    ],
+    "synonyms": ["Mound", "Rise"],
+    "antonyms": ["Valley"]
+  },
+  "or": {
+    "word": "Or",
+    "definition": "（接続詞）あるいは、または。選択肢を示す。",
+    "partOfSpeech": "接続詞",
+    "examples": [
+      "Over the hill or under land? (丘を越えて、あるいは陸の下？)",
+      "Apple or orange? (りんご、それともオレンジ？)"
+    ],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "under": {
+    "word": "Under",
+    "definition": "（前置詞）〜の下に、〜の真下に。",
+    "partOfSpeech": "前置詞",
+    "examples": [
+      "Under land. (陸の下に。)",
+      "The cat is under the table. (猫はテーブルの下にいます。)"
+    ],
+    "synonyms": ["Below", "Beneath"],
+    "antonyms": ["Over", "Above"]
+  },
+  "land": {
+    "word": "Land",
+    "definition": "（名詞）陸、土地、国。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "Under land. (陸の下。)",
+      "Where is the land beyond the eye? (目の届かない場所にある土地はどこ？)"
+    ],
+    "synonyms": ["Ground", "Country"],
+    "antonyms": ["Sea", "Ocean"]
+  },
+  "behind": {
+    "word": "Behind",
+    "definition": "（前置詞）〜の後ろに、〜の背後に。",
+    "partOfSpeech": "前置詞",
+    "examples": [
+      "Just behind the tree. (木のすぐ後ろ。)",
+      "Someone is behind you. (誰かがあなたの後ろにいます。)"
+    ],
+    "synonyms": ["Rear"],
+    "antonyms": ["In front of"]
+  },
+  "tree": {
+    "word": "Tree",
+    "definition": "（名詞）木、樹木。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "Behind the tree. (木の後ろ。)",
+      "An apple tree. (りんごの木。)"
+    ],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "when": {
+    "word": "When",
+    "definition": "（接続詞）〜する時。時間を表す。",
+    "partOfSpeech": "接続詞",
+    "examples": [
+      "When clouds go rolling by. (雲が流れていく時。)",
+      "Call me when you are ready. (準備ができたら電話して。)"
+    ],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "clouds": {
+    "word": "Clouds",
+    "definition": "（名詞）雲。空に浮かぶ水蒸気の塊。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "When clouds go rolling by. (雲が流れていく時。)",
+      "Look at those white clouds. (あの白い雲を見て。)"
+    ],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "go": {
+    "word": "Go",
+    "definition": "（動詞）行く、進む、過ぎ去る。",
+    "partOfSpeech": "動詞",
+    "examples": [
+      "When clouds go rolling by. (雲が流れていく時。)",
+      "Go to school. (学校へ行く。)"
+    ],
+    "synonyms": ["Move", "Proceed"],
+    "antonyms": ["Stay", "Come"]
+  },
+  "rolling": {
+    "word": "Rolling",
+    "definition": "（動詞rollの現在分詞）転がっている、流れていく。",
+    "partOfSpeech": "動詞",
+    "examples": [
+      "Clouds go rolling by. (雲が流れていく。)",
+      "A rolling stone. (転がる石。)"
+    ],
+    "synonyms": ["Turning"],
+    "antonyms": []
+  },
+  "by": {
+    "word": "By",
+    "definition": "（副詞・前置詞）そばを、通り過ぎて。〜によって。",
+    "partOfSpeech": "副詞 / 前置詞",
+    "examples": [
+      "Go rolling by. (そばを流れていく。)",
+      "Stand by me. (私のそばにいて。)"
+    ],
+    "synonyms": ["Past", "Near"],
+    "antonyms": []
+  },
+  "they": {
+    "word": "They",
+    "definition": "（代名詞）彼らは、それらは。前に出た複数のものを指す。",
+    "partOfSpeech": "代名詞",
+    "examples": [
+      "They roll away. (それらは転がり去る。)",
+      "They must be somewhere. (それらはどこかにあるに違いない。)"
+    ],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "roll": {
+    "word": "Roll",
+    "definition": "（動詞）転がる、進む。",
+    "partOfSpeech": "動詞",
+    "examples": ["They roll away. (それらは転がり去る。)"],
+    "synonyms": ["Turn"],
+    "antonyms": []
+  },
+  "away": {
+    "word": "Away",
+    "definition": "（副詞）離れて、去って。",
+    "partOfSpeech": "副詞",
+    "examples": [
+      "They roll away. (それらは転がり去る。)",
+      "Go away! (あっちへ行け！)"
+    ],
+    "synonyms": ["Off", "Aside"],
+    "antonyms": ["Near"]
+  },
+  "leave": {
+    "word": "Leave",
+    "definition": "（動詞）去る、残す、離れる。",
+    "partOfSpeech": "動詞",
+    "examples": [
+      "Leave the sky. (空を去る。)",
+      "Don't leave me alone. (一人にしないで。)"
+    ],
+    "synonyms": ["Depart", "Exit"],
+    "antonyms": ["Arrive", "Stay"]
+  },
+  "sky": {
+    "word": "Sky",
+    "definition": "（名詞）空。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "Leave the sky. (空を去る。)",
+      "The sky is blue. (空は青い。)"
+    ],
+    "synonyms": ["Heavens"],
+    "antonyms": ["Ground"]
+  },
+  "where": {
+    "word": "Where",
+    "definition": "（副詞・接続詞）どこに、どこで。",
+    "partOfSpeech": "副詞",
+    "examples": [
+      "Where is the land? (その土地はどこ？)",
+      "Where can it be? (それはどこにあり得る？)"
+    ],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "beyond": {
+    "word": "Beyond",
+    "definition": "（前置詞）〜の向こうに、〜を越えて。",
+    "partOfSpeech": "前置詞",
+    "examples": [
+      "Beyond the eye. (目の届かない向こう。)",
+      "Beyond the mountains. (山の向こう。)"
+    ],
+    "synonyms": ["Past", "Further"],
+    "antonyms": []
+  },
+  "eye": {
+    "word": "Eye",
+    "definition": "（名詞）目、視力。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "Beyond the eye. (目の届かないところ。)",
+      "Close your eyes. (目を閉じて。)"
+    ],
+    "synonyms": ["Vision"],
+    "antonyms": []
+  },
+  "that": {
+    "word": "That",
+    "definition": "（関係代名詞・代名詞）それ、あれ。ここでは関係代名詞。",
+    "partOfSpeech": "代名詞",
+    "examples": ["That people cannot see. (人々が見ることのできないもの。)"],
+    "synonyms": [],
+    "antonyms": ["This"]
+  },
+  "people": {
+    "word": "People",
+    "definition": "（名詞）人々。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "People cannot see. (人々は見ることができない。)"
+    ],
+    "synonyms": ["Persons", "Humans"],
+    "antonyms": []
+  },
+  "can": {
+    "word": "Can",
+    "definition": "（助動詞）〜できる。能力や可能性を表す。",
+    "partOfSpeech": "助動詞",
+    "examples": [
+      "Where can it be? (それはどこにあり得る？)",
+      "I can swim. (私は泳げます。)"
+    ],
+    "synonyms": ["Able to"],
+    "antonyms": ["Cannot"]
+  },
+  "not": {
+    "word": "Not",
+    "definition": "（副詞）〜でない。否定を表す。",
+    "partOfSpeech": "副詞",
+    "examples": ["Cannot (can not) see. (見ることができない。)"],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "see": {
+    "word": "See",
+    "definition": "（動詞）見る、見える、理解する。",
+    "partOfSpeech": "動詞",
+    "examples": [
+      "People cannot see. (人々は見ることができない。)",
+      "I see the point. (言いたいことはわかります。)"
+    ],
+    "synonyms": ["Look", "Watch"],
+    "antonyms": []
+  },
+  "it": {
+    "word": "It",
+    "definition": "（代名詞）それ。特定の物や状況を指す。",
+    "partOfSpeech": "代名詞",
+    "examples": ["Where can it be? (それはどこにあり得る？)"],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "stars": {
+    "word": "Stars",
+    "definition": "（名詞）星（複数形）。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "Where do stars go? (星はどこへ行くの？)",
+      "The stars are bright. (星が輝いている。)"
+    ],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "crescent": {
+    "word": "Crescent",
+    "definition": "（名詞・形容詞）三日月、三日月形の。",
+    "partOfSpeech": "名詞",
+    "examples": ["Where is the crescent moon? (三日月はどこ？)"],
+    "synonyms": [],
+    "antonyms": ["Full moon"]
+  },
+  "moon": {
+    "word": "Moon",
+    "definition": "（名詞）月。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "Crescent moon. (三日月。)",
+      "The moon orbits the Earth. (月は地球の周りを回っている。)"
+    ],
+    "synonyms": [],
+    "antonyms": ["Sun"]
+  },
+  "must": {
+    "word": "Must",
+    "definition": "（助動詞）〜に違いない。〜しなければならない。強い推量や義務。",
+    "partOfSpeech": "助動詞",
+    "examples": [
+      "They must be somewhere. (それらはどこかにあるに違いない。)",
+      "You must go. (あなたは行かなければならない。)"
+    ],
+    "synonyms": [],
+    "antonyms": []
+  },
+  "somewhere": {
+    "word": "Somewhere",
+    "definition": "（副詞）どこかに、どこかで。",
+    "partOfSpeech": "副詞",
+    "examples": [
+      "Somewhere in a sunny afternoon. (晴れた午後のどこかに。)"
+    ],
+    "synonyms": ["Anywhere"],
+    "antonyms": ["Nowhere"]
+  },
+  "sunny": {
+    "word": "Sunny",
+    "definition": "（形容詞）晴れた、日の当たる。",
+    "partOfSpeech": "形容詞",
+    "examples": [
+      "In a sunny afternoon. (晴れた午後に。)",
+      "A sunny day. (晴れた日。)"
+    ],
+    "synonyms": ["Bright", "Clear"],
+    "antonyms": ["Cloudy", "Rainy"]
+  },
+  "afternoon": {
+    "word": "Afternoon",
+    "definition": "（名詞）午後。",
+    "partOfSpeech": "名詞",
+    "examples": [
+      "In a sunny afternoon. (晴れた午後に。)",
+      "Good afternoon. (こんにちは。)"
+    ],
+    "synonyms": [],
+    "antonyms": ["Morning"]
+  }
+}
