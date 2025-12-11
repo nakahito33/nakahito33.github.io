@@ -128,37 +128,108 @@ main {
 }
 
 .translation-content {
-  background-color: #fff; /* 変更 */
-  padding: 16px;
-  height: 250px; /* 変更 */
-  overflow-y: auto; /* 変更 */
-  flex-grow: 1; /* 追加 */
+  position: relative;
+  background-color: #fff;
+  padding: 0;
+  /* パディング不要 */
+  height: 250px;
+  overflow: hidden;
+  /* ここを auto から hidden にする */
+  flex-grow: 1;
 }
 
 .lang-text {
-  display: none;
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  /* スクロールはここに一本化 */
+  visibility: hidden;
+  padding: 16px;
+  /* 代わりに内側余白をつける */
+  z-index: 1;
 }
 
 .lang-text.active {
-  display: block;
+  visibility: visible;
+  z-index: 2;
 }
 
 .lang-text p {
-  cursor: pointer;
-  transition: background-color 0.15s ease;  /*色変化を滑らかにする*/
-  padding: 4px 6px;
+  position: relative;
+  margin: 4px 0;
+  padding: 6px 8px;
   border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .lang-text p:hover {
-  background-color: #f0f0f0;
-  /* マウスを近づけると薄い灰色 */
+  background-color: #f3fafd;
 }
 
-.lang-text p:active {
-  background-color: #d0d0d0;
-  /* 押したとき少し暗い灰色 */
+.lang-text p.active {
+  background-color: #e6f7ff;
+  font-weight: bold;
 }
+.subtitle-line {
+  overflow-anchor: none;
+}
+
+.star-icon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  font-size: 18px;
+  color: #ccc;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.lang-text p:hover .star-icon {
+  opacity: 1;
+}
+
+.star-icon:hover {
+  color: #ffe37c;
+}
+
+.star-icon:active {
+  font-weight: bold;
+}
+
+.star-icon.star-active {
+  color: #f7c200;
+  opacity: 1;
+}
+
+.scroll-helper-btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  font-size: 20px;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+  user-select: none;
+}
+
+#scroll-up-btn {
+  top: 10%;
+}
+
+#scroll-down-btn {
+  bottom: 10%;
+}
+
 /* クイズ部分のスタイル */
 .right {
   width: 35%; /* 変更：右側の割合を調整 */
