@@ -78,55 +78,5 @@ main {
     margin-right: 20px;
 }
 
-/* =========================================
-   スマホ用レスポンシブ設定 (767px以下)
-   ========================================= */
-@media screen and (max-width: 767px) {
-  
-  /* 1. コンテナの幅を広げて、画面を有効活用する */
-  .container {
-    width: 95%; /* 80%から95%に変更して広く使う */
-    /* margin: 0 auto; は上の設定が効くのでそのままでOK */
-  }
 
-  /* 2. 画像エリアの左余白を消して、横スクロールを実現する */
-  .container-img {
-    padding-left: 0;       /* 原因だった左の余白(40px)を削除 */
-    margin-bottom: 30px;   /* 下の余白を調整 */
-    
-    /* --- 横スクロールさせる魔法の記述 --- */
-    display: flex;         /* 画像を横一列に並べる */
-    overflow-x: auto;      /* 横にはみ出たらスクロールさせる */
-    gap: 15px;             /* 画像と画像の間の隙間 */
-    padding-bottom: 10px;  /* スクロール操作しやすくする余白 */
-    
-    /* スクロール動作を滑らかにする */
-    -webkit-overflow-scrolling: touch; 
-  }
-
-  /* 3. 画像の表示調整 */
-  .container-img a {
-    /* リンク要素が縮まないようにする */
-    flex-shrink: 0; 
-  }
-
-  .container-img img {
-    margin-right: 0;       /* gapで隙間を作るのでmarginはリセット */
-    width: 160px;          /* スマホで見やすいサイズに調整（お好みで変更可） */
-    height: auto;          /* 比率を保つ */
-    object-fit: cover;
-    border-radius: 4px;    /* 角を少し丸くすると今風になります */
-  }
-
-  /* (オプション) スクロールバーのデザインを可愛くする */
-  .container-img::-webkit-scrollbar {
-    height: 6px;           /* バーの太さ */
-  }
-  .container-img::-webkit-scrollbar-thumb {
-    background: #ffc9a3;   /* つまみの色 */
-    border-radius: 3px;
-  }
-  .container-img::-webkit-scrollbar-track {
-    background: #f1f1f1;   /* レールの色 */
-  }
 }
