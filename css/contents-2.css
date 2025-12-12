@@ -1,8 +1,9 @@
 /* contents-2.css */
 /* 単語帳のCSSを書きたい */
 
-/* 単語追加フォームのスタイル */
+/* 単語追加フォームのスタイル (変更なし) */
 .add-word-form {
+  max-height: 200px;
   max-width: 600px;
   margin: 30px auto;
   padding: 20px;
@@ -49,6 +50,7 @@
   background-color: #d9480f;
 }
 
+
 /* 単語リストのスタイル */
 #wordbook-list {
   max-width: 600px;
@@ -60,7 +62,7 @@
 .word-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* 縦並びになっても、コントロールボタンとの垂直方向の位置を揃える */
   padding: 12px 15px;
   margin-bottom: 8px;
   background-color: #fff;
@@ -75,30 +77,40 @@
   opacity: 0.8;
 }
 
-/* 単語テキスト: 縦並び (column) */
+/* 🚩 修正点: 単語テキストを縦並びにするための変更 */
 .word-text {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column; /* 👈 ここを column に変更して縦並びにする */
   flex-grow: 1;
   margin-right: 15px;
 }
 
+/* 🚩 修正点: 英単語と日本語訳の見た目を調整 */
 .english {
   font-weight: bold;
   color: #333;
-  margin-bottom: 4px;
+  margin-bottom: 4px; /* 日本語訳との間に少しスペースを空ける */
 }
 
 .japanese {
   color: #666;
-  border-left: none;
+  /* 縦並びになったため、不要なスタイルを削除または変更 */
+  border-left: none; /* 👈 横並びの時に使っていた区切り線を削除 */
   padding-left: 0;
 }
+/* 英語の後に区切り線を入れたい場合は、以下を追加 */
+/*
+.english {
+    // ... (既存のスタイル)
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 4px;
+}
+*/
 
-/* コントロールボタン: 縦並び (column) */
+
 .word-controls {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column; /* 👈 ボタンも縦に並べると見やすいことが多い */
   gap: 8px;
   flex-shrink: 0;
 }
