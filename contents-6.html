@@ -1,86 +1,97 @@
-<!-- contents-6.html -->
 <!doctype html>
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>字幕付き動画</title>
-  <!--  swiperを追加  -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/hamburger.css">
-  <link rel="stylesheet" href="css/contents-6.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>字幕付き動画</title>
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/hamburger.css">
+   <link rel="stylesheet" href="css/contents-6.css">
 </head>
 
 <body>
 
-  <header>
-    <div class="head">
-      <!-- ハンバーガーメニュ -->
-      <section class="hamburger" id="open_nav">
-        <div class="btn-trigger" id="btn01">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </section>
-      <!-- タイトル -->
-      <div class="title">
-        <h1><a href="index.html">CineLingua</a></h1>
+   <header>
+      <div class="head">
+         <section class="hamburger" id="open_nav">
+            <div class="btn-trigger" id="btn01">
+               <span></span>
+               <span></span>
+               <span></span>
+            </div>
+         </section>
+         <div class="title">
+            <h1><a href="index.html">CineLingua</a></h1>
+         </div>
       </div>
-    </div>
-    <nav class="nav">
-      <!-- ハンバーガーメニューの開いた中身 -->
-    </nav>
-  </header>
+      <nav class="nav">
+      </nav>
+   </header>
 
-  <main>
+   <main>
+      <div class="left-container">
 
-        <div id="player"></div>
+         <div id="player-wrapper">
+            <div id="player"></div> 
+        </div>
 
-        <div class="translation-section">
+         <div class="translation-section">
             <div class="language-tabs">
-                <button class="tab-button active">英語</button>
-                <button class="tab-button">日本語</button>
+               <button class="tab-button active">英語</button>
+               <button class="tab-button">日本語</button>
             </div>
             <div class="translation-content">
-                <div class="lang-text active"></div>
-                <div class="lang-text"></div>
-                <div id="scroll-up-btn" class="scroll-helper-btn">↑</div>
-                <div id="scroll-down-btn" class="scroll-helper-btn">↓</div>
+               <div class="lang-text active"></div>
+               <div class="lang-text"></div>
+               <div id="scroll-up-btn" class="scroll-helper-btn">↑</div>
+               <div id="scroll-down-btn" class="scroll-helper-btn">↓</div>
             </div>
-        </div>
+         </div>
+      </div>
 
-    </main>
+      <div id="quiz-section">
+         <h2 class="quiz-title">動画クイズ</h2>
+         <div id="quiz-content">
 
-  <!-- フッター -->
-  <footer class="footer">
-    <small>🄫CineLingua</small>
-  </footer>
+            <div class="quiz-item">
+               <p class="question">Q1. 司会者ジェフ・ポスニックが所属するチームは何ですか？</p>
+               <p class="question-sentence">（関連文: I'm a member of the Developer Relations team.）</p>
+               <div class="answer-container">
+                  <button class="answer-button">答えを表示</button>
+                  <p class="answer-text hidden">Developer Relations team</p>
+               </div>
+            </div>
 
+            <div class="quiz-item">
+               <p class="question">Q2. アリスが本に注意を払うのが難しいと考える理由は何ですか？</p>
+               <p class="question-sentence">（関連文: Bow how can one possibly pay attention to a book with no pictures in
+                  it?）</p>
+               <div class="answer-container">
+                  <button class="answer-button">答えを表示</button>
+                  <p class="answer-text hidden">写真がないから</p>
+               </div>
+            </div>
 
+            <div class="quiz-item">
+               <p class="question">Q3. 適切な単語を選んで文を完成させてください。</p>
+               <p class="question-sentence">She always goes to the park, ______ it's raining.</p>
+               <div class="answer-container">
+                  <button class="answer-button">答えを表示</button>
+                  <p class="answer-text hidden">even if</p>
+               </div>
+            </div>
 
-  <!-- ハンバーガーメニューの開いた中身 -->
-  <nav id="nav">
-    <ul>
-      <li class="bo-da-"><a href="index.html">ホーム</a></li>
-      <!-- <li class="bo-da-"><a href="contents-6.html">映画・洋画</a></li> -->
-      <li class="bo-da-"><a href="contents-2.html">My単語帳</a></li>
-      <li class="bo-da-"><a href="contents-3.html">辞書</a></li>
-    </ul>
-  </nav>
+         </div>
+      </div>
 
+   </main>
 
-  <script src="https://www.youtube.com/iframe_api"></script>
+   <script src="https://www.youtube.com/iframe_api"></script>
 
-  <!--  JavaScriptの読み込み -->
-  <script src="scripts/contents-6.js"></script>
-  <!--  swiperを追加  -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
-  <!--  JavaScriptの読み込み -->
+   <script src="scripts/contents-6.js"></script>
+   <script src="scripts/static-quiz-toggle.js"></script>
 
 </body>
-
 
 </html>

@@ -1,114 +1,228 @@
 /* contents-6.css */
 
 /* ------------------------------------------------------------------
- * 1. スクロールコンテナと Flexbox の競合解消
+ * 1. 画面全体設定 (縦スクロール許可 & 横スクロール抑制)
+ * ------------------------------------------------------------------ */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* 縦スクロールを許可 */
+    overflow-y: scroll; 
+    /* 横スクロールを禁止 */
+    overflow-x: hidden; 
+}
+
+* {
+    /* Padding/Borderを幅と高さの計算に含める */
+    box-sizing: border-box; 
+}
+
+main {
+    display: flex; 
+    /* 最小高さを確保し、コンテンツが少ない場合でもレイアウトを維持 */
+    min-height: 90vh; 
+    height: auto; 
+    max-width: 100vw;
+    margin: 30px;
+    padding: 0;
+}
+
+/* ------------------------------------------------------------------
+ * 2. メインレイアウト: 左 (動画+字幕) 50% / 右 (クイズ) 50%
+ * ------------------------------------------------------------------ */
+.left-container {
+    display: flex;
+    flex-direction: column; /* 上下分割 */
+    width: 50%;
+    height: auto; /* スクロールできるように高さを解放 */
+    flex-shrink: 0;
+    border-right: 1px solid #ddd;
+}
+
+#quiz-section {
+    width: 50%;
+    flex-shrink: 0;
+    padding: 20px;
+    background-color: #f4f4f4; 
+    /* クイズが多い場合はこのエリア内でスクロール */
+    overflow-y: auto; 
+}
+
+/* ------------------------------------------------------------------
+ * 3. 左上: 動画プレイヤー (#player) の縦横比維持 (Padding Hack)
  * ------------------------------------------------------------------ */
 
-/* .translation-content がスクロール可能なコンテナ（親要素）になります。
-   min-width: 0 が Flexbox の横幅拡張を防ぎます。 */
+#player-wrapper {
+    /* left-container の中で高さを定義 (Flexboxアイテム) */
+    width: 100%;
+    flex-shrink: 0; 
+    flex-grow: 0;
+    /* 縦横比維持のためのPadding Hack */
+    height: 0; 
+    padding-bottom: 56.25%; /* 16:9 のアスペクト比 */
+    position: relative; 
+}
+
+/* YouTube iframe 本体 */
+#player {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ------------------------------------------------------------------
+ * 4. 左下: 翻訳セクション (.translation-section) の調整
+ * ------------------------------------------------------------------ */
+.translation-section {
+    width: 100%;
+    /* Padding Hack で動画が場所を取った後の残りの高さを占有 */
+    height: auto; 
+    display: flex;
+    flex-direction: column; 
+    flex-grow: 1; 
+    overflow: hidden; /* translation-content にスクロールを任せる */
+}
+
+/* 翻訳コンテンツ (.translation-content) */
 .translation-content {
-    overflow-y: auto; /* 縦スクロールを有効化 */
+    overflow-y: auto; 
     padding: 16px; 
-    
-    /* 🚨 横幅拡張問題の修正 🚨 */
+    flex-grow: 1; 
     min-width: 0; 
 }
 
 /* ------------------------------------------------------------------
- * 2. 各字幕行 (<span>タグ) のスタイル
+ * 5. 字幕行、ハイライト、タブのスタイル
  * ------------------------------------------------------------------ */
 
-/* 各セリフの要素（content-6.jsで生成される<span>タグ） */
-.lang-text span {
+/* 各セリフの要素 (JSで生成されるpタグ) */
+.lang-text p {
     display: block; 
     margin: 5px 0;
     padding: 8px;
     font-size: 1em;
-    color: #888; 
+    color: #333; 
     transition: background-color 0.3s, color 0.3s, font-weight 0.3s;
     border-radius: 4px;
     cursor: pointer; 
     line-height: 1.5;
-    
-    /* 🚨 日本語切り替え時の横幅拡張問題の修正 🚨 */
     word-wrap: break-word; 
     overflow-wrap: break-word;
 }
-
-/* ホバー時のスタイル（単語帳への追加を促す） */
-.lang-text span:hover {
+.lang-text p:hover {
     background-color: #f0f0f0; 
 }
-
-/* ------------------------------------------------------------------
- * 3. リアルタイムハイライト (.highlight) のスタイル
- * ------------------------------------------------------------------ */
-
-/* 今話している部分のハイライトスタイル */
-.lang-text span.highlight {
+.lang-text p.active { /* ハイライトスタイル */
     font-weight: bold;
     color: #333; 
     background-color: #ffc9a3; 
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
-
-/* ------------------------------------------------------------------
- * 4. 言語切り替えタブの連携スタイル
- * ------------------------------------------------------------------ */
-
-/* .lang-text コンテナの表示/非表示制御 */
 .lang-text {
     display: none;
 }
-
 .lang-text.active {
-    display: block; /* アクティブな言語だけ表示 */
+    display: block; 
 }
 
 /* ------------------------------------------------------------------
- * 5. 映像部分と翻訳部分の幅の制御 (それぞれ50%ずつ)
+ * 6. クイズ表示用のスタイル
  * ------------------------------------------------------------------ */
-
-/* 映像部分のコンテナ - 親要素(.left)の50%を占める */
-#player {
-    width: 50%;
-    /* Flexアイテムとしての振る舞いを定義 */
-    flex-shrink: 0; 
-    flex-grow: 0; 
+.quiz-title {
+    margin-top: 0;
+    border-bottom: 2px solid #ff8b5e;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.quiz-item {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+}
+.question {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.question-sentence { /* 動画からの関連文表示用 */
+    margin: 5px 0 15px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 3px solid #ccc;
+    font-size: 0.9em;
 }
 
-/* 翻訳部分全体 - 親要素(.left)の50%を占める */
-.translation-section {
-    width: 50%;
-    flex-shrink: 0;
-    flex-grow: 0;
-    /* .translation-section 自体が縦並びのFlexコンテナとして機能するように再設定 */
-    flex-direction: column; 
+/* 答えトグル関連 */
+.answer-container {
     display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.answer-button {
+    padding: 8px 15px;
+    background-color: #ff8b5e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.answer-button:hover {
+    background-color: #d9480f;
+}
+.answer-text {
+    color: #4CAF50; 
+    font-weight: bold;
+}
+.answer-text.hidden {
+    display: none;
+}
+.quiz-hint {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+    border-top: 1px dashed #eee;
+    padding-top: 5px;
 }
 
-
-/* =========================================
-   スマホ用レスポンシブ設定 (768px以下)
-   ========================================= */
+/* ------------------------------------------------------------------
+ * 7. スマホ用レスポンシブ設定 (768px以下)
+ * ------------------------------------------------------------------ */
 @media screen and (max-width: 768px) {
-  
-  /* 1. メインエリアを縦並びにする */
-  main {
-    flex-direction: column; /* 横並び解除 */
-    gap: 20px;              /* 上下の隙間 */
-  }
+    /* 1. メインエリアを縦並びにする */
+    main {
+        flex-direction: column; 
+        height: auto; 
+        overflow-y: visible; /* スマホではメインコンテンツが画面外に出てもスクロールできるように */
+        gap: 20px; 
+        padding: 10px; /* 左右の余白 */
+    }
 
-  /* 2. 動画と字幕エリアの幅を100%にする */
-  #player,
-  .translation-section {
-    width: 100%;  /* 50%から100%に変更 */
-    flex: none;   /* Flexの設定をリセット */
-  }
+    /* 2. 全エリアの幅を100%にする */
+    .left-container,
+    #quiz-section {
+        width: 100%; 
+        height: auto;
+        flex: none; 
+        border-right: none;
+    }
+    
+    /* 3. 動画プレイヤーの縦横比は維持 */
+    #player-wrapper {
+        padding-bottom: 56.25%; /* 16:9 維持 */
+        height: 0;
+    }
 
-  /* 3. (任意) 字幕エリアの高さを調整 */
-  /* スマホだと縦長になりすぎないように高さを指定しても良いです */
-  .translation-content {
-    height: 300px; /* 必要に応じて調整してください */
-  }
+    /* 4. 字幕エリアの高さは固定せず、コンテンツに合わせるが、長すぎないように制限 */
+    .translation-content {
+        max-height: 300px;
+    }
+    #quiz-section {
+        padding: 10px; /* スマホでは内側のパディングを調整 */
+    }
 }
