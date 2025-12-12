@@ -1,4 +1,3 @@
-<!-- contents-2.html -->
 <!doctype html>
 <html>
 
@@ -6,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>単語帳</title>
-  <!--  swiperを追加  -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/hamburger.css">
@@ -17,7 +15,6 @@
 
   <header>
     <div class="head">
-      <!-- ハンバーガーメニュ -->
       <section class="hamburger" id="open_nav">
         <div class="btn-trigger" id="btn01">
           <span></span>
@@ -25,46 +22,42 @@
           <span></span>
         </div>
       </section>
-      <!-- タイトル -->
       <div class="title">
         <h1><a href="index.html">CineLingua</a></h1>
       </div>
     </div>
     <nav class="nav">
-      <!-- ハンバーガーメニューの開いた中身 -->
-    </nav>
+      </nav>
   </header>
 
-  <div class="add-word-form">
-    <h2>単語の追加</h2>
-    <div class="input-group">
-      <input type="text" id="input-english" placeholder="英語 (English)">
-      <input type="text" id="input-japanese" placeholder="日本語 (Japanese)">
+  <main>
+    <div class="add-word-form">
+      <h2>単語の追加</h2>
+      <div class="input-group">
+        <input type="text" id="input-english" placeholder="英語 (English)">
+        <input type="text" id="input-japanese" placeholder="日本語 (Japanese)">
+      </div>
+      <button id="add-word-button">単語を追加</button>
     </div>
-    <button id="add-word-button">単語を追加</button>
-  </div>
 
-  <ul id="wordbook-list"></ul>
+    <ul id="wordbook-list"></ul>
+  </main>
 
 
-  <!-- フッター -->
   <footer class="footer">
     <small>🄫CineLingua</small>
   </footer>
 
 
-  <!-- ハンバーガーメニューの開いた中身 -->
   <nav id="nav">
     <ul>
       <li class="bo-da-"><a href="index.html">ホーム</a></li>
-      <!-- <li class="bo-da-"><a href="contents-6.html">映画・洋画</a></li> -->
       <li class="bo-da-"><a href="contents-2.html">My単語帳</a></li>
       <li class="bo-da-"><a href="contents-3.html">辞書</a></li>
     </ul>
   </nav>
 
 
-  <!--  JavaScriptの読み込み -->
   <script src="scripts/main.js"></script>
   <script src="scripts/contents-2.js"></script>
 
