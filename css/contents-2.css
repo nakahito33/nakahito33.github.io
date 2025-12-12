@@ -1,7 +1,7 @@
 /* contents-2.css */
 /* 単語帳のCSSを書きたい */
 
-/* 単語追加フォームのスタイル */
+/* 単語追加フォームのスタイル (変更なし) */
 .add-word-form {
   max-width: 600px;
   margin: 30px auto;
@@ -77,27 +77,41 @@
   opacity: 0.8;
 }
 
+/* 修正点: 単語テキストが残りのスペースを埋め、コントロールボタンと区切る */
 .word-text {
   display: flex;
-  gap: 15px;
+  /* 修正: flex-grow: 1 を設定して、単語テキスト部分が最大に広がるようにする */
   flex-grow: 1;
-  background: #f0f0f0;
+  /* 修正: スペースを空ける */
+  margin-right: 15px; 
+  /* 修正: 背景色を削除 (リストアイテム全体の背景色を使用) */
+  /* background: #f0f0f0; <-- 削除 */
 }
 
+/* 修正点: 英単語と日本語訳の見た目を調整 */
 .english {
   font-weight: bold;
   color: #333;
+  /* 修正: 日本語訳との間に十分なスペースを確保 */
+  min-width: 150px; /* 英語に最低限の幅を与える */
 }
 
 .japanese {
   color: #666;
+  /* 修正: 英語との間に区切り線を追加（任意）*/
+  border-left: 1px solid #ddd;
+  padding-left: 15px;
+  flex-grow: 1; /* 日本語訳が残りのスペースを埋める */
 }
 
 .word-controls {
+  /* 変更なし: ボタンは適切な幅を維持 */
   display: flex;
   gap: 8px;
+  flex-shrink: 0; /* ボタンが縮まないように固定 */
 }
 
+/* その他のスタイル (変更なし) */
 .learned-button {
   padding: 5px 10px;
   border: 1px solid #ccc;
