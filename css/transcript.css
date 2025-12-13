@@ -1,68 +1,133 @@
+@charset "UTF-8";
+
+/* =========================================
+   transcript.css - シネマティックデザイン
+   ========================================= */
+
 /* 基本的なスタイル */
 body { 
-    font-family: sans-serif; 
+    font-family: 'Noto Sans JP', sans-serif; 
     text-align: center; 
-    background-color: #f0f0f0;
+    /* 映画館のような深い黒背景 */
+    background-color: #141414;
+    color: #ffffff;
     margin: 0;
     padding: 20px;
+    /* 背景にわずかなグラデーションを入れて奥行きを出す */
+    background-image: radial-gradient(circle at top, #2a2a2a, #141414);
+    min-height: 100vh;
 }
 
 /* YouTubeプレーヤーと字幕コンテナを中央に配置 */
 #player, #subtitle-container {
     margin: 20px auto;
+    max-width: 100%; /* スマホではみ出さないように */
 }
 
-/* 字幕コンテナのスタイル */
+/* YouTubeプレーヤーに影をつける */
+#player {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    border-radius: 8px;
+}
+
+/* --- 字幕コンテナのスタイル --- */
 #subtitle-container {
-    width: 560px; /* YouTubeプレーヤーと同じ幅に設定 */
+    width: 560px; /* YouTubeプレーヤーと同じ幅 */
     height: 225px;
-    overflow-y: scroll; /* 縦スクロールを有効にする */
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow-y: scroll; /* 縦スクロール有効 */
+    
+    /* ダークカードデザイン */
+    background-color: #1f1f1f;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    
+    /* 浮き上がるような影 */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    
     -webkit-overflow-scrolling: touch; /* iOSでのスクロールをスムーズに */
-    text-align: left; /* テキストを左揃えに */
+    text-align: left;
 }
 
-/* 各字幕行のスタイル */
-#subtitle-list p {
-    margin: 5px 0;
-    padding: 8px;
-    font-size: 1em;
-    color: #888;
-    transition: background-color 0.3s, color 0.3s, font-weight 0.3s;
+/* スクロールバーのカスタマイズ（ダークモード用） */
+#subtitle-container::-webkit-scrollbar {
+    width: 8px;
+}
+#subtitle-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+#subtitle-container::-webkit-scrollbar-thumb {
+    background: #555;
     border-radius: 4px;
 }
 
-/* 現在再生中の字幕に適用するスタイル */
-#subtitle-list p.active {
-    color: #333;
-    font-weight: bold;
-    background-color: #e6f7ff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+/* --- 各字幕行のスタイル --- */
+#subtitle-list p {
+    margin: 6px 0;
+    padding: 10px 12px;
+    font-size: 1em;
+    line-height: 1.5;
+    
+    /* 未再生の字幕は薄いグレー */
+    color: rgba(255, 255, 255, 0.6);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent; /* ハイライト用の枠確保 */
 }
 
-/* 追加：/////////////////////////////////////////////////////*/
-/* 言語切り替えボタンのコンテナースタイル */
+/* ホバー時の挙動 */
+#subtitle-list p:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+/* --- 現在再生中の字幕 --- */
+#subtitle-list p.active {
+    color: #fff;
+    font-weight: 700;
+    
+    /* オレンジ色の薄い背景 */
+    background-color: rgba(255, 139, 94, 0.2);
+    /* 左端にアクセントカラーのライン */
+    border-left-color: #ff8b5e;
+    
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+
+/* --- 言語切り替えボタンエリア --- */
 #lang-switcher {
-    margin: 10px auto;
-    width: 560px; /* プレーヤーと同じ幅 */
+    margin: 20px auto;
+    width: 560px;
+    max-width: 100%;
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
 }
 
-/* 言語切り替えボタンのスタイル */
+/* 言語切り替えボタン */
 #lang-switcher button {
-    padding: 8px 15px;
-    border: 1px solid #ccc;
-    background-color: #fff;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    
+    /* グラデーションボタン */
+    background: linear-gradient(135deg, #ff9966, #ff5e62);
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.2s, color 0.2s;
+    
+    transition: transform 0.2s, opacity 0.2s;
+    box-shadow: 0 4px 10px rgba(255, 94, 98, 0.3);
 }
 
 #lang-switcher button:hover {
-    background-color: #e0e0e0;
+    opacity: 0.9;
+    transform: translateY(-2px); /* 少し浮く */
+}
+
+#lang-switcher button:active {
+    transform: translateY(0);
 }

@@ -3,12 +3,28 @@
 /* Google Fontsを読み込む */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
 
+/* =========================================
+   style.css - シネマティックデザイン (全体共通)
+   ========================================= */
+
+/* --- カラー変数の定義 --- */
+:root {
+  --bg-body: #141414;        /* 全体の背景色（深い黒） */
+  --bg-card: #1f1f1f;        /* コンテンツの背景色（暗いグレー） */
+  --text-main: #ffffff;      /* メイン文字色（白） */
+  --text-sub: #b3b3b3;       /* サブ文字色（グレー） */
+  --accent-color: #ff8b5e;   /* アクセント単色 */
+  --accent-gradient: linear-gradient(135deg, #ff9966, #ff5e62); /* リッチなグラデーション */
+  --border-color: rgba(255, 255, 255, 0.1); /* 薄い境界線 */
+}
+
 /* すべてのwebページに適用 */
 html {
-  font-family: 'Noto Sans JP', sans-serif; /* 変更：読みやすいフォントに変更 */
+  font-family: 'Noto Sans JP', sans-serif;
   line-height: 1.6;
-  color: #333; /* 変更：純粋な黒から少し柔らかい色に */
+  color: var(--text-main);
   border: none;
+  background-color: var(--bg-body);
 }
 
 html * {
@@ -17,7 +33,10 @@ html * {
 
 body {
   margin: 0;
-  background-color: #f9f9f9; /* 追加：背景に薄い色を追加 */
+  background-color: var(--bg-body);
+  /* 背景にわずかなグラデーションを入れて奥行きを出す */
+  background-image: radial-gradient(circle at top, #2a2a2a, #141414);
+  background-attachment: fixed; /* スクロールしても背景を固定 */
 }
 
 h1,h2,p,ul,a,li {
@@ -27,20 +46,29 @@ h1,h2,p,ul,a,li {
 
 a,li {
   text-decoration: none;
-  color: #333;
+  color: var(--text-main);
   list-style: none;
+  transition: opacity 0.3s;
 }
 
-/* ヘッダー */
+a:hover {
+  opacity: 0.8;
+}
+
+/* --- ヘッダー --- */
 header {
-  background-color: #fff; /* 変更：背景色を白に */
-  border-bottom: 1px solid #e0e0e0; /* 変更：境界線を薄いグレーに */
-  padding: 8px 0; /* 追加：上下に少し余白を追加 */
+  background-color: rgba(20, 20, 20, 0.9); /* 半透明の黒 */
+  backdrop-filter: blur(10px); /* すりガラス効果 */
+  border-bottom: 1px solid var(--border-color);
+  padding: 15px 0;
+  position: sticky; /* スクロール追従 */
+  top: 0;
+  z-index: 1000;
 }
 
 .head {
-  width: 90%; /* 変更 */
-  max-width: 1200px; /* 変更 */
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -49,31 +77,41 @@ header {
 }
 
 h1 {
-  font-size: 32px; /* 変更：サイズを調整 */
+  font-size: 28px;
   font-weight: 700;
+  letter-spacing: 0.05em;
 }
 
-/* main */
+/* タイトルロゴをグラデーションにする */
+h1 a {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* --- Main レイアウト --- */
 main {
-  width: 95%; /* 変更 */
-  max-width: 1200px; /* 追加：大画面でも広がりすぎないように */
-  margin: 24px auto; /* 変更 */
+  width: 95%;
+  max-width: 1200px;
+  margin: 40px auto;
   display: flex;
-  gap: 24px; /* 追加：左右の要素間に隙間を作成 */
+  gap: 30px; /* 間隔を少し広げる */
 }
 
 /* mainの左部分 */
 .left {
-  width: 65%; /* 変更：左側の割合を調整 */
-  display: flex; /* 追加 */
-  flex-direction: column; /* 追加 */
+  width: 65%;
+  display: flex;
+  flex-direction: column;
 }
 
 .movie {
   overflow: hidden;
-  border-radius: 8px;
-  /* margin: 0 16px; ← mainのgapで管理するため削除 */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 追加：立体感を出す影 */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* 映画館のような影 */
+  border: 1px solid var(--border-color);
+  background-color: #000;
 }
 
 .movie iframe {
@@ -83,66 +121,67 @@ main {
   display: block;
   margin: 0 auto;
   box-sizing: border-box;
-  transform: scale(1.5); /* 変更：拡大率を調整 */
+  /* transform: scale(1.5); ← scaleを使うと画角からはみ出る場合があるので、必要なければ削除推奨 */
 }
 
-/* 翻訳部分のスタイル */
+/* --- 翻訳部分のスタイル --- */
 .translation-section {
-  border: 1px solid #e0e0e0; /* 変更 */
-  border-radius: 8px; /* 変更 */
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
   overflow: hidden;
-  margin: 24px 0 0 0; /* 変更 */
-  flex-grow: 1; /* 追加：高さを自動調整 */
-  display: flex; /* 追加 */
-  flex-direction: column; /* 追加 */
-  background-color: #fff; /* 追加 */
+  margin: 30px 0 0 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card); /* カード背景 */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 .language-tabs {
   display: flex;
-  background-color: #f7f7f7; /* 変更 */
-  border-bottom: 1px solid #e0e0e0; /* 変更 */
+  background-color: rgba(0,0,0,0.3);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .tab-button {
   flex: 1;
-  padding: 12px 0; /* 変更 */
+  padding: 15px 0;
   text-align: center;
   border: none;
   background-color: transparent;
   cursor: pointer;
   font-weight: 500;
-  color: #555;
-  transition: background-color 0.2s; /* 追加：ホバー効果を滑らかに */
+  color: var(--text-sub);
+  transition: all 0.3s;
 }
 
 .tab-button:not(.active):hover {
-  background-color: #e9e9e9;
+  background-color: rgba(255,255,255,0.05);
+  color: #fff;
 }
 
 .tab-button.active {
-  background-color: #fff; /* 変更 */
-  color: #000;
+  background-color: transparent;
+  color: #fff;
   font-weight: 700;
-  border-bottom: 2px solid #ffc9a3;/* 追加:選択したとき色を付ける */
+  border-bottom: 2px solid var(--accent-color);
 }
 
 .translation-content {
   position: relative;
-  background-color: #fff; /* 変更 */
-  padding: 16px;
-  height: 250px; /* 変更 */
-  overflow: hidden; /* 変更 */
-  flex-grow: 1; /* 追加 */
+  background-color: var(--bg-card);
+  padding: 20px;
+  height: 300px; /* 少し高く */
+  overflow: hidden;
+  flex-grow: 1;
 }
 
-.lang-text {position: absolute;
+.lang-text {
+  position: absolute;
   inset: 0;
   overflow-y: auto;
-  /* スクロールはここに一本化 */
   visibility: hidden;
-  padding: 16px;
-  /* 代わりに内側余白をつける */
+  padding: 20px;
   z-index: 1;
 }
 
@@ -153,20 +192,24 @@ main {
 
 .lang-text p {
   position: relative;
-  margin: 4px 0;
+  margin: 6px 0;
   cursor: pointer;
-  transition: background-color 0.15s ease;  /*色変化を滑らかにする*/
-  padding: 4px 6px;
-  border-radius: 4px;
+  transition: all 0.2s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: rgba(255,255,255,0.8);
 }
 
 .lang-text p:hover {
-  background-color: #f3fafd;
+  background-color: rgba(255,255,255,0.1);
+  color: #fff;
 }
 
 .lang-text p.active {
-  background-color: #e6f7ff;
+  background-color: rgba(255, 139, 94, 0.2); /* オレンジの薄い背景 */
   font-weight: bold;
+  color: #fff;
+  border-left: 3px solid var(--accent-color);
 }
 
 .subtitle-line {
@@ -177,6 +220,7 @@ main {
   align-items: center;
 }
 
+/* お気に入りスターアイコン */
 .lang-text p:hover .star-icon {
   opacity: 1;
 }
@@ -186,13 +230,14 @@ main {
   right: 8px;
   opacity: 0;
   font-size: 18px;
-  color: #ccc;
+  color: #555;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: all 0.2s;
 }
 
 .star-icon:hover {
-  color: #ffe37c;
+  color: #ffe37c; /* 薄い黄色 */
+  transform: scale(1.2);
 }
 
 .star-icon:active {
@@ -200,119 +245,155 @@ main {
 }
 
 .star-icon.star-active {
-  color: #f7c200;
+  color: #ffc107; /* 濃い黄色 */
   opacity: 1;
+  text-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
 }
 
+/* スクロール補助ボタン */
 .scroll-helper-btn {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(255, 139, 94, 0.9); /* アクセントカラー */
   color: white;
   font-size: 20px;
-  line-height: 36px;
+  line-height: 40px;
   text-align: center;
   cursor: pointer;
   display: none;
   user-select: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.2s;
+}
+
+.scroll-helper-btn:hover {
+  transform: translateX(-50%) scale(1.1);
 }
 
 #scroll-up-btn {
-  top: 10%;
+  top: 15px;
 }
 
 #scroll-down-btn {
-  bottom: 10%;
+  bottom: 15px;
 }
 
-/* クイズ部分のスタイル */
+
+/* --- クイズ部分のスタイル --- */
 .right {
-  width: 35%; /* 変更：右側の割合を調整 */
+  width: 35%;
 }
 
 .quiz-section {
-  padding: 24px; /* 変更 */
-  background-color: #fff;
-  border-radius: 8px;
-  margin: 0; /* 変更 */
-  border: 1px solid #e0e0e0; /* 追加 */
+  padding: 30px;
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  margin: 0;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 .quiz-title {
-  font-size: 22px; /* 変更 */
-  border-bottom: 2px solid #ffc9a3;
-  padding-bottom: 8px;
+  font-size: 22px;
+  /* グラデーションの下線 */
+  border-bottom: 2px solid;
+  border-image: var(--accent-gradient) 1;
+  padding-bottom: 10px;
   font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.05em;
 }
 
 .quiz-item {
-  margin-top: 24px; /* 変更 */
+  margin-top: 30px;
+  padding: 20px;
+  background-color: rgba(255,255,255,0.03);
+  border-radius: 8px;
 }
 
-.question,
+.question {
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #fff;
+}
+
 .question-sentence {
-  margin-bottom: 12px; /* 変更 */
+  margin-bottom: 15px;
+  font-style: italic;
+  color: var(--text-sub);
+  padding: 10px;
+  border-left: 2px solid var(--text-sub);
+  background-color: rgba(0,0,0,0.2);
 }
 
 .answer-container {
   display: flex;
   align-items: center;
-  gap: 12px; /* 変更 */
+  gap: 15px;
+  margin-top: 15px;
 }
 
 .answer-button {
-  font-size: 14px; /* 変更 */
-  background-color: #ff8b5e;
+  font-size: 14px;
+  /* グラデーションボタン */
+  background: var(--accent-gradient);
   color: #fff;
-  padding: 8px 16px;
+  padding: 8px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: opacity 0.2s; /* 追加 */
+  font-weight: bold;
+  transition: transform 0.2s, opacity 0.2s;
+  box-shadow: 0 4px 10px rgba(255, 94, 98, 0.3);
 }
 
 .answer-button:hover {
-  opacity: 0.8;
+  opacity: 0.9;
+  transform: translateY(-2px);
 }
 
 .answer-text {
-  font-weight: 700; /* 変更 */
-  color: #d9480f; /* 変更 */
+  font-weight: 700;
+  color: #4CAF50; /* 正解の緑は視認性のため維持 */
+  font-size: 16px;
+  text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
 }
 
 .hidden {
   display: none;
 }
 
-/* フッター */
+
+/* --- フッター --- */
 .footer {
-  /* background-imageプロパティを削除 */
-  margin-top: 30px;
-  padding: 24px 15px; /* 変更 */
+  margin-top: 60px;
+  padding: 40px 15px;
   font-size: 12px;
-  color: #555; /* 変更 */
-  background-color: #f0f0f0; /* 変更 */
-  text-align: center; /* 追加 */
+  color: var(--text-sub);
+  background-color: #000;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
 }
 
 /* ===============================
    画面幅が768px以下の時のスタイル
-   =============================== */
+   ================================ */
 @media (max-width: 768px) {
   main {
     flex-direction: column;
+    width: 90%;
   }
 
   .left, .right {
     width: 100%;
   }
+  
+  .quiz-section {
+    padding: 20px;
+  }
 }
-
-
-
-

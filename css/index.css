@@ -1,82 +1,218 @@
 @charset "UTF-8";
 
-/* Google Fontsを読み込む */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+/* =========================================
+   index.css - シネマティックデザイン
+   ========================================= */
 
+/* --- Swiper (スライドショー) 設定 --- */
+.swiper {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 50px; /* ページネーション用の余白 */
+    /* 下の方を少しフェードさせて馴染ませる */
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
 
-
-/* スライド自体の設定 */
 .swiper-slide {
     height: auto;
-    /* スライド間の隙間調整(HTML1で横幅を調節するとうまくいかなかった) */
-    overflow: hidden; 
-    /* 非アクティブなスライドを少し薄くする場合（お好みで） */
-    transition: opacity 0.3s; 
-    
+    border-radius: 12px; /* 角丸 */
+    overflow: hidden;
+    /* 影をつけて立体感を出す */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.6; /* 非アクティブなスライドは少し暗く */
 }
 
-/* スライド内の画像をレスポンシブにする */
+.swiper-slide-active {
+    opacity: 1;
+    transform: scale(1.05); /* アクティブなスライドを少し大きく */
+    z-index: 10;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .swiper-slide img {
-    width: 100%;       /* 親要素(スライド)の幅に合わせる */
-    height: 100%;      /* 高さも合わせる */
-    object-fit: cover; /* 比率を保ってトリミング */
-    vertical-align: bottom; /* 画像下の隙間削除 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
 }
 
+/* ページネーション（点々） */
 .swiper-pagination-bullet {
-  background: #ffc9a3;/* ページネーションの色 */
+    background: #fff;
+    opacity: 0.3;
+    width: 8px;
+    height: 8px;
+    transition: all 0.3s;
 }
 
 .swiper-pagination-bullet-active {
-  background: #ff8b5e;/* ページネーションの色 */
+    background: var(--accent-color, #ff8b5e); /* オレンジ */
+    opacity: 1;
+    width: 24px; /* アクティブな点は横長にする */
+    border-radius: 4px;
 }
 
-.swiper-button-prev, .swiper-button-next {
-  color: #ff8b5e; /* 矢印の色 */
+/* 矢印ナビゲーション */
+.swiper-button-prev,
+.swiper-button-next {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+    transition: transform 0.2s;
 }
 
-/* main部分ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-/* main {
-    width: 95%;
-    max-width: 1200px;
-    margin: 24px auto;
-    overflow-x: hidden; 横スクロールを無効化
-    display: flex;
-}
-/* main部分ーおすすめ 
-.container-img {
-    overflow-x: scroll; スクロール
-    gap: 16px;
-    padding-bottom: 20px;width: 100%;
-}
+.swiper-button-prev:hover { transform: translateX(-3px); }
+.swiper-button-next:hover { transform: translateX(3px); }
 
-.container-img::-webkit-scrollbar {
-    display: none;スクロールバーを隠す
-}
 
-.container-img {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-} */
-/* おすすめ部分の画像をスクロールさせたいんだけど、マジできないーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* --- メインコンテンツ --- */
 main {
     display: block;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding-bottom: 60px;
 }
 
+/* セクション設定 */
 .container {
-    width: 80%;
-    border-bottom: solid 2px #ffc9a3;
-    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 60px;
+    border-bottom: none; /* 古い線は削除 */
 }
 
+/* 見出し (H1) */
+.container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.05em;
+}
+
+/* 見出しの左にアクセントバーを追加 */
+.container h1::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 24px;
+    background: var(--accent-gradient, linear-gradient(135deg, #ff9966, #ff5e62));
+    margin-right: 15px;
+    border-radius: 2px;
+}
+
+/* サブ見出し (H2) */
+.container h2 {
+    font-size: 16px;
+    color: #b3b3b3; /* グレー */
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    border-left: none;
+}
+
+
+/* --- 画像リストエリア (PC版: グリッド表示) --- */
 .container-img {
-    padding-left: 40px;
+    display: grid;
+    /* 画面幅に合わせて自動で列数を調整（最小180px） */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 0;
     margin-bottom: 40px;
 }
 
-.container-img img{
-    margin-right: 20px;
+/* 画像リンクのカード化 */
+.container-img a {
+    display: block;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    /* アスペクト比を固定 (例: 3:2) */
+    aspect-ratio: 3 / 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0; /* 古いmarginをリセット */
+    transition: filter 0.3s;
+}
+
+/* ホバー時のエフェクト (浮き上がる + 光る) */
+.container-img a:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(255, 139, 94, 0.3); /* オレンジの光 */
+    z-index: 2;
+}
+
+.container-img a:hover img {
+    filter: brightness(1.1); /* 少し明るくする */
 }
 
 
+/* =========================================
+   スマホ用レスポンシブ設定 (767px以下)
+   ========================================= */
+@media screen and (max-width: 767px) {
+    
+    main {
+        width: 95%; /* 画面幅を広く使う */
+        margin-top: 20px;
+    }
+
+    /* 見出しサイズ調整 */
+    .container h1 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+    .container h1::before {
+        height: 20px;
+    }
+
+    /* --- スマホ版: 横スクロール実装 --- */
+    .container-img {
+        display: flex;         /* 横並びにする */
+        grid-template-columns: none; /* Grid解除 */
+        overflow-x: auto;      /* 横スクロール許可 */
+        overflow-y: hidden;
+        gap: 12px;             /* 画像間の隙間 */
+        padding-bottom: 15px;  /* スクロールバーのための余白 */
+        margin-right: -2.5%;   /* 画面右端まで広げるハック */
+        
+        /* スクロールを滑らかに */
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory; /* スクロールした時にピタッと止まる */
+    }
+
+    /* スマホ版の画像カード設定 */
+    .container-img a {
+        flex: 0 0 140px; /* 幅を140pxに固定（縮まないようにする） */
+        scroll-snap-align: start; /* 左端に合わせて止まる */
+        aspect-ratio: 16 / 9; /* スマホは見やすいように少し横長に */
+    }
+
+    /* ホバーエフェクトはスマホでは邪魔になることがあるので控えめに */
+    .container-img a:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    /* スクロールバーのデザイン */
+    .container-img::-webkit-scrollbar {
+        height: 4px;
+    }
+    .container-img::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+    }
+    .container-img::-webkit-scrollbar-thumb {
+        background: var(--accent-color, #ff8b5e);
+        border-radius: 2px;
+    }
 }
