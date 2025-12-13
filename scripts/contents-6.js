@@ -155,7 +155,7 @@ function updateScrollButtonsVisual() {
     const scrollBottom = scrollTop + box.clientHeight;
 
     // 上下に余裕を持たせるパディング（オプション）
-    const PADDING = 4; // px単位で微調整
+    const PADDING = 10; // px単位で微調整
 
     // ハイライト行が上端より上に出ている場合 → 上ボタン表示
     if (targetBottom < scrollTop + PADDING) {
