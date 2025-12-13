@@ -1,154 +1,213 @@
 @charset "UTF-8";
 
 /* =======================================
-   CineLingua コンテンツ3 (辞書) 用スタイル
+   CineLingua コンテンツ3 (辞書) - シネマティックデザイン
    ======================================= */
 
 /* 辞書全体のコンテナ */
 .dictionary-container {
-    /* 辞書ページでは、メインコンテンツを左右に分割する代わりに中央に配置します */
     width: 100%;
-    /* mainのCSSで設定された左右のgapを無視し、子要素を中央に配置 */
+    max-width: 800px; /* 読みやすいように幅を制限 */
+    margin: 0 auto;
 }
 
-/* 検索フォームセクション (quiz-sectionのデザインを流用) */
+/* --- 検索フォームセクション --- */
 .search-section {
-    padding: 24px;
-    background-color: #fff;
-    border-radius: 8px;
-    margin-bottom: 24px; /* 結果エリアとの間にスペースを確保 */
-    border: 1px solid #e0e0e0;
+    padding: 30px;
+    background-color: var(--card-bg, #1f1f1f); /* ダークカード */
+    border-radius: 12px;
+    margin-bottom: 30px;
+    /* 浮き上がる影 */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .search-section h2 {
     font-size: 22px;
-    border-bottom: 2px solid #ffc9a3;
-    padding-bottom: 8px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    color: var(--text-main, #fff);
+    
+    /* 下線をグラデーションに */
+    border-bottom: 2px solid;
+    border-image: var(--accent-gradient, linear-gradient(135deg, #ff9966, #ff5e62)) 1;
+    padding-bottom: 10px;
+    letter-spacing: 0.05em;
 }
 
 #dictionary-form {
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
 #search-input {
     flex-grow: 1;
-    padding: 10px 15px;
+    padding: 12px 15px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none; /* フォーカス時のデフォルト枠線を削除 */
-    transition: border-color 0.3s;
+    
+    /* 入力欄をダークモード仕様に */
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: #fff;
+    outline: none;
+    transition: all 0.3s;
+}
+
+#search-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
 }
 
 #search-input:focus {
-    border-color: #ff8b5e; /* フォーカス時にブランドカラーを適用 */
+    border-color: var(--accent-color, #ff8b5e);
+    box-shadow: 0 0 8px rgba(255, 139, 94, 0.3);
 }
 
 #search-button {
-    /* answer-buttonのスタイルを流用 */
-    background-color: #ff8b5e;
+    /* グラデーションボタン */
+    background: var(--accent-gradient, linear-gradient(135deg, #ff9966, #ff5e62));
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
-    font-weight: 500;
-    transition: opacity 0.2s;
+    font-weight: 700;
+    transition: transform 0.2s, opacity 0.2s;
+    box-shadow: 0 4px 10px rgba(255, 94, 98, 0.3);
 }
 
 #search-button:hover {
-    opacity: 0.8;
+    opacity: 0.9;
+    transform: translateY(-2px);
 }
 
-/* 検索結果表示エリア */
+/* --- 検索結果表示エリア --- */
 .results-section {
-    padding: 24px;
-    background-color: #fff;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
-    min-height: 250px; /* ある程度の高さを確保 */
+    padding: 30px;
+    background-color: var(--card-bg, #1f1f1f);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    min-height: 250px;
+    color: var(--text-main, #fff);
 }
 
-/* 検索結果の個々の項目 */
+/* 検索ワード（見出し） */
 #search-results h3 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 15px;
-    border-bottom: 1px dotted #e0e0e0;
-    padding-bottom: 5px;
+    font-size: 28px;
+    color: var(--text-main, #fff);
+    margin-bottom: 20px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-/* 品詞 */
+/* 品詞タグ */
 .part-of-speech {
     display: inline-block;
-    background-color: #ffc9a3; /* ブランドのサブカラー */
-    color: #333;
+    /* アクセントカラー背景 */
+    background: var(--accent-gradient, linear-gradient(135deg, #ff9966, #ff5e62));
+    color: #fff;
     font-weight: 700;
-    padding: 4px 8px;
+    padding: 4px 10px;
     border-radius: 4px;
-    margin-left: 10px;
+    margin-left: 15px;
     font-size: 14px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    vertical-align: middle;
 }
 
 /* 定義リスト */
 dl {
-    margin: 20px 0;
-    padding-left: 15px;
-    border-left: 3px solid #ff8b5e; /* ブランドカラーの縦線 */
+    margin: 25px 0;
+    padding-left: 20px;
+    border-left: 3px solid var(--accent-color, #ff8b5e);
 }
 
 dt {
     font-weight: 700;
-    color: #555;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-size: 16px;
+    color: var(--text-sub, #b3b3b3);
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 dd {
     margin-left: 0;
-    padding-left: 10px;
-    margin-bottom: 15px;
-    color: #333;
+    padding-left: 0;
+    margin-bottom: 20px;
+    color: var(--text-main, #fff);
+    font-size: 1.1em;
+    line-height: 1.6;
 }
 
-/* 例文のリスト */
+/* 例文リスト */
 .example-sentences ul {
     list-style-type: none;
     padding-left: 0;
+    margin-top: 10px;
 }
 
 .example-sentences li {
-    background-color: #f7f7f7;
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 8px;
-    border-left: 4px solid #e0e0e0;
+    /* 例文の背景を少し明るい黒に */
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border-left: 4px solid rgba(255, 255, 255, 0.1);
+    font-style: italic;
+    color: #e0e0e0;
 }
 
 /* 類義語・反意語セクション */
 .synonyms-antonyms {
-    margin-top: 25px;
-    padding-top: 15px;
-    border-top: 1px dashed #e0e0e0;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
 }
 
 .synonyms-antonyms p {
-    margin-top: 10px;
+    margin-top: 12px;
     line-height: 1.8;
+    color: var(--text-sub, #ccc);
 }
 
 .synonyms-antonyms strong {
-    color: #ff8b5e;
+    color: var(--accent-color, #ff8b5e);
+    margin-right: 5px;
 }
 
 /* 初期のメッセージ */
 .initial-message {
-    color: #777;
-    padding: 15px;
+    color: rgba(255, 255, 255, 0.4);
+    padding: 40px;
     text-align: center;
+    font-style: italic;
+}
+
+/* スマホ対応 */
+@media screen and (max-width: 600px) {
+    #dictionary-form {
+        flex-direction: column;
+    }
+    
+    #search-button {
+        width: 100%;
+    }
+    
+    #search-results h3 {
+        font-size: 24px;
+    }
+    
+    .part-of-speech {
+        margin-left: 0;
+        margin-top: 8px;
+        display: block;
+        width: fit-content;
+    }
 }

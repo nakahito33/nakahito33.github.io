@@ -88,6 +88,7 @@ window.renderWordbook = function() {
     
     if (window.wordbook.length === 0) {
         list.innerHTML = `<li class="empty-list-message">まだ単語が登録されていません。</li>`;
+        attachEventListeners(); // ← ここで必ず呼ぶ
         return;
     }
 

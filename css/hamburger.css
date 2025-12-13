@@ -1,11 +1,15 @@
 @charset "UTF-8";
 
-/* ハンバーガーメニュー */
+/* =========================================
+   hamburger.css - シネマティックデザイン
+   ========================================= */
+
+/* --- ハンバーガーボタンの配置 --- */
 .hamburger {
     position: absolute;
-    /* 絶対位置指定 */
     left: 0px;
-    /* 左端から36px */
+    /* ヘッダーより上に表示させる */
+    z-index: 1001; 
 }
 
 .btn-trigger {
@@ -15,13 +19,15 @@
     cursor: pointer;
 }
 
+/* --- ボタンの3本線 --- */
 .btn-trigger span {
     position: absolute;
     left: 0;
     width: 100%;
-    height: 4px;
-    background-color: #000000;
+    height: 3px; /* 少し細くして洗練させる */
+    background-color: #fff; /* ダーク背景に合わせて白に変更 */
     border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5); /* 影をつけて立体感を出す */
 }
 
 .btn-trigger,
@@ -32,7 +38,7 @@
 }
 
 .btn-trigger span:nth-of-type(1) {
-    top: 0;
+    top: 10px; /* 位置を少し調整 */
 }
 
 .btn-trigger span:nth-of-type(2) {
@@ -40,12 +46,14 @@
 }
 
 .btn-trigger span:nth-of-type(3) {
-    bottom: 0;
+    bottom: 10px; /* 位置を少し調整 */
 }
 
+/* --- ×印になるアニメーション --- */
 #btn01.active span:nth-of-type(1) {
-    -webkit-transform: translateY(20px) rotate(-45deg);
-    transform: translateY(20px) rotate(-45deg);
+    -webkit-transform: translateY(10px) rotate(-45deg); /* 数値を調整 */
+    transform: translateY(10px) rotate(-45deg);
+    background-color: #ff8b5e; /* 開いた時はオレンジ色にする */
 }
 
 #btn01.active span:nth-of-type(2) {
@@ -53,31 +61,34 @@
 }
 
 #btn01.active span:nth-of-type(3) {
-    -webkit-transform: translateY(-20px) rotate(45deg);
-    transform: translateY(-20px) rotate(45deg);
+    -webkit-transform: translateY(-10px) rotate(45deg); /* 数値を調整 */
+    transform: translateY(-10px) rotate(45deg);
+    background-color: #ff8b5e; /* 開いた時はオレンジ色にする */
 }
 
-/* ナビゲーションのCSS */
+
+/* --- ナビゲーションメニュー本体 --- */
 #nav {
     display: flex;
-    background-color: #e6e6e6;
+    flex-direction: column; /* 明示的に縦並び */
+    
+    /* ダークモード背景（すりガラス効果） */
+    background-color: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+    
     width: 260px;
-    height: 100%;
-    padding: 16px;
-    z-index: 3;
-    /* ドロワーナビゲーションの必須スタイル */
+    height: 100vh; /* 画面の高さ100% */
+    padding: 80px 16px 20px; /* 上部に余白を取り、ボタンと被らないように */
+    z-index: 1000;
+    
+    /* ドロワーナビゲーションの配置 */
     position: fixed;
     right: -270px;
     top: 0;
-    /* 開く、閉じるアニメーション */
-    transition: transform 0.5s;
-}
-
-#nav li a {
-    color: rgb(4, 29, 111);
-    text-decoration: none;
-    display: block;
-    padding: 18px 0;
+    
+    /* 開く、閉じるアニメーション（少しリッチな動きに） */
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 #nav ul {
@@ -87,19 +98,35 @@
     width: 100%;
 }
 
+/* --- メニューリンクのデザイン --- */
+#nav li a {
+    color: #e0e0e0; /* 白に近いグレー */
+    text-decoration: none;
+    display: block;
+    padding: 18px 10px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.05em; /* 文字間隔を広げて映画っぽく */
+    transition: all 0.3s ease;
+}
+
+/* ホバー時のエフェクト */
 #nav li a:hover {
-    background-color: rgb(185, 233, 255);
+    color: #ff8b5e; /* アクセントカラー（オレンジ） */
+    background-color: rgba(255, 255, 255, 0.05); /* うっすら背景を明るく */
+    padding-left: 20px; /* 右にスライドする動き */
 }
 
+/* 区切り線 */
 .bo-da- {
-    border-bottom: 1px solid rgb(185, 233, 255);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* 薄い透明な線 */
 }
 
-.last,.last a {
-    width: 230px;
+.last, .last a {
+    width: 100%;
 }
 
-/* ドロワーが開かれた時のスタイル */
+/* --- ドロワーが開かれた時のスタイル --- */
 .show {
     transform: translate3d(-270px, 0, 0);
 }

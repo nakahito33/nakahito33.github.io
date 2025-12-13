@@ -1,60 +1,88 @@
-/* contents-2.css */
-/* 単語帳のCSSを書きたい */
+@charset "UTF-8";
 
-/* 単語追加フォームのスタイル (変更なし) */
+/* =========================================
+   contents-2.css : シネマティック単語帳デザイン
+   ========================================= */
+
+/* --- 単語追加フォーム --- */
 .add-word-form {
-  max-height: 200px;
   max-width: 600px;
-  margin: 30px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  border: 1px solid #e0e0e0;
+  margin: 40px auto;
+  padding: 30px;
+  /* ダークなカード背景 */
+  background-color: var(--card-bg, #1f1f1f); 
+  border-radius: 12px;
+  /* 浮き上がるような影 */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .add-word-form h2 {
   font-size: 1.5em;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #ffc9a3;
-  padding-bottom: 5px;
+  margin-bottom: 24px;
+  /* 下線をグラデーションに */
+  border-bottom: 2px solid; 
+  border-image: var(--accent-gradient, linear-gradient(135deg, #ff9966, #ff5e62)) 1;
+  padding-bottom: 10px;
+  color: var(--text-main, #fff);
+  letter-spacing: 0.05em;
 }
 
 .input-group {
   display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
 .input-group input {
   flex-grow: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 12px 15px;
+  /* 入力欄もダークに */
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
   font-size: 16px;
+  color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--accent-color, #ff8b5e);
+  box-shadow: 0 0 8px rgba(255, 139, 94, 0.3);
+}
+
+/* プレースホルダーの色を薄く */
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 #add-word-button {
   width: 100%;
-  padding: 10px;
-  background-color: #ff8b5e;
+  padding: 12px;
+  /* グラデーションボタン */
+  background: var(--accent-gradient, linear-gradient(135deg, #ff9966, #ff5e62));
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.2s;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  transition: opacity 0.3s, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(255, 94, 98, 0.3);
 }
 
 #add-word-button:hover {
-  background-color: #d9480f;
+  opacity: 0.9;
+  transform: translateY(-2px);
 }
 
 
-/* 単語リストのスタイル */
+/* --- 単語リスト --- */
 #wordbook-list {
   max-width: 600px;
-  margin: 30px auto;
+  margin: 30px auto 60px; /* 下に余白追加 */
   padding: 0;
   list-style: none;
 }
@@ -62,94 +90,130 @@
 .word-item {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* 縦並びになっても、コントロールボタンとの垂直方向の位置を揃える */
-  padding: 12px 15px;
-  margin-bottom: 8px;
-  background-color: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  transition: background-color 0.2s;
+  align-items: center;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  /* リストアイテムもダークカード化 */
+  background-color: var(--card-bg, #1f1f1f);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
 }
 
+/* ホバー時に少し浮く */
+.word-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* 学習済みのスタイル */
 .word-item.learned {
-  background-color: #e6ffe6;
-  border-left: 5px solid #4CAF50;
-  opacity: 0.8;
+  /* 背景を少し暗くして目立たなくする */
+  background-color: #141414; 
+  border-left: 5px solid #4CAF50; /* 緑のライン */
+  opacity: 0.6; /* 全体を薄く */
 }
 
-/* 🚩 修正点: 単語テキストを縦並びにするための変更 */
+/* テキストエリア */
 .word-text {
   display: flex;
-  flex-direction: column; /* 👈 ここを column に変更して縦並びにする */
+  flex-direction: column;
   flex-grow: 1;
-  margin-right: 15px;
+  margin-right: 20px;
 }
 
-/* 🚩 修正点: 英単語と日本語訳の見た目を調整 */
 .english {
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 4px; /* 日本語訳との間に少しスペースを空ける */
+  font-size: 1.1em;
+  font-weight: 700;
+  color: var(--text-main, #fff); /* 白文字 */
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
 }
 
 .japanese {
-  color: #666;
-  /* 縦並びになったため、不要なスタイルを削除または変更 */
-  border-left: none; /* 👈 横並びの時に使っていた区切り線を削除 */
+  font-size: 0.9em;
+  color: var(--text-sub, #b3b3b3); /* グレー文字 */
+  border-left: none;
   padding-left: 0;
 }
-/* 英語の後に区切り線を入れたい場合は、以下を追加 */
-/*
-.english {
-    // ... (既存のスタイル)
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 4px;
-}
-*/
 
-
+/* ボタンエリア */
 .word-controls {
   display: flex;
-  flex-direction: column; /* 👈 ボタンも縦に並べると見やすいことが多い */
-  gap: 8px;
+  flex-direction: row; /* 横並びに戻した方がスマホで押しやすい場合も（お好みでcolumnでも可） */
+  gap: 10px;
   flex-shrink: 0;
 }
 
+/* 「覚えた」ボタン */
 .learned-button {
-  padding: 5px 10px;
-  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
-  background-color: #f0f0f0;
-  transition: background-color 0.2s;
+  font-size: 13px;
+  background-color: transparent;
+  color: var(--text-sub, #b3b3b3);
+  transition: all 0.3s;
 }
 
+.learned-button:hover {
+  border-color: #4CAF50;
+  color: #4CAF50;
+}
+
+/* 学習済み状態のボタン */
 .word-item.learned .learned-button {
   background-color: #4CAF50;
   color: #fff;
   border-color: #4CAF50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
 }
 
+/* 削除ボタン */
 .delete-button {
-  background-color: #ff6666;
-  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ff6666;
   border: none;
   border-radius: 4px;
-  width: 30px;
-  height: 30px;
-  line-height: 1;
-  font-size: 18px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
 }
 
 .delete-button:hover {
-  background-color: #cc0000;
+  background-color: #ff6666;
+  color: #fff;
 }
 
+/* リストが空の時のメッセージ */
 .empty-list-message {
   text-align: center;
-  color: #999;
-  padding: 20px;
+  color: var(--text-sub, #999);
+  padding: 40px;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* スマホ対応 */
+@media screen and (max-width: 600px) {
+  .add-word-form {
+    padding: 20px;
+    margin: 20px auto;
+  }
+  
+  .input-group {
+    flex-direction: column; /* 入力欄を縦並びに */
+    gap: 10px;
+  }
+  
+  .word-controls {
+    flex-direction: column; /* ボタンを縦並びに */
+    gap: 8px;
+  }
 }
