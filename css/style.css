@@ -165,7 +165,7 @@ main {
 }
 
 .lang-text p.active {
-  background-color: #e5f7ff;
+  background-color: #e6f7ff;
   font-weight: bold;
 }
 
@@ -312,6 +312,7 @@ main {
     width: 100%;
   }
 }
+
 
 
 
