@@ -112,13 +112,15 @@ main {
     word-wrap: break-word; 
     overflow-wrap: break-word;
 }
+
 .lang-text p:hover {
-    background-color: #f0f0f0; 
+    background-color: #f3fafd;
 }
+
 .lang-text p.active { /* ハイライトスタイル */
     font-weight: bold;
     color: #333; 
-    background-color: #ffc9a3; 
+    background-color: #e5f7ff;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 .lang-text {
