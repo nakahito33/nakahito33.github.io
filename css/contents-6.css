@@ -2,7 +2,7 @@
 
 /* =======================================
    CineLingua コンテンツ6 (動画学習)
-   - シネマティックデザイン
+   - ダッシュボード型（1画面完結）レイアウト
    ======================================= */
 
 /* --- 1. 画面全体設定 --- */
@@ -10,108 +10,98 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  /* 映画館のような黒背景 */
-  background-color: var(--bg-color, #141414);
+  height: 100vh; /* 画面の高さを100%に固定 */
+  overflow: hidden; /* 画面全体のスクロールを禁止 */
+  
+  /* ダークモード背景 */
+  background-color: var(--bg-body, #141414);
   color: var(--text-main, #fff);
+  
+  /* 文字を見やすく */
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 * {
   box-sizing: border-box;
 }
 
+/* --- 2. メインエリア配置 --- */
 main {
-  display: flex;
-  min-height: 90vh;
-  height: auto;
-  max-width: 100vw;
-  margin: 0; /* マージンを消して画面いっぱいに */
+  /* ヘッダー(約60px)を引いた高さ */
+  height: calc(100vh - 70px); 
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
   padding: 20px;
+  
+  display: flex;
   gap: 20px;
 }
 
-/* --- 2. レイアウト分割 --- */
+/* --- 3. 左カラム（動画 + 字幕） --- */
 .left-container {
   display: flex;
   flex-direction: column;
-  width: 60%; /* 動画側を少し広く */
-  height: auto;
-  flex-shrink: 0;
-  gap: 20px; /* 動画と字幕の間隔 */
+  width: 60%; /* 画面の6割 */
+  height: 100%; /* 高さいっぱい使う */
+  gap: 20px;
 }
 
-#quiz-section {
-  width: 40%;
-  flex-shrink: 0;
-  padding: 25px;
-  /* ダークカード背景 */
-  background-color: var(--card-bg, #1f1f1f);
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-  overflow-y: auto;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-
-/* --- 3. 動画プレイヤー (16:9維持) --- */
+/* --- 4. 動画プレイヤー --- */
 #player-wrapper {
   width: 100%;
-  flex-shrink: 0;
-  height: 0;
-  padding-bottom: 56.25%; /* 16:9 */
+  flex-shrink: 0; /* 縮ませない */
+  padding-bottom: 56.25%; /* 16:9比率 */
   position: relative;
-  /* プレイヤー周りに影をつける */
-  box-shadow: 0 15px 30px rgba(0,0,0,0.6);
-  border-radius: 8px;
-  overflow: hidden;
   background-color: #000;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  
+  /* 縦長画面対策: 動画が大きすぎると字幕が潰れるので最大高さを制限 */
+  max-height: 50vh; 
+  padding-bottom: 0; /* paddingハックを無効化してheightで制御 */
+  height: 50vh; /* 画面の半分の高さ */
 }
+/* ※もし動画の左右に黒帯が出ても良いなら上記height指定が安定します。
+   比率重視なら padding-bottom: 56.25% を使い、字幕エリアを狭くします。*/
 
 #player {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  border-radius: 8px;
 }
 
-
-/* --- 4. 字幕セクション --- */
+/* --- 5. 字幕セクション（残りの高さを埋める） --- */
 .translation-section {
   width: 100%;
-  height: auto;
-  min-height: 300px;
+  /* 動画以外の余ったスペースを全て使う魔法の記述 */
+  flex-grow: 1; 
+  min-height: 0; /* Flexアイテム内でスクロールさせるために必須 */
+  
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  background-color: var(--card-bg, #1f1f1f);
+  background-color: var(--bg-card, #1f1f1f);
   border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden; /* はみ出し防止 */
 }
 
-/* 言語タブ */
 .language-tabs {
+  flex-shrink: 0; /* タブの高さは固定 */
+  display: flex;
   background-color: rgba(0,0,0,0.3);
   border-bottom: 1px solid rgba(255,255,255,0.1);
-  display: flex;
 }
 
 .tab-button {
   flex: 1;
-  padding: 15px;
+  padding: 12px;
   background: transparent;
   color: var(--text-sub, #b3b3b3);
   border: none;
   cursor: pointer;
-  transition: all 0.3s;
   font-weight: 500;
-}
-
-.tab-button:hover {
-  background-color: rgba(255,255,255,0.05);
-  color: #fff;
+  transition: all 0.3s;
 }
 
 .tab-button.active {
@@ -120,27 +110,39 @@ main {
   border-bottom: 2px solid var(--accent-color, #ff8b5e);
 }
 
-/* 字幕コンテンツエリア */
+/* 字幕リストエリア（ここだけスクロールさせる） */
 .translation-content {
-  overflow-y: auto;
-  padding: 20px;
-  flex-grow: 1;
-  min-width: 0;
+  flex-grow: 1; /* 親要素いっぱいに広げる */
+  overflow-y: auto; /* 縦スクロール許可 */
+  padding: 15px;
   position: relative;
+  
+  /* スクロールバーのデザイン */
+  scrollbar-width: thin;
+  scrollbar-color: #555 #222;
 }
 
-/* 各セリフ行 */
+/* スクロールバー (Chrome/Safari) */
+.translation-content::-webkit-scrollbar {
+  width: 8px;
+}
+.translation-content::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+.translation-content::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+}
+
+/* 字幕テキスト */
 .lang-text p {
-  display: block;
-  margin: 8px 0;
-  padding: 10px 12px;
-  font-size: 1.05em;
-  line-height: 1.6;
-  color: rgba(255,255,255,0.7); /* 少し暗めの白 */
+  margin: 6px 0;
+  padding: 8px 12px;
+  color: rgba(255,255,255,0.7);
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s;
-  border-left: 3px solid transparent; /* ハイライト用の枠確保 */
+  border-left: 3px solid transparent;
 }
 
 .lang-text p:hover {
@@ -148,123 +150,140 @@ main {
   color: #fff;
 }
 
-/* ハイライト（現在再生中） */
 .lang-text p.active {
   font-weight: 700;
   color: #fff;
-  /* ダークモード用のハイライト背景 */
-  background-color: rgba(255, 139, 94, 0.2); 
-  border-left-color: var(--accent-color, #ff8b5e); /* 左端にオレンジのライン */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  background-color: rgba(255, 139, 94, 0.2);
+  border-left-color: var(--accent-color, #ff8b5e);
 }
 
 .lang-text { display: none; }
 .lang-text.active { display: block; }
 
 
-/* --- 5. クイズエリア --- */
+/* --- 6. 右カラム（クイズ） --- */
+#quiz-section {
+  width: 40%; /* 画面の4割 */
+  height: 100%; /* 高さいっぱい */
+  overflow-y: auto; /* ここだけスクロール */
+  
+  padding: 20px;
+  background-color: var(--bg-card, #1f1f1f);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  /* スクロールバー */
+  scrollbar-width: thin;
+  scrollbar-color: #555 #222;
+}
+
+#quiz-section::-webkit-scrollbar {
+  width: 8px;
+}
+#quiz-section::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+/* クイズパーツ */
 .quiz-title {
   margin-top: 0;
   border-bottom: 2px solid;
   border-image: var(--accent-gradient, linear-gradient(135deg, #ff9966, #ff5e62)) 1;
   padding-bottom: 12px;
-  margin-bottom: 24px;
-  font-size: 1.4em;
+  margin-bottom: 20px;
+  font-size: 1.2em;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  color: var(--text-main, #fff);
+  color: #fff;
 }
 
 .quiz-item {
-  margin-bottom: 30px;
-  padding: 20px;
-  background-color: rgba(255,255,255,0.05); /* カード内の薄い背景 */
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: rgba(255,255,255,0.05);
   border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.05);
 }
 
 .question {
   font-weight: 700;
-  margin-bottom: 10px;
-  font-size: 1.1em;
+  margin-bottom: 8px;
   color: #fff;
 }
 
-/* 関連文（引用） */
 .question-sentence {
-  margin: 10px 0 20px 0;
-  padding: 12px;
+  margin: 8px 0 15px 0;
+  padding: 10px;
   background-color: rgba(0,0,0,0.3);
-  border-left: 3px solid var(--text-sub, #b3b3b3);
-  font-size: 0.95em;
+  border-left: 2px solid #b3b3b3;
+  font-size: 0.9em;
   color: #ccc;
   font-style: italic;
 }
 
-/* 答えエリア */
 .answer-container {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-top: 15px;
+  gap: 10px;
 }
 
 .answer-button {
-  padding: 8px 16px;
+  padding: 6px 14px;
   background: var(--accent-gradient, linear-gradient(135deg, #ff9966, #ff5e62));
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 0.9em;
   font-weight: bold;
-  transition: transform 0.2s, opacity 0.2s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
-
-.answer-button:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
+.answer-button:hover { opacity: 0.9; }
 
 .answer-text {
-  color: #4CAF50; /* 正解の緑はそのまま */
+  color: #4CAF50;
   font-weight: bold;
-  font-size: 1.1em;
-  text-shadow: 0 0 10px rgba(76, 175, 80, 0.4);
 }
-
-.answer-text.hidden {
-  display: none;
-}
+.answer-text.hidden { display: none; }
 
 
-/* --- 6. スマホ用レスポンシブ (768px以下) --- */
+/* --- 7. スマホ対応 (縦並びに戻す) --- */
 @media screen and (max-width: 768px) {
+  /* スマホではスクロールさせるため高さを解放 */
+  html, body {
+    height: auto;
+    overflow: auto;
+  }
+
   main {
     flex-direction: column;
+    height: auto; /* 固定高さを解除 */
     padding: 15px;
-    gap: 30px;
   }
 
-  .left-container, 
-  #quiz-section {
-    width: 100%;
-    flex: none;
-  }
-
-  /* スマホでは動画下にすぐ字幕が来るように */
   .left-container {
+    width: 100%;
+    height: auto;
     gap: 15px;
   }
 
-  /* 動画のアスペクト比維持 */
   #player-wrapper {
-    padding-bottom: 56.25%; 
-    height: 0;
+    /* スマホでは高さを指定せずアスペクト比で表示 */
+    height: auto;
+    max-height: none;
+    padding-bottom: 56.25%;
+  }
+  
+  #player {
+    position: absolute;
   }
 
-  /* 字幕エリアの高さ制限（スクロールしやすく） */
-  .translation-content {
-    max-height: 250px; 
+  .translation-section {
+    height: 300px; /* スマホでの字幕エリア高さ */
+    flex-grow: 0;
+  }
+
+  #quiz-section {
+    width: 100%;
+    height: auto;
+    overflow: visible;
   }
 }
