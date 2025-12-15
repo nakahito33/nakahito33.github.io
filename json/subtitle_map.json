@@ -3,6 +3,10 @@
         "videoId": "BPNZdXZ5_HA",
         "subtitle": "json/jimaku/alice.json"
     },
+    "nasa": {
+        "videoId": "IWPMM2-xt6w", 
+        "subtitle": "json/jimaku/nasa.json"
+    },
     "transcript": {
         "videoId": "M7lc1UVf-VE",
         "subtitle": "json/jimaku/transcript.json"
@@ -11,4 +15,5 @@
         "videoId": "unknown",
         "subtitle": "json/jimaku/UNKNOWN.csv"
     }
+
 }
