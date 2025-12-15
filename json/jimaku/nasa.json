@@ -1,0 +1,296 @@
+[
+  {
+    "speaker": "Zena",
+    "text": "Hello and welcome to the International Space Station.",
+    "translated": "こんにちは、国際宇宙ステーションへようこそ。",
+    "start": 0.0
+  },
+  {
+    "speaker": "Zena",
+    "text": "We've been thinking a lot about the holidays that are coming up",
+    "translated": "私たちは、もうすぐやってくるホリデーシーズンについていろいろと考えていました。",
+    "start": 3.0
+  },
+  {
+    "speaker": "Zena",
+    "text": "and I wanted to check-in with my crewmates and just start talking about that holiday season.",
+    "translated": "そこで、クルーのみんなとホリデーシーズンについて話し合いたいと思ったんです。",
+    "start": 7.0
+  },
+  {
+    "speaker": "Zena",
+    "text": "Jonny what does Thanksgiving mean to you?",
+    "translated": "ジョニー、あなたにとって感謝祭とは何ですか？",
+    "start": 13.0
+  },
+  {
+    "speaker": "Jonny",
+    "text": "Yeah thanksgiving for me is always a time to kind of pause and slow down and reflect on",
+    "translated": "そうですね、私にとって感謝祭はいつも、立ち止まってゆっくりと考えを巡らせる時間です。",
+    "start": 18.0
+  },
+  {
+    "speaker": "Jonny",
+    "text": "our lives, the people we cherish in our lives and all the support we've had on this journey.",
+    "translated": "私たちの人生や、大切に思っている人々、そしてこの旅で受けてきた全てのサポートについて。",
+    "start": 25.0
+  },
+  {
+    "speaker": "Jonny",
+    "text": "In particular for this year, I get to spend it with you all up here in space",
+    "translated": "特に今年は、宇宙で皆さんと一緒に過ごすことができます。",
+    "start": 33.0
+  },
+  {
+    "speaker": "Jonny",
+    "text": "so I feel very blessed and honored to share that time with you.",
+    "translated": "だから、皆さんとこの時間を共有できることをとても恵まれていると思いますし、光栄に感じています。",
+    "start": 38.0
+  },
+  {
+    "speaker": "Jonny",
+    "text": "But at the same time I think a lot about my friends and family and everyone",
+    "translated": "でも同時に、友人や家族、そしてみんなのことをたくさん考えています。",
+    "start": 43.0
+  },
+  {
+    "speaker": "Jonny",
+    "text": "who has supported me along this journey. And I think if I had to choose",
+    "translated": "この旅路を支えてくれたみんなのことを。もし選ばなければならないとしたら...",
+    "start": 47.0
+  },
+  {
+    "speaker": "Jonny",
+    "text": "one word its just gratitude, I am very very grateful for that.",
+    "translated": "ひとことで言えば「感謝」です。本当に、心から感謝しています。",
+    "start": 50.0
+  },
+  {
+    "speaker": "Jonny",
+    "text": "Kimiya what does Thanksgiving mean for you and what are you looking forward to doing up here for Thanksgiving?",
+    "translated": "キミヤ（油井亀美也）、あなたにとって感謝祭とは？そしてここで感謝祭に何をするのを楽しみにしていますか？",
+    "start": 56.0
+  },
+  {
+    "speaker": "Kimiya",
+    "text": "Thank you for asking. Uh we don't have really have Thanksgiving in Japan",
+    "translated": "聞いてくれてありがとう。あー、日本では感謝祭という習慣はあまりないのですが",
+    "start": 67.0
+  },
+  {
+    "speaker": "Kimiya",
+    "text": "but since here in ISS everyone respects each others culture internationally.",
+    "translated": "ここISSでは、みんなが国際的にお互いの文化を尊重し合っています。",
+    "start": 72.0
+  },
+  {
+    "speaker": "Kimiya",
+    "text": "So I do really respect Thanksgiving, just a very good tradition.",
+    "translated": "だから私も感謝祭をとても尊重しています。とても良い伝統ですから。",
+    "start": 77.0
+  },
+  {
+    "speaker": "Kimiya",
+    "text": "To show respect and also like appreciation to others so I try to yeah enjoy",
+    "translated": "他者への敬意と感謝を示すためにね。だから私も楽しもうと思います。",
+    "start": 82.0
+  },
+  {
+    "speaker": "Kimiya",
+    "text": "that holiday. Uh actually looking forward to eat some like special dinner",
+    "translated": "その休日をね。実は、特別なディナーを食べるのを楽しみにしています。",
+    "start": 89.0
+  },
+  {
+    "speaker": "Kimiya",
+    "text": "or something like that. Yeah for the U.S. so do you have any special plan you guys for the food?",
+    "translated": "というか、そんな感じのことをね。アメリカのみんなは食事について何か特別な計画はあるの？",
+    "start": 97.0
+  },
+  {
+    "speaker": "Mike",
+    "text": "Yeah for the food so one of my favorite parts of Thanksgiving.",
+    "translated": "ああ、食事についてだね。感謝祭の楽しみの一つだから。",
+    "start": 100.0
+  },
+  {
+    "speaker": "Mike",
+    "text": "This is my second Thanksgiving in space so I highly recommend it.",
+    "translated": "宇宙で過ごす感謝祭はこれが2回目なんだけど、すごくおすすめだよ。",
+    "start": 104.0
+  },
+  {
+    "speaker": "Mike",
+    "text": "Uh last time was with the shuttle crew and uh it was amazing this time its",
+    "translated": "前回はシャトルのクルーと一緒で素晴らしかったけど、今回は...",
+    "start": 107.0
+  },
+  {
+    "speaker": "Mike",
+    "text": "gunna be with the new Soyuz crew. And we're getting food ready uh so we have",
+    "translated": "新しいソユーズのクルーと一緒になるんだ。食事の準備も進めているよ。",
+    "start": 113.0
+  },
+  {
+    "speaker": "Mike",
+    "text": "like the traditions of turkey there's some cranberry sauce here",
+    "translated": "伝統的な七面鳥もあるし、クランベリーソースもある。",
+    "start": 117.0
+  },
+  {
+    "speaker": "Mike",
+    "text": "in fact I am gonna just toss these out a little bit. This cranberry sauce is",
+    "translated": "実際、ちょっとこれを出してみようかな。このクランベリーソースは",
+    "start": 121.0
+  },
+  {
+    "speaker": "Mike",
+    "text": "actually kind of Russian cranberries so its kinda neat to have that up",
+    "translated": "実はロシアのクランベリーなんだ。だからこれを宇宙で食べるのはちょっと粋だよね。",
+    "start": 125.0
+  },
+  {
+    "speaker": "Mike",
+    "text": "here cause that's one of my favorite parts. And uh I'm gunna miss my",
+    "translated": "僕の大好物の一つだからね。それから、もちろん...",
+    "start": 128.0
+  },
+  {
+    "speaker": "Mike",
+    "text": "family of course and uh but I am up here with my space family and its really awesome.",
+    "translated": "家族が恋しいけれど、ここには宇宙の家族がいる。それって本当に最高なことだよ。",
+    "start": 132.0
+  },
+  {
+    "speaker": "Mike",
+    "text": "And uh so were looking forward to the food up here and the company.",
+    "translated": "だからここでの食事と仲間たちとの時間を楽しみにしているんだ。",
+    "start": 138.0
+  },
+  {
+    "speaker": "Mike",
+    "text": "And uh Zena is this the only food we have?",
+    "translated": "ところでジーナ、食事はこれだけ？",
+    "start": 143.0
+  },
+  {
+    "speaker": "Zena",
+    "text": "Why no Mike this is not the only food we have. I think food is a really",
+    "translated": "いいえマイク、これだけじゃないわ。食事は本当に...",
+    "start": 152.0
+  },
+  {
+    "speaker": "Zena",
+    "text": "important part of everyday life up here and staying happy and healthy.",
+    "translated": "ここでの日常生活、そして幸せで健康でいるために重要な要素だもの。",
+    "start": 157.0
+  },
+  {
+    "speaker": "Zena",
+    "text": "And we share a lot of meals and this one is going to be extra special.",
+    "translated": "私たちは何度も食事を共にするけれど、今回のはとびきり特別になりそうね。",
+    "start": 162.0
+  },
+  {
+    "speaker": "Zena",
+    "text": "And our ground teams and the food lab at NASA have taken such great care of",
+    "translated": "地上のチームとNASAの食品ラボがとても気遣ってくれて、",
+    "start": 166.0
+  },
+  {
+    "speaker": "Zena",
+    "text": "us that we have a very special food holiday bag here. We've got",
+    "translated": "とても特別なホリデー用フードバッグを用意してくれたの。中身は...",
+    "start": 171.0
+  },
+  {
+    "speaker": "Zena",
+    "text": "everything from turkey and the traditional things that Mike",
+    "translated": "七面鳥から、さっきマイクが言及したような伝統的なものまで全て揃っているわ。",
+    "start": 177.0
+  },
+  {
+    "speaker": "Zena",
+    "text": "mentioned some mashed potatoes to crabmeat salmon we've even got some",
+    "translated": "マッシュポテトにカニ肉、サーモン、それからなんと...",
+    "start": 180.0
+  },
+  {
+    "speaker": "Zena",
+    "text": "lobster which is amazing. So I think its gonna be a really really delicious",
+    "translated": "ロブスターまであるの！すごいわよね。だから本当に美味しい...",
+    "start": 186.0
+  },
+  {
+    "speaker": "Zena",
+    "text": "meal and I can't wait to share it with everyone including our new crewmates",
+    "translated": "食事になると思うわ。新しいクルーも含めてみんなでシェアするのが待ちきれない。",
+    "start": 192.0
+  },
+  {
+    "speaker": "Zena",
+    "text": "who are launching on a Soyuz rocket on Thanksgiving day. That's gunna",
+    "translated": "彼らは感謝祭の当日にソユーズロケットで打ち上げられるのよ。",
+    "start": 195.0
+  },
+  {
+    "speaker": "Zena",
+    "text": "be really exciting. yeah this is marking also the end of your mission",
+    "translated": "本当にワクワクするわ。そう、これはあなたのミッションの終わりでも...",
+    "start": 200.0
+  },
+  {
+    "speaker": "Zena",
+    "text": "with us Jonny and so thinkin about our new crewmembers coming up and",
+    "translated": "あるのよね、ジョニー。だから新しいクルーがやってくること、そして...",
+    "start": 206.0
+  },
+  {
+    "speaker": "Zena",
+    "text": "sharing the Thanksgiving meal together, how does that make you feel?",
+    "translated": "感謝祭の食事を共にすることを考えて、どんな気持ち？",
+    "start": 212.0
+  },
+  {
+    "speaker": "Jonny",
+    "text": "Uh I think the best way to show what that makes me feel is just show it.",
+    "translated": "あー、どんな気持ちか伝えるには、行動で示すのが一番だと思うな。",
+    "start": 218.0
+  },
+  {
+    "speaker": "Zena",
+    "text": "Awwwww.",
+    "translated": "あ〜〜（感動の声）",
+    "start": 230.0
+  },
+  {
+    "speaker": "Jonny",
+    "text": "Love you guys.",
+    "translated": "みんな大好きだよ。",
+    "start": 233.0
+  },
+  {
+    "speaker": "Mike",
+    "text": "And from all of us aboard the International Space Station we",
+    "translated": "国際宇宙ステーションに搭乗している私たち全員から、",
+    "start": 235.0
+  },
+  {
+    "speaker": "Mike",
+    "text": "wish you all a Happy Thanksgiving from space. May you spend it with",
+    "translated": "宇宙から、ハッピー・サンクスギビング！皆さんが...",
+    "start": 238.0
+  },
+  {
+    "speaker": "Mike",
+    "text": "your friends and family enjoy the food good food and appreciate great",
+    "translated": "友人や家族と過ごし、美味しい食事を楽しみ、素晴らしい...",
+    "start": 244.0
+  },
+  {
+    "speaker": "Mike",
+    "text": "things that we have in our lives. Thank you so much.",
+    "translated": "人生の恵みに感謝できますように。本当にありがとう。",
+    "start": 247.0
+  }
+]
