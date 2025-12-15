@@ -145,6 +145,24 @@ function attachEventListeners() {
             const index = parseInt(e.currentTarget.dataset.index);
             deleteWord(index);
         });
+
+        document.querySelectorAll('.speak-btn-word').forEach(button => {
+        if (button._eventAttached) return;
+        button._eventAttached = true;
+
+        button.addEventListener('click', (e) => {
+            // 親要素へのクリック伝播を防ぐ（もしあれば）
+            e.stopPropagation();
+            
+            const text = e.currentTarget.dataset.text;
+            const lang = e.currentTarget.dataset.lang;
+            
+            // main.jsで作った関数を呼ぶ
+            if (window.speakText) {
+                window.speakText(text, lang);
+            }
+        });
+    });
     });
 
     // 記憶済みボタンのイベント
