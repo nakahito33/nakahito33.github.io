@@ -231,4 +231,32 @@ document.addEventListener('DOMContentLoaded', function () {
   // 呼び出し
   initYouTubeAndSubtitlesIfNecessary();
 
+// main.js の末尾に追加
+
+/**
+ * テキスト読み上げ関数 (Web Speech API)
+ * @param {string} text - 読み上げるテキスト
+ * @param {string} lang - 言語コード (英語: 'en-US', 日本語: 'ja-JP')
+ */
+window.speakText = function(text, lang = 'en-US') {
+    // ブラウザが対応していなければ終了
+    if (!('speechSynthesis' in window)) {
+        alert("お使いのブラウザは読み上げに対応していません");
+        return;
+    }
+
+    // 読み上げ中のものがあればキャンセル（連打対策）
+    window.speechSynthesis.cancel();
+
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = lang; 
+    utter.rate = 1.0;  // 速度 (0.1 ~ 10)
+    utter.pitch = 1.0; // 高さ (0 ~ 2)
+    utter.volume = 1.0; // 音量 (0 ~ 1)
+
+    window.speechSynthesis.speak(utter);
+};
+
+　　
+
 });
