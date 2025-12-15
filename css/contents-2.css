@@ -1,75 +1,85 @@
 @charset "UTF-8";
 
 /* =========================================
-   contents-2.css : シネマティック単語帳（カードグリッド版）
+   contents-2.css : モダン・ダークグリッドデザイン
    ========================================= */
 
 /* --- 1. レイアウト全体：2カラム構成 --- */
 main {
   display: flex;
-  gap: 30px;        /* フォームとリストの間隔 */
+  gap: 40px;        /* フォームとリストの間隔を広めに */
   align-items: flex-start; /* 上揃え */
   padding: 40px;
-  max-width: 1200px;
+  max-width: 1400px; /* 広い画面でも崩れないように */
   margin: 0 auto;   /* 中央寄せ */
+  min-height: 80vh; /* 最低限の高さを確保 */
 }
 
 /* --- 2. 左側：入力フォームエリア --- */
 #add-word-section {
-  width: 350px;     /* 幅を固定 */
+  width: 320px;     /* 幅を固定 */
   flex-shrink: 0;   /* 縮まないようにする */
   position: sticky; /* スクロールしても画面についてくる */
-  top: 20px;
+  top: 30px;
   
-  background-color: var(--card-bg, #1f1f1f);
-  padding: 25px;
-  border-radius: 16px;
+  /* ガラスっぽい質感 */
+  background-color: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 #add-word-section h2 {
   margin-top: 0;
-  font-size: 1.2rem;
-  border-bottom: 2px solid;
-  border-image: var(--accent-gradient, linear-gradient(135deg, #ff9966, #ff5e62)) 1;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  color: var(--text-main, #fff);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #fff;
+  border-left: 4px solid var(--accent-color, #ff8b5e); /* 左にアクセントライン */
+  padding-left: 15px;
 }
 
+/* 入力欄を縦並びに変更 */
 #add-word-section input {
+  display: block;
   width: 100%;
   margin-bottom: 15px;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
   color: #fff;
-  transition: border-color 0.3s;
+  font-size: 1rem;
+  transition: all 0.3s;
 }
 
 #add-word-section input:focus {
   outline: none;
   border-color: var(--accent-color, #ff8b5e);
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 0 2px rgba(255, 139, 94, 0.2);
 }
 
 #add-word-button {
   width: 100%;
-  padding: 12px;
-  background: var(--accent-gradient, linear-gradient(135deg, #ff9966, #ff5e62));
+  padding: 14px;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #ff9966, #ff5e62);
   border: none;
-  border-radius: 8px;
+  border-radius: 50px; /* 丸っこいボタン */
   color: white;
   font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(255, 94, 98, 0.4);
 }
 
 #add-word-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 94, 98, 0.4);
-  opacity: 0.9;
+  box-shadow: 0 6px 20px rgba(255, 94, 98, 0.6);
 }
 
 
@@ -81,8 +91,8 @@ main {
 
 #wordbook-list {
   display: grid;
-  /* 画面幅に合わせてカードを自動で並べる（最低幅280px） */
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  /* ★ここが重要：カードの幅を自動調整してタイル状に並べる */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   list-style: none;
   padding: 0;
@@ -91,20 +101,21 @@ main {
 
 /* リストが空の時のメッセージ */
 .empty-list-message {
-  grid-column: 1 / -1; /* 横幅いっぱいに広げる */
+  grid-column: 1 / -1;
   text-align: center;
-  color: var(--text-sub, #999);
-  padding: 40px;
-  font-style: italic;
-  opacity: 0.7;
+  color: #666;
+  padding: 60px;
+  font-size: 1.1rem;
+  border: 2px dashed #333;
+  border-radius: 12px;
 }
 
 
 /* --- 4. 単語カードのデザイン --- */
 .word-item {
-  background-color: var(--card-bg, #1f1f1f);
-  border-radius: 12px;
-  padding: 20px;
+  background-color: #252525;
+  border-radius: 16px;
+  padding: 24px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   
@@ -112,140 +123,161 @@ main {
   flex-direction: column;
   justify-content: space-between;
   
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
   overflow: hidden;
+  min-height: 180px; /* カードの高さを揃える */
 }
 
 .word-item:hover {
   transform: translateY(-5px);
-  border-color: rgba(255, 139, 94, 0.5);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  background-color: #2a2a2a;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* 記憶済みのスタイル */
 .word-item.learned {
-  opacity: 0.6;
-  background-color: #141414;
-  border: 1px solid #4CAF50;
+  background-color: #1a1a1a;
+  opacity: 0.7;
+  border: 1px solid #2e7d32;
 }
 .word-item.learned::after {
-  content: "COMPLETED";
+  content: "MASTERED";
   position: absolute;
-  top: 15px;
-  right: -35px;
-  background: #4CAF50;
+  top: 20px;
+  right: -30px;
+  background: #2e7d32;
   color: #fff;
-  font-size: 0.7rem;
-  padding: 5px 40px;
-  transform: rotate(45deg);
+  font-size: 0.6rem;
   font-weight: bold;
+  letter-spacing: 1px;
+  padding: 5px 35px;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 /* テキスト部分 */
 .word-text {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .english {
   display: block;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--text-main, #fff);
+  font-size: 1.5rem; /* 英語を大きく */
+  font-weight: 800;
+  color: #fff;
   margin-bottom: 8px;
   line-height: 1.2;
+  word-break: break-word; /* 長い単語でも折り返す */
+}
+
+/* スピーカーボタンの行 */
+.word-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
 }
 
 .japanese {
+  display: block;
   font-size: 0.95rem;
-  color: var(--text-sub, #b3b3b3);
+  color: #bbb;
+  line-height: 1.5;
 }
 
-/* --- コントロールボタン群 --- */
+/* --- コントロールボタン群（カード下部） --- */
 .word-controls {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* 右寄せ */
-  gap: 10px;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  justify-content: space-between; /* 左右に配置 */
   padding-top: 15px;
-  margin-top: auto; /* 下部に固定 */
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: auto;
 }
 
-/* スピーカーボタン（丸いアイコンデザイン） */
+/* ★スピーカーボタンの修正（白い箱を消す） */
 .speak-btn-word {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent !important; /* 強制的に透明に */
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
+  min-width: 36px; /* 潰れないように */
   color: var(--accent-color, #ff8b5e);
   cursor: pointer;
   
-  display: inline-flex; /* ここを変更：flexだとテキスト横並びにしやすい */
+  display: flex;
   align-items: center;
   justify-content: center;
   
-  font-size: 1rem;
+  font-size: 1.1rem;
   transition: all 0.2s;
-  margin-left: 10px;
-  vertical-align: middle;
+  padding: 0;
+  outline: none;
 }
 
 .speak-btn-word:hover {
-  background: rgba(255, 139, 94, 0.1);
+  background: rgba(255, 139, 94, 0.1) !important;
   border-color: var(--accent-color, #ff8b5e);
   transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 139, 94, 0.3);
 }
 
 /* 記憶・削除ボタン */
-.learned-button, .delete-button {
+.learned-button {
   background: transparent;
-  border: 1px solid #444;
+  border: 1px solid #555;
   color: #ccc;
   font-size: 0.8rem;
-  padding: 6px 12px;
-  border-radius: 6px;
+  padding: 6px 15px;
+  border-radius: 20px;
   cursor: pointer;
   transition: all 0.2s;
 }
-
 .learned-button:hover {
-  background: #4CAF50;
-  color: white;
   border-color: #4CAF50;
+  color: #4CAF50;
+  background: rgba(76, 175, 80, 0.1);
 }
 
+.delete-button {
+  background: transparent;
+  color: #666;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
 .delete-button:hover {
-  background: #ff4757;
-  color: white;
-  border-color: #ff4757;
+  background: rgba(255, 71, 87, 0.1);
+  color: #ff4757;
 }
 
 
-/* --- 5. スマホ対応 --- */
-@media screen and (max-width: 768px) {
-  /* 全体を縦並びに戻す */
+/* --- スマホ対応 --- */
+@media screen and (max-width: 900px) {
   main {
     flex-direction: column; 
     padding: 20px;
-    gap: 20px;
+    gap: 30px;
   }
 
-  /* フォームの固定を解除し、幅いっぱいに */
   #add-word-section {
     width: 100%;
     position: static;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
-  /* グリッドの列数をスマホ用に調整 */
   #wordbook-list {
-    grid-template-columns: 1fr; /* 1列表示 */
-  }
-  
-  /* ボタン類を押しやすく */
-  .word-controls {
-    justify-content: space-between;
+    /* スマホでも2列にするか、1列にするか */
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); 
   }
 }
