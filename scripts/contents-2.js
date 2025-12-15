@@ -115,6 +115,8 @@ window.renderWordbook = function() {
         li.innerHTML = `
 <div class="word-text">
     <span class="english">${displayedEn}</span>
+    <button class="speak-btn-word" data-text="${wordObj.en}" data-lang="en-US">🔊</button>
+    <br>
     <span class="japanese">${wordObj.ja || ''}</span>
 </div><div class="word-controls">
     <button class="learned-button" data-index="${index}">
@@ -122,7 +124,8 @@ window.renderWordbook = function() {
     </button><button class="delete-button" data-index="${index}">
         &times;
     </button>
-</div>`; // <- divタグ間、buttonタグ間を詰める
+</div>`;
+         // <- divタグ間、buttonタグ間を詰める
         
         list.appendChild(li);
     });
