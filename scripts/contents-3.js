@@ -68,4 +68,38 @@ form.addEventListener('submit', async (e) => {
         console.error('AI検索エラー:', error);
         resultsDiv.innerHTML = `<p class="error-message">検索に失敗しました。<br>時間をおいて再度お試しください。</p>`;
     }
+
+
+    /* --- contents-3.css に追加 --- */
+
+/* 点滅アニメーションの定義 (ふわっと消えて現れる) */
+@keyframes blink-animation {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; } /* 半分くらい透明に */
+  100% { opacity: 1; }
+}
+
+/* ローディング表示のコンテナ */
+.loading-container {
+  text-align: center;
+  padding: 40px 20px;
+  color: #ccc;
+}
+
+/* 点滅させるテキストのスタイル */
+.blink-text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--accent-color, #ff8b5e); /* アクセントカラーを使用 */
+  /* アニメーションを適用: 名前 時間 無限ループ 滑らかに */
+  animation: blink-animation 1.5s infinite ease-in-out;
+  display: inline-block; /* アニメーションをきれいに効かせるため */
+  margin-bottom: 10px;
+}
+
+/* 下の英語補足テキスト */
+.loading-sub-text {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
 });
