@@ -59,6 +59,7 @@ form.addEventListener('submit', async (e) => {
         // ※GASの仕様上、CORSエラーが出ないように 'text/plain' として送るのがコツです
         const response = await fetch(GAS_API_URL, {
             method: 'POST',
+            headers: { 'Content-Type': 'text/plain' },
             body: JSON.stringify({ word: word }) 
         });
 
