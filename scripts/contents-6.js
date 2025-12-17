@@ -1,6 +1,9 @@
 // contents-6.js
 'use strict';
 
+// ▼▼▼ AI辞書用のGAS URL (contents-3.jsと同じもの) ▼▼▼
+const GAS_API_URL = "https://script.google.com/macros/s/AKfycbxZi5NGHgMVixSQg6Wwc9BufRbx_JkwhK8PcDkpebC4d5Q5iQevlzTwpttbEOzVv4q86w/exec";
+
 let ytplayer = null;
 let eventsData = [];
 let subtitleInterval = null;
@@ -8,10 +11,9 @@ let subtitleInterval = null;
 let wordbook = JSON.parse(localStorage.getItem('wordbook') || '[]');
 
 // 状態（単純化）
-let isAutoScroll = true;        // 自動追従フラグ（仕様どおり：クリックで復帰）
+let isAutoScroll = true;        // 自動追従フラグ
 let isAnimating = false;
 let animCancelToken = null;
-
 let activeIndex = -1;
 
 // DOM refs
@@ -23,7 +25,7 @@ let btnUp = null;
 let btnDown = null;
 let sharedScrollTop = 0;
 
-const ANIM_DURATION_MS = 100;   // 100ms 固定（仕様）
+const ANIM_DURATION_MS = 100;
 const SCROLL_THROTTLE_MS = 80;
 
 function clamp(n, a, b) { return Math.max(a, Math.min(b, n)); }
@@ -41,7 +43,7 @@ if (openNav && nav) {
     });
 }
 
-// ボタンのアニメーション（バツ印への変化など）
+// ボタンのアニメーション
 if (btnTrigger) {
     btnTrigger.addEventListener('click', function () {
         this.classList.toggle('active');
@@ -51,18 +53,12 @@ if (btnTrigger) {
 // 上寄せの理想 top を返す
 function computeIdealScrollTop(box, el) {
     if (!box || !el) return 0;
-    // el.offsetTop は親コンテナからのオフセット（期待どおり）
     const offset = el.offsetTop || 0;
     return Math.max(0, offset - 8); // 少し余白
 }
 
-// 固定時間アニメ（en/ja 同期） — 100ms
+// 固定時間アニメ（en/ja 同期）
 function animateScrollTo(targetTop) {
-    console.log("[ANIM] start anim to targetTop=", targetTop,
-        "en.start=", enBox.scrollTop,
-        "ja.start=", jaBox.scrollTop,
-        "isAutoScroll=", isAutoScroll
-    );
     if (!enBox || !jaBox) return Promise.resolve();
     // cancel previous
     if (animCancelToken) {
@@ -90,7 +86,7 @@ function animateScrollTo(targetTop) {
         enBox.scrollTop = newEn;
         jaBox.scrollTop = newJa;
 
-        // update sharedScrollTop to latest applied value (use en as canonical)
+        // update sharedScrollTop
         sharedScrollTop = enBox.scrollTop;
 
         if (p < 1 && !cancelled) {
@@ -110,9 +106,7 @@ function animateScrollTo(targetTop) {
         animCancelToken = null;
     };
 
-    // resolve after duration
     return new Promise(res => setTimeout(() => {
-        // finalize sharedScrollTop to exact target
         sharedScrollTop = targetTop;
         enBox.scrollTop = targetTop;
         jaBox.scrollTop = targetTop;
@@ -120,7 +114,7 @@ function animateScrollTo(targetTop) {
     }, ANIM_DURATION_MS + 10));
 }
 
-// ハイライト表示のみ（DOMクラス切替）
+// ハイライト表示のみ
 function updateHighlight(index) {
     activeIndex = index;
     const boxes = document.querySelectorAll('.lang-text');
@@ -132,7 +126,7 @@ function updateHighlight(index) {
     updateScrollButtonsVisual();
 }
 
-// ボタン表示更新（enBox を基準）
+// ボタン表示更新
 function updateScrollButtonsVisual() {
     const enActive = enBox?.classList.contains('active');
     const box = enActive ? enBox : jaBox;
@@ -153,18 +147,14 @@ function updateScrollButtonsVisual() {
     const targetBottom = targetTop + item.offsetHeight;
     const scrollTop = box.scrollTop;
     const scrollBottom = scrollTop + box.clientHeight;
+    const PADDING = 10;
 
-    // 上下に余裕を持たせるパディング（オプション）
-    const PADDING = 10; // px単位で微調整
-
-    // ハイライト行が上端より上に出ている場合 → 上ボタン表示
     if (targetBottom < scrollTop + PADDING) {
         if (btnUp) btnUp.style.display = 'block';
     } else {
         if (btnUp) btnUp.style.display = 'none';
     }
 
-    // ハイライト行が下端より下に出ている場合 → 下ボタン表示
     if (targetTop > scrollBottom - PADDING) {
         if (btnDown) btnDown.style.display = 'block';
     } else {
@@ -177,11 +167,10 @@ function hideScrollButtons() {
     if (btnDown) btnDown.style.display = 'none';
 }
 
-// 行クリック（ジャンプ） — 100ms アニメで上寄せ。クリックで isAutoScroll を true に戻す。
+// 行クリック（ジャンプ）
 function onLineClick(index) {
     updateHighlight(index);
     isAutoScroll = true;
-    // rAF×2 でレイアウト安定の後アニメ
     requestAnimationFrame(() => {
         requestAnimationFrame(() => {
             const enActive = enBox.classList.contains('active');
@@ -203,22 +192,16 @@ function onLineClick(index) {
 // 自動追従呼び出し
 function scrollToActiveIfNeeded() {
     if (activeIndex < 0) return;
-
-    // 現在アクティブなタブを判定
     const enActive = enBox.classList.contains('active');
     const box = enActive ? enBox : jaBox;
     const items = enActive ? enItems : jaItems;
-
     const target = items[activeIndex];
     if (!target) return;
-
     const targetTop = computeIdealScrollTop(box, target);
-
-    // 英語・日本語は常に同期スクロール
     animateScrollTo(targetTop);
 }
 
-// renderSubtitles（DOMが存在する前提で呼ぶ）
+// renderSubtitles (辞書クリック機能追加済み)
 function renderSubtitles() {
     console.log("[DEBUG] renderSubtitles CALLED");
 
@@ -242,12 +225,38 @@ function renderSubtitles() {
     const fragJa = document.createDocumentFragment();
 
     eventsData.forEach((ev, idx) => {
+        // --- 英語字幕（単語クリック対応） ---
         const pEn = document.createElement('p');
         pEn.className = 'subtitle-line';
-        pEn.textContent = (ev.speaker ? ev.speaker + ' : ' : ' : ') + ev.text;
         pEn.dataset.index = idx;
         if (ev.start != null) pEn.dataset.start = ev.start;
         if (ev.end != null) pEn.dataset.end = ev.end;
+
+        // 話者表示
+        const prefixText = (ev.speaker ? ev.speaker + ' : ' : ' : ');
+        const spanPrefix = document.createElement('span');
+        spanPrefix.textContent = prefixText;
+        pEn.appendChild(spanPrefix);
+
+        // 単語分割してspan化
+        const words = ev.text.split(' ');
+        words.forEach(w => {
+            const spanWord = document.createElement('span');
+            spanWord.textContent = w + ' ';
+            spanWord.className = 'clickable-word'; // CSSでスタイル適用
+            
+            // 単語クリックイベント
+            spanWord.addEventListener('click', (e) => {
+                e.stopPropagation(); // 行クリック（シーク）を防止
+                
+                // 記号除去 ( "rain," -> "rain" )
+                const cleanWord = w.replace(/[.,!?;:()"]/g, "");
+                if(cleanWord.trim().length > 0) {
+                    showDictionaryModal(cleanWord);
+                }
+            });
+            pEn.appendChild(spanWord);
+        });
 
         const starEn = document.createElement('span');
         starEn.className = 'star-icon';
@@ -259,6 +268,8 @@ function renderSubtitles() {
         pEn.appendChild(starEn);
         pEn.addEventListener('click', () => onLineClick(idx));
 
+
+        // --- 日本語字幕 ---
         const pJa = document.createElement('p');
         pJa.className = 'subtitle-line';
         pJa.textContent = (ev.speaker ? ev.speaker + ' : ' : ' : ') + ev.translated;
@@ -297,42 +308,100 @@ function renderSubtitles() {
     updateScrollButtonsVisual();
 }
 
+
+// ▼▼▼ 追加: 辞書モーダル表示関数 ▼▼▼
+async function showDictionaryModal(word) {
+    const modal = document.getElementById('dict-modal');
+    const resultArea = document.getElementById('modal-result-area');
+    const closeBtn = document.querySelector('.close-modal-btn');
+    
+    if(!modal || !resultArea) {
+        console.error("辞書モーダル用のHTML要素(id='dict-modal'等)が見つかりません。contents-6.htmlに追加してください。");
+        return;
+    }
+
+    // モーダルを表示
+    modal.classList.remove('hidden');
+    
+    // 閉じるイベント
+    closeBtn.onclick = () => modal.classList.add('hidden');
+    modal.onclick = (e) => {
+        if (e.target === modal) modal.classList.add('hidden');
+    };
+
+    // ローディング表示
+    resultArea.innerHTML = `
+        <div style="text-align:center; padding:20px;">
+            <p style="color:#ff8b5e; font-weight:bold; animation:blink 1s infinite;">AI検索中...</p>
+            <p>Searching for "${word}"...</p>
+        </div>
+    `;
+
+    // 動画を一時停止
+    if(ytplayer && typeof ytplayer.pauseVideo === 'function') {
+        ytplayer.pauseVideo();
+    }
+
+    try {
+        // GASへ問い合わせ
+        const response = await fetch(GAS_API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain' },
+            body: JSON.stringify({ word: word }) 
+        });
+
+        if (!response.ok) throw new Error('Network response was not ok');
+        const data = await response.json();
+
+        // 結果のHTML生成
+        let html = `<h3>${data.word} <span class="part-of-speech">${data.partOfSpeech || ''}</span></h3>`;
+        html += `<dl><dt>定義</dt><dd>${data.definition}</dd></dl>`;
+        
+        if (data.examples && data.examples.length > 0) {
+            html += '<dt>例文</dt><ul>';
+            data.examples.forEach(ex => html += `<li style="font-size:0.9em; color:#ccc; margin-bottom:5px;">${ex}</li>`);
+            html += '</ul>';
+        }
+
+        // 単語帳に追加ボタン
+        html += `<div style="margin-top:20px; text-align:right;">
+                 <button onclick="addToWordbook('${data.word}')" 
+                 style="padding:8px 16px; background:#ff8b5e; border:none; border-radius:4px; color:#fff; cursor:pointer;">
+                 + 単語帳に追加
+                 </button></div>`;
+
+        resultArea.innerHTML = html;
+
+    } catch (error) {
+        console.error(error);
+        resultArea.innerHTML = `<p style="color:red;">検索に失敗しました。<br>もう一度試してください。</p>`;
+    }
+}
+
+
 // 単語帳をローカルストレージに保存
 function saveWordbook() {
     localStorage.setItem("wordbook", JSON.stringify(wordbook));
-
-    // contents-2.jsで定義された描画関数を呼び出し、再描画を委譲
     if (window.renderWordbook) {
         window.renderWordbook();
     }
 }
-
-// ★ saveWordbook をグローバルに公開
 window.saveWordbook = saveWordbook;
 
 // 単語帳追加・削除トグル
 function toggleWordbook(idx) {
     const ev = eventsData[idx];
     if (!ev) return;
-
     const pair = { en: ev.text, ja: ev.translated };
-
-    const exists = wordbook.some(
-        w => w.en === pair.en && w.ja === pair.ja
-    );
+    const exists = wordbook.some(w => w.en === pair.en && w.ja === pair.ja);
 
     if (exists) {
-        // 削除
         wordbook = wordbook.filter(w => !(w.en === pair.en && w.ja === pair.ja));
     } else {
-        // 追加
         wordbook.push(pair);
     }
-
-    // 保存と描画は saveWordbook に任せる
     saveWordbook();
 
-    // 星アイコンの状態を更新
     const en = enItems[idx];
     const ja = jaItems[idx];
     if (!en || !ja) return;
@@ -368,22 +437,15 @@ function attachScrollWatchers() {
             last = t;
             if (isAnimating) return;
 
-            // update shared and sync the other box
             const other = (box === enBox) ? jaBox : enBox;
             const current = box.scrollTop;
-
-            // store shared
             sharedScrollTop = current;
-
-            // sync other if different (avoid unnecessary writes)
             if (other && Math.abs(other.scrollTop - current) > 1) {
                 other.scrollTop = current;
             }
-
             updateScrollButtonsVisual();
         }, { passive: true });
 
-        // user intent only on wheel / touchstart (prevents star/button clicks from stopping auto-follow)
         ['wheel', 'touchstart'].forEach(ev => {
             box.addEventListener(ev, () => {
                 isAutoScroll = false;
@@ -396,20 +458,14 @@ function attachScrollWatchers() {
     if (btnUp && !btnUp._registered) {
         btnUp.addEventListener('click', () => {
             if (activeIndex < 0) activeIndex = 0;
-
-            // 現在のアクティブタブを判定
             const enActive = enBox.classList.contains('active');
             const box = enActive ? enBox : jaBox;
             const items = enActive ? enItems : jaItems;
-
             const targetItem = items[activeIndex];
             const top = targetItem ? computeIdealScrollTop(box, targetItem) : 0;
-
-            // 両方同期スクロール（ここは即時）
             sharedScrollTop = top;
             if (enBox) enBox.scrollTop = top;
             if (jaBox) jaBox.scrollTop = top;
-
             isAutoScroll = true;
             updateScrollButtonsVisual();
         });
@@ -419,20 +475,14 @@ function attachScrollWatchers() {
     if (btnDown && !btnDown._registered) {
         btnDown.addEventListener('click', () => {
             if (activeIndex < 0) activeIndex = 0;
-
-            // 現在のアクティブタブを判定
             const enActive = enBox.classList.contains('active');
             const box = enActive ? enBox : jaBox;
             const items = enActive ? enItems : jaItems;
-
             const targetItem = items[activeIndex];
             const top = targetItem ? computeIdealScrollTop(box, targetItem) : 0;
-
-            // 両方同期スクロール
             sharedScrollTop = top;
             if (enBox) enBox.scrollTop = top;
             if (jaBox) jaBox.scrollTop = top;
-
             isAutoScroll = true;
             updateScrollButtonsVisual();
         });
@@ -443,19 +493,15 @@ function attachScrollWatchers() {
 // YouTube 側で再生時に呼ばれるループ
 function updateSubtitleFromPlayer() {
     if (!ytplayer || !eventsData.length) return;
-
     const t = ytplayer.getCurrentTime();
     const firstStart = parseFloat(eventsData[0]?.start ?? 0);
 
-    // ① 最初の時間より前に戻った → ハイライト解除
     if (t < firstStart) {
         if (activeIndex !== -1) {
             activeIndex = -1;
             updateHighlight(-1);
-
-            // ユーザー操作尊重：自動スクロールがOFFなら位置を変更しない
             if (isAutoScroll) {
-                const top = 0; // 最上部に戻す場合のみ
+                const top = 0;
                 if (enBox) enBox.scrollTop = top;
                 if (jaBox) jaBox.scrollTop = top;
                 sharedScrollTop = top;
@@ -464,7 +510,6 @@ function updateSubtitleFromPlayer() {
         return;
     }    
 
-    // ② どの行が現在か判定
     let newIndex = -1;
     for (let i = 0; i < eventsData.length; i++) {
         const next = i < eventsData.length - 1 ? eventsData[i + 1].start : Infinity;
@@ -472,7 +517,6 @@ function updateSubtitleFromPlayer() {
     }
     if (newIndex === -1) return;
     
-    // ④ ハイライト更新
     if (newIndex !== activeIndex) {
         updateHighlight(newIndex);
         if (isAutoScroll) scrollToActiveIfNeeded();
@@ -481,64 +525,49 @@ function updateSubtitleFromPlayer() {
 
 function onPlayerStateChange(event) {
     if (event.data === YT.PlayerState.PLAYING) {
-
         if (activeIndex === -1 && eventsData.length > 0) {
             const top = computeIdealScrollTop(enBox, enItems[0]);
             sharedScrollTop = top;
             if (enBox) enBox.scrollTop = top;
             if (jaBox) jaBox.scrollTop = top;
-
-            // 初回は自動スクロールを有効化
             isAutoScroll = true;
         }
-
-        // ▼（現状の処理）
         if (!window.__subtitlesRendered) {
             renderSubtitles();
             window.__subtitlesRendered = true;
         }
-
         if (subtitleInterval) clearInterval(subtitleInterval);
         subtitleInterval = setInterval(updateSubtitleFromPlayer, 100);
     }
 }
 
-// タブバインド（クリックで active 切替・即時ジャンプ→短いアニメ）
+// タブバインド
 function bindTabButtons() {
     const tabButtons = Array.from(document.querySelectorAll('.tab-button'));
     const langContents = Array.from(document.querySelectorAll('.lang-text'));
 
     tabButtons.forEach((btn, i) => {
-        // 防止: 二重登録
         if (btn._registered) return;
         btn._registered = true;
 
         btn.addEventListener('click', () => {
-            // 1) タブの active 切替（見た目）
             tabButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
-            // 2) 表示切替（DOM の active クラス）
             langContents.forEach((c, ci) => c.classList.toggle('active', ci === i));
             
-            // 3) 自動追従を有効にする
             if (isAutoScroll == true) {
                 scrollToActiveIfNeeded();
             }
 
-            // 4) レイアウト確定後、sharedScrollTop を復元して両方に反映
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
                     setTimeout(() => {
-                        // タブ切り替え時にスクロール位置を復元するのは
-                        // 自動追従オフの時だけにする
                         if (!isAutoScroll) {
                             const t = sharedScrollTop || 0;
                             if (enBox) enBox.scrollTop = t;
                             if (jaBox) jaBox.scrollTop = t;
                             updateScrollButtonsVisual();
                         }
-
                     }, 0);
                 });
             });
@@ -548,50 +577,32 @@ function bindTabButtons() {
 
 // 初期化：字幕ロード -> render -> bind -> YouTube準備
 async function init() {
-    // 1. DOM要素取得
     enBox = document.querySelectorAll('.lang-text')[0];
     jaBox = document.querySelectorAll('.lang-text')[1];
     console.log('init() called');
-    console.log('enBox / jaBox:', enBox, jaBox);
 
-    // 2. 字幕データと videoId の取得
     let videoId = null;
     try {
         const video = new URLSearchParams(window.location.search).get('video') || 'default';
-        console.log('video param:', video);
-
         const mapResponse = await fetch('json/subtitle_map.json');
-        console.log('mapResponse.ok:', mapResponse.ok);
         if (!mapResponse.ok) throw new Error('subtitle_map.json not found');
-
         const map = await mapResponse.json();
-        console.log('subtitle_map.json loaded:', map);
-
         const entry = map[video] || map['default'];
-        console.log('map entry:', entry);
-
         videoId = entry?.videoId || null;
-        console.log('videoId:', videoId);
-
         const subtitlePath = entry.subtitle;
         const res = await fetch(subtitlePath);
         if (!res.ok) throw new Error(`字幕JSONが見つかりません: ${res.status}`);
         eventsData = await res.json();
         window.eventsData = eventsData;
-        console.log('subtitle fetch ok:', res.ok);
-        console.log('eventsData loaded, length:', eventsData.length);
     } catch (err) {
         console.error('subtitle load error', err);
         eventsData = [];
     }
 
-    // 3. 字幕描画
     renderSubtitles();
-    console.log('[DEBUG] renderSubtitles CALLED');
     bindTabButtons();
-    console.log('[DEBUG] bindTabButtons() done');
 
-    // 4. YouTube API スクリプトを一度だけ読み込む / 既にロード済みなら手動で呼ぶ
+    // YouTube IFrame API Ready 時に呼ばれる関数を定義
     window.onYouTubeIframeAPIReady = function () {
         console.log('onYouTubeIframeAPIReady called');
         const playerDiv = document.getElementById('player');
@@ -599,7 +610,6 @@ async function init() {
             if (playerDiv) playerDiv.innerHTML = '<p>unknown</p>';
             return;
         }
-
         ytplayer = new YT.Player('player', {
             videoId: videoId,
             host: 'https://www.youtube.com',
@@ -611,76 +621,40 @@ async function init() {
             },
             events: { onStateChange: onPlayerStateChange }
         });
-
         window.ytplayer = ytplayer;
-        console.log('YouTube player created:', ytplayer);
     };
 
+    // APIスクリプトの注入
     if (!document.querySelector('script[data-ytapi]')) {
-        console.log('injecting YouTube IFrame API script');
         const s = document.createElement('script');
         s.src = 'https://www.youtube.com/iframe_api';
         s.dataset.ytapi = '1';
         s.onload = () => {
-            console.log('YouTube IFrame API script loaded');
-            // APIロード完了時に手動呼び出し
             if (typeof window.onYouTubeIframeAPIReady === 'function') {
-                window.onYouTubeIframeAPIReady();
+                // 自動で呼ばれない場合の手動呼び出し（保険）
+                // window.onYouTubeIframeAPIReady(); 
             }
         };
-        s.onerror = (e) => console.error('Failed to load YouTube IFrame API script', e);
         document.body.appendChild(s);
     } else if (window.YT && typeof window.YT.Player === 'function') {
-        console.log('YT already loaded, calling onYouTubeIframeAPIReady manually');
         window.onYouTubeIframeAPIReady();
-    }    
-
-    // 5. YouTube API Ready 時にプレイヤーを同期生成
-    window.onYouTubeIframeAPIReady = function () {
-        console.log('onYouTubeIframeAPIReady called');
-        const playerDiv = document.getElementById('player');
-        if (!videoId || videoId === 'unknown') {
-            if (playerDiv) playerDiv.innerHTML = '<p>unknown</p>';
-            return;
-        }
-
-        ytplayer = new YT.Player('player', {
-            videoId: videoId,
-            host: 'https://www.youtube.com',
-            playerVars: {
-                origin: window.location.origin,
-                enablejsapi: 1,
-                rel: 0,
-                playsinline: 1
-            },
-            events: { onStateChange: onPlayerStateChange }
-        });
-
-        window.ytplayer = ytplayer;
-        console.log('YouTube player created:', ytplayer);
-    };
-
-    // 6. 初回スクロール位置設定
+    }
+    
+    // 初期スクロール設定
     attachScrollWatchers();
-    console.log('[DEBUG] attachScrollWatchers CALLED');
     requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-            if (!enItems || !enItems.length) return;
-
-            let targetTop;
-            if (isAutoScroll) {
-                targetTop = computeIdealScrollTop(enBox, enItems[activeIndex]);
-            } else {
-                targetTop = enBox.scrollTop; // 現在の位置維持
-            }
-
-            sharedScrollTop = targetTop;
-            if (enBox) enBox.scrollTop = targetTop;
-            if (jaBox) jaBox.scrollTop = targetTop;
-
-            updateScrollButtonsVisual();
-        });
-    });    
+        if (!enItems || !enItems.length) return;
+        let targetTop;
+        if (isAutoScroll) {
+            targetTop = computeIdealScrollTop(enBox, enItems[activeIndex]);
+        } else {
+            targetTop = enBox.scrollTop;
+        }
+        sharedScrollTop = targetTop;
+        if (enBox) enBox.scrollTop = targetTop;
+        if (jaBox) jaBox.scrollTop = targetTop;
+        updateScrollButtonsVisual();
+    });
 }
 
 // ページロード時に初期化
