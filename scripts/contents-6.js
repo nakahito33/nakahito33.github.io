@@ -220,6 +220,8 @@ function onLineClick(index) {
     }
 }
 
+// scripts/contents-6.js の renderSubtitles 関数のみ書き換え
+
 function renderSubtitles() {
     console.log("[DEBUG] renderSubtitles CALLED");
     enBox = document.querySelectorAll('.lang-text')[0];
@@ -231,42 +233,72 @@ function renderSubtitles() {
     const fragJa = document.createDocumentFragment();
 
     eventsData.forEach((ev, idx) => {
-        // 英語
+        // --- 英語字幕 ---
         const pEn = document.createElement('p');
         pEn.className = 'subtitle-line';
         pEn.dataset.index = idx;
         
-        const prefix = document.createElement('span');
-        prefix.textContent = (ev.speaker ? ev.speaker + ' : ' : ' : ');
-        pEn.appendChild(prefix);
+        // ▼▼▼ 変更点1: 再生ボタン(▶)を先頭に追加 ▼▼▼
+        // テキスト部分と機能を完全に分けます
+        const playBtn = document.createElement('span');
+        playBtn.className = 'play-btn'; // 後でCSSでデザイン
+        playBtn.textContent = '▶'; 
+        playBtn.onclick = (e) => {
+            e.stopPropagation(); // 親への伝播を止める
+            onLineClick(idx);    // ここを押した時だけシークする
+        };
+        pEn.appendChild(playBtn);
+
+        // 話者表示
+        if (ev.speaker) {
+            const speakerSpan = document.createElement('span');
+            speakerSpan.className = 'speaker-name';
+            speakerSpan.textContent = ev.speaker + ': ';
+            pEn.appendChild(speakerSpan);
+        }
 
         // 単語クリック対応
         const words = ev.text.split(' ');
         words.forEach(w => {
             const span = document.createElement('span');
-            span.textContent = w; // CSSで隙間を作るのでスペース不要
+            span.textContent = w;
             span.className = 'clickable-word';
             span.onclick = (e) => {
-                e.stopPropagation();
+                e.stopPropagation(); // ここを押しても動画は飛ばない
                 const clean = w.replace(/[.,!?;:()"]/g, "");
                 if(clean.trim()) showDictionaryModal(clean);
             };
             pEn.appendChild(span);
         });
 
+        // お気に入り★ボタン
         const starEn = createStar(idx);
         pEn.appendChild(starEn);
-        pEn.onclick = () => onLineClick(idx);
+        
+        // ★重要: 行全体(pEn)のクリックイベントは削除しました
+        // これで「文字の隙間」を押しても動画が勝手に飛ばなくなります
 
-        // 日本語
+        // --- 日本語字幕 ---
         const pJa = document.createElement('p');
         pJa.className = 'subtitle-line';
-        pJa.textContent = (ev.speaker ? ev.speaker + ' : ' : ' : ') + ev.translated;
         pJa.dataset.index = idx;
+
+        // 日本語側にも再生ボタンをつける
+        const playBtnJa = document.createElement('span');
+        playBtnJa.className = 'play-btn';
+        playBtnJa.textContent = '▶';
+        playBtnJa.onclick = (e) => {
+            e.stopPropagation();
+            onLineClick(idx);
+        };
+        pJa.appendChild(playBtnJa);
+
+        const textSpan = document.createElement('span');
+        textSpan.textContent = (ev.speaker ? ev.speaker + ' : ' : '') + ev.translated;
+        pJa.appendChild(textSpan);
         
         const starJa = createStar(idx);
         pJa.appendChild(starJa);
-        pJa.onclick = () => onLineClick(idx);
 
         // お気に入り状態反映
         const saved = wordbook.some(w => w.en === ev.text && w.ja === ev.translated);
