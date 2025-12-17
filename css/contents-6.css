@@ -251,12 +251,16 @@ main {
   cursor: pointer;
   border-bottom: 1px dotted transparent;
   transition: all 0.2s;
+  
+  /* ▼▼▼ 追加：単語の右側にスペースを空ける ▼▼▼ */
+  margin-right: 0.3em; /* 文字サイズの0.3倍の隙間を作る */
+  display: inline-block; /* 隙間を効きやすくする */
 }
+
 .clickable-word:hover {
   color: var(--accent-color, #ff8b5e);
   border-bottom: 1px dotted var(--accent-color, #ff8b5e);
 }
-
 /* モーダル全体の背景（暗くする） */
 .modal-overlay {
   position: fixed;
