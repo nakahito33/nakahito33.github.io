@@ -373,6 +373,35 @@ function saveWordbook() {
 }
 window.saveWordbook = saveWordbook;
 
+// --- ここから追記 ---
+
+// AI辞書など外部から単語を追加するための関数
+function addToWordbook(wordText) {
+    // すでに同じ英語が登録されていないかチェック
+    const isAlreadySaved = wordbook.some(w => w.en === wordText);
+    
+    if (isAlreadySaved) {
+        alert(`「${wordText}」はすでに単語帳に追加されています。`);
+        return;
+    }
+
+    // 単語帳に追加 (日本語訳はAI辞書からの追加とわかるようにしておく)
+    wordbook.push({ en: wordText, ja: "（AI辞書から追加）" });
+    
+    // 保存処理を実行
+    saveWordbook();
+    
+    // 字幕の★マークの状態も更新するために再描画
+    renderSubtitles();
+    
+    alert(`「${wordText}」を単語帳に追加しました！`);
+}
+
+// AI辞書のHTML側の onclick="addToWordbook(...)" から呼べるようにグローバルに公開する
+window.addToWordbook = addToWordbook;
+
+// --- 追記ここまで ---
+
 function toggleWordbook(idx) {
     const ev = eventsData[idx];
     const pair = { en: ev.text, ja: ev.translated };
